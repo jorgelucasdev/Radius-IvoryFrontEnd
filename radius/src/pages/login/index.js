@@ -1,0 +1,20 @@
+import React from "react";
+import styles from "./index.module.scss";
+import { Container, Row, Col } from "react-bootstrap";
+import Radius from "../../assets/images/logoRadius.png";
+import LogoIvory from "../../assets/images/logoIvory.png";
+
+function Autenticacao() {
+  return (
+    <Container className={styles.autenticacao}>
+      <div className={styles.form}>
+        <img src={Radius} className={styles.imgRadius} />
+      </div>
+      <footer className={styles.footer}>
+        <img src={LogoIvory} className={styles.logoFooter} />
+      </footer>
+    </Container>
+  );
+}
+
+export default Autenticacao;

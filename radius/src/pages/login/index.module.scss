@@ -1,0 +1,29 @@
+.autenticacao {
+  background: url("../../assets/images/fundo.jpg") no-repeat center center fixed;
+  height: 100vh;
+  min-width: 100px;
+  position: relative;
+  background: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    background: #ffffff;
+    height: 400px;
+    width: 600px;
+    border-radius: 5px;
+    padding: 0 0 40px;
+    margin: 0 0 60px;
+
+    .imgRadius {
+      padding: 40px 225px 0;
+    }
+  }
+  .logoFooter {
+    display: flex;
+    height: 75px;
+    width: 85px;
+    align-items: flex-end;
+  }
+}
