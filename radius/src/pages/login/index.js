@@ -4,13 +4,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import Radius from "../../assets/images/logoRadius.png";
 import LogoIvory from "../../assets/images/logoIvory.png";
 import Login from "./login";
+import FaleConosco from "./faleconosco.js";
 
 function Autenticacao() {
   return (
     <Container className={styles.autenticacao}>
       <div className={styles.form}>
         <img src={Radius} className={styles.imgRadius} />
-        <Login />
+        {/* <Login /> */}
+        <FaleConosco />
       </div>
       <footer className={styles.footer}>
         <img src={LogoIvory} className={styles.logoFooter} />
