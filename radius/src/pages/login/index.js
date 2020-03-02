@@ -12,6 +12,7 @@ function Autenticacao() {
       </div>
       <footer className={styles.footer}>
         <img src={LogoIvory} className={styles.logoFooter} />
+          <p>Produto desenvolvido por IvoryIt</p>      
       </footer>
     </Container>
   );
