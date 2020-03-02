@@ -1,12 +1,18 @@
-.faleconosco {
+.faleconoscoContainer {
   display: grid;
   margin: 0 auto 0;
 
-  .Header {
+  .textTitle {
     text-align: center;
     .title1 {
       font-weight: bold;
+      margin-bottom: 5px;
     }
-
+    .title2 {
+      margin-top: 0px;
+    }
+    p {
+      text-align: center;
+    }
   }
 }
