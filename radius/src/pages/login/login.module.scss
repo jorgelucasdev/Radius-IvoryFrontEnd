@@ -1,0 +1,12 @@
+.loginbox {   
+    display: grid;
+    margin: 0 auto 0;
+    .text {
+        .title{
+            font-weight: bold; 
+        }      
+        p {    
+            text-align: center;  
+        }
+    }
+}
