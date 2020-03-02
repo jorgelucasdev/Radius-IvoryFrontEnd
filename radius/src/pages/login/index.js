@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Radius from "../../assets/images/logoRadius.png";
 import LogoIvory from "../../assets/images/logoIvory.png";
 import Login from "./login";
-import FaleConosco from "./faleconosco.js";
+import EsqueciSenha from "./EsqueciSenha";
 
 function Autenticacao() {
   return (
@@ -12,11 +12,11 @@ function Autenticacao() {
       <div className={styles.form}>
         <img src={Radius} className={styles.imgRadius} />
         {/* <Login /> */}
-        <FaleConosco />
+        <EsqueciSenha/>
       </div>
       <footer className={styles.footer}>
         <img src={LogoIvory} className={styles.logoFooter} />
-        <p>Produto desenvolvido por IvoryIt</p>      
+          <p>Produto desenvolvido por IvoryIt</p>      
       </footer>
     </Container>
   );

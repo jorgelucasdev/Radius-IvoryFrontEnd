@@ -1,0 +1,35 @@
+.esqueciSenha{
+   display: grid;
+   width: 80%;
+   margin: 0 auto  0;
+   .header{
+        .title{    
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+        .subtitle{
+            text-align: center;
+            margin-top: 6px;
+        }
+   }
+   
+   body{
+        text-align: center;
+        .label{
+            display: flex;
+            text-align: left;
+        }
+        input{
+            margin: 3px 0 12px;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: #2E75B6;
+            border-width: 1px;
+        }
+    }
+
+}
+  
