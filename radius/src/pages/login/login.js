@@ -10,9 +10,9 @@ function Login() {
                 <p>insira seus dados nos campor abaixo.</p>
             </Row>
             <Row><label>Usuário:</label></Row>
-            <Row><input></input></Row>
+            <Row><input className={styles.inputUser}></input></Row>
             <Row><label>Senha:</label></Row>
-            <Row><input></input></Row>
+            <Row><input className={styles.inputSenha}></input></Row>
         </Container>
     )
 }
