@@ -6,16 +6,16 @@
         .title{
             text-align: center;
             font-weight: bold;
+            margin: 0 auto 0;
             margin-bottom: 0px; 
         }      
-        p {    
+        .insira {    
             text-align: center;
-            margin-top: 6px;  
+            margin: 6px auto 0; 
         }
     }
     .form{
         text-align: center;
-        flex-direction: row;
         .labelUser {
             display: flex;
             text-align: left;
@@ -50,6 +50,9 @@
             color: #FFF;
             border-radius: 10px;
             border-style: solid;
+        }
+        .textEnd {
+            margin: 25px 0 0 0;
         }
     }
 }
