@@ -14,13 +14,11 @@ function Login() {
                 </Row>
             </div>
             <Container className={styles.form}>
-                <Row><label className={styles.labelUser}>Usuário:</label></Row>
-                <Row><input className={styles.inputUser}></input></Row>
-                <Row><label className={styles.labelSenha}>Senha:</label></Row>
-                <Row><input className={styles.inputSenha}></input></Row>
-                <Row>
-                    <button className={styles.btnEntrar}>ENTRAR</button>
-                </Row>
+                <label className={styles.labelUser}>Usuário:</label>
+                <input className={styles.inputUser}></input>
+                <label className={styles.labelSenha}>Senha:</label>
+                <input className={styles.inputSenha}></input>
+                <button className={styles.btnEntrar}>ENTRAR</button>
                 <Row className={styles.textEnd}>
                     <Col className={styles.textEsqueceu}><a>Esqueceu sua senha?</a></Col>
                     <Col className={styles.textFale}><a>Fale conosco</a></Col>
