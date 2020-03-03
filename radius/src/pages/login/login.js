@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Login() {
     return(
-        <Container className={styles.loginbox}>
+        <Container className={styles.form}>
             <Row className={styles.text}>
                 <p className={styles.title}>Seja bem-vindo ao Radius</p>
                 <p>insira seus dados nos campor abaixo.</p>

@@ -1,32 +1,82 @@
 import React from "react";
 import styles from "./faleconosco.module.scss";
-import { Container, Row, Col, Form, Grid , FormGroup } from "react-bootstrap";
-
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Grid,
+  FormGroup,
+  Button
+} from "react-bootstrap";
 
 function FaleConosco() {
   return (
-    <Container className={styles.faleconoscoContainer}>
-    <div className= {styles.Header}>
-      <Row className={styles.textTitle}>
-        <p className={styles.title1}>Fale conosco</p>
-        <p className={styles.title2}>Insira seus dados nos campor abaixo.</p>
+    <Container className={styles.faleconosco}>
+      <Row className={styles.text}>
+        <p className={styles.title}>Fale conosco</p>
       </Row>
-      </div>
-      <Form>
-        <Form.Row>
-          <Form.Group as={Col} md="2" controlId="formGridNome">
-            <Form.Label>Nome</Form.Label>
-            <Form.Control type="nome"/>
-          </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email"/>
-          </Form.Group>
-        </Form.Row>
-      </Form>
+      <Row className={styles.text}>
+        <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
+      </Row>
+
+      <body className={styles.form}>
+        <Row>
+          <Col>
+            <Row>
+              <label className={styles.labelNome}>Nome:</label>
+            </Row>
+            <Row>
+              <input className={styles.inputNome}></input>
+            </Row>
+          </Col>
+          
+          <Col>
+            <Row>
+              <label className={styles.labelEmail}>Email:</label>
+            </Row>
+            <Row>
+              <input className={styles.inputEmail}></input>
+            </Row>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Row>
+              <label className={styles.labelNomeDaEmpresa}>
+                Nome da Empresa:
+              </label>
+            </Row>
+            <Row>
+              <input className={styles.inputNomeDaEmpresa}></input>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <label className={styles.labelAssunto}>Assunto:</label>
+            </Row>
+            <Row>
+              <input className={styles.inputAssunto}></input>
+            </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Row>
+              <label className={styles.labelMensagem}>Mensagem:</label>
+            </Row>
+            <Row>
+              <input className={styles.inputMensagem}></input>
+            </Row>
+          </Col>
+        </Row>
+        <Row>
+          <button className={styles.btnEnviar}>ENVIAR</button>
+        </Row>
+      </body>
     </Container>
-
   );
 }
 export default FaleConosco;
