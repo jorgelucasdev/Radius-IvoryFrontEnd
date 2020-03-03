@@ -32,7 +32,8 @@ function FaleConosco() {
             </Row>
           </Col>
 
-          <Col md={{offset: 1}}>
+          {/* <Col md={{offset: 1}}> */}
+          <Col className={styles.col2}>
             <Row>
               <label className={styles.labelEmail}>Email:</label>
             </Row>
@@ -54,7 +55,7 @@ function FaleConosco() {
             </Row>
           </Col>
 
-          <Col md={{offset: 1}}>
+          <Col className={styles.col2}>
             <Row>
               <label className={styles.labelAssunto}>Assunto:</label>
             </Row>

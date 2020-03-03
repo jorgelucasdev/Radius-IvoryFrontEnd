@@ -13,8 +13,8 @@ function Autenticacao() {
       <Container className={styles.container}>
         <div className={styles.form}>
           <img src={Radius} className={styles.imgRadius} />
-          {/* <FaleConosco /> */}
-          <EsqueciSenha />
+          <FaleConosco />
+          {/* <EsqueciSenha /> */}
         </div>
         <footer className={styles.footer}>
           <img src={LogoIvory} className={styles.logoFooter} />
