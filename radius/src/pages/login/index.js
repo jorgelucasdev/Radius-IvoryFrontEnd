@@ -12,7 +12,8 @@ function Autenticacao() {
       <Container className={styles.container}>
         <div className={styles.form}>
           <img src={Radius} className={styles.imgRadius} />
-          <Login />
+          <EsqueciSenha/>
+          {/* <Login /> */}
         </div>
         <footer className={styles.footer}>
           <img src={LogoIvory} className={styles.logoFooter} />

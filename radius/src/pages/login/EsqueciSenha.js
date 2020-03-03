@@ -8,8 +8,8 @@ export default class EsqueciSenha extends Component {
     render() {
         return (
             <Container className={styles.esqueciSenha}>
+                {/* <FontAwesomeIcon icon={faAngleLeft}/> */}
                 <header className={styles.header}>
-                    <FontAwesomeIcon icon={faAngleLeft} className={styles.leftAngle}/>
                     <p className={styles.title}>Esqueci minha senha</p>
                     <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
                 </header>
@@ -20,7 +20,7 @@ export default class EsqueciSenha extends Component {
                         <input type="text" />
                         <label className={styles.label}>CNPJ:</label>
                         <input type="text" />
-                        {/* <button>REQUISITAR NOVA SENHA</button> */}
+                        <button className={styles.btnEntrar}>REQUISITAR NOVA SENHA</button>
                 </Container>
             </Container>
         )
