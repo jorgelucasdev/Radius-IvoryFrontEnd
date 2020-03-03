@@ -8,24 +8,11 @@ import EsqueciSenha from "./EsqueciSenha";
 
 function Autenticacao() {
   return (
-<<<<<<< HEAD
-    <Container className={styles.autenticacao}>
-      <div className={styles.form}>
-        <img src={Radius} className={styles.imgRadius} />
-        <Login />
-      </div>
-      <footer className={styles.footer}>
-        <img src={LogoIvory} className={styles.logoFooter} />
-          <p>Produto desenvolvido por IvoryIt</p>      
-      </footer>
-    </Container>
-=======
     <div className={styles.autenticacao}>
       <Container className={styles.container}>
         <div className={styles.form}>
           <img src={Radius} className={styles.imgRadius} />
-          {/* <Login /> */}
-          <EsqueciSenha />
+          <Login />
         </div>
         <footer className={styles.footer}>
           <img src={LogoIvory} className={styles.logoFooter} />
@@ -34,7 +21,6 @@ function Autenticacao() {
       </Container>
     </div>
 
->>>>>>> esqueciSenha
   );
 }
 
