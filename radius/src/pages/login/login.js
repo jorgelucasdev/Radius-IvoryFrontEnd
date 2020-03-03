@@ -9,10 +9,13 @@ function Login() {
                 <p className={styles.title}>Seja bem-vindo ao Radius</p>
                 <p>insira seus dados nos campor abaixo.</p>
             </Row>
-            <Row><label>Usuário:</label></Row>
+            <Row><label className={styles.labelUser}>Usuário:</label></Row>
             <Row><input className={styles.inputUser}></input></Row>
-            <Row><label>Senha:</label></Row>
+            <Row><label className={styles.labelSenha}>Senha:</label></Row>
             <Row><input className={styles.inputSenha}></input></Row>
+            <Row>
+            <button className={styles.btnEntrar}>ENTRAR</button>
+            </Row>
         </Container>
     )
 }
