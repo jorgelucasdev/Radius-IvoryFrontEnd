@@ -13,19 +13,15 @@ export default class EsqueciSenha extends Component {
                     <p className={styles.title}>Esqueci minha senha</p>
                     <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
                 </header>
-                <body>
-                    <div className={styles.form}>
-
+                <Container className={styles.body}>
                         <label className={styles.label}>Nome:</label>
                         <input type="text" className={styles.input} />
                         <label className={styles.label}>Email:</label>
                         <input type="text" />
                         <label className={styles.label}>CNPJ:</label>
                         <input type="text" />
-
                         {/* <button>REQUISITAR NOVA SENHA</button> */}
-                    </div>
-                </body>
+                </Container>
             </Container>
         )
     }
