@@ -4,7 +4,6 @@ import { Container, Row, Col, Grid } from "react-bootstrap";
 
 function Login() {
     return(
-<<<<<<< HEAD
         <Container className={styles.loginbox}>
             <div className={styles.text}>
                 <Row>
@@ -23,21 +22,10 @@ function Login() {
                     <button className={styles.btnEntrar}>ENTRAR</button>
                 </Row>
                 <Row className={styles.textEnd}>
-                    <Col><a className={styles.textEsqueceu}>Esqueceu sua senha?</a></Col>
-                    <Col><a className={styles.textFale}>Fale conosco</a></Col>
+                    <Col className={styles.textEsqueceu}><a>Esqueceu sua senha?</a></Col>
+                    <Col className={styles.textFale}><a>Fale conosco</a></Col>
                 </Row>
             </Container>
-=======
-        <Container className={styles.form}>
-            <Row className={styles.text}>
-                <p className={styles.title}>Seja bem-vindo ao Radius</p>
-                <p>insira seus dados nos campor abaixo.</p>
-            </Row>
-            <Row><label>Usuário:</label></Row>
-            <Row><input className={styles.inputUser}></input></Row>
-            <Row><label>Senha:</label></Row>
-            <Row><input className={styles.inputSenha}></input></Row>
->>>>>>> faleconosco
         </Container>
     )
 }
