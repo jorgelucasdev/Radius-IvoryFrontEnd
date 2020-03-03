@@ -9,18 +9,19 @@ import FaleConosco from "./faleconosco";
 
 function Autenticacao() {
   return (
-    <Container className={styles.autenticacao}>
-      <div className={styles.form}>
-        <img src={Radius} className={styles.imgRadius} />
-        {/* <Login /> */}
-        {/* <EsqueciSenha/> */}
-        <FaleConosco />
-      </div>
-      <footer className={styles.footer}>
-        <img src={LogoIvory} className={styles.logoFooter} />
-          <p>Produto desenvolvido por IvoryIt</p>      
-      </footer>
-    </Container>
+    <div className={styles.autenticacao}>
+      <Container className={styles.container}>
+        <div className={styles.form}>
+          <img src={Radius} className={styles.imgRadius} />
+          <Login />
+        </div>
+        <footer className={styles.footer}>
+          <img src={LogoIvory} className={styles.logoFooter} />
+          <p>Produto desenvolvido por IvoryIt</p>
+        </footer>
+      </Container>
+    </div>
+
   );
 }
 

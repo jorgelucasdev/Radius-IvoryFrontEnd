@@ -1,14 +1,15 @@
 .autenticacao {
-  background: url("../../assets/images/fundo.jpg") no-repeat center center fixed;
+  background: url("../../assets/images/fundo.jpg") no-repeat center center;
+  background-size: cover;
   height: 100vh;
-  min-width: 100px;
-  position: relative;
-  background: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
+  min-height: 657px;
+  
+  .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
   .form {
     display: flex;
     flex-direction: column;
