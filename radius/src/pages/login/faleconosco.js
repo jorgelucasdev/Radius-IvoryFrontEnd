@@ -31,8 +31,8 @@ function FaleConosco() {
               <input className={styles.inputNome}></input>
             </Row>
           </Col>
-          
-          <Col>
+
+          <Col md={{offset: 1}}>
             <Row>
               <label className={styles.labelEmail}>Email:</label>
             </Row>
@@ -53,7 +53,8 @@ function FaleConosco() {
               <input className={styles.inputNomeDaEmpresa}></input>
             </Row>
           </Col>
-          <Col>
+
+          <Col md={{offset: 1}}>
             <Row>
               <label className={styles.labelAssunto}>Assunto:</label>
             </Row>
@@ -68,7 +69,7 @@ function FaleConosco() {
               <label className={styles.labelMensagem}>Mensagem:</label>
             </Row>
             <Row>
-              <input className={styles.inputMensagem}></input>
+              <textarea className={styles.inputMensagem}></textarea>
             </Row>
           </Col>
         </Row>
