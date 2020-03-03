@@ -3,6 +3,9 @@
    width: 80%;
    margin: 0 auto  0;
    .header{
+        .leftAngle{
+            
+        }
         .title{    
             text-align: center;
             font-weight: bold;
@@ -16,6 +19,9 @@
    
    body{
         text-align: center;
+        .form{
+            padding: 0 60px;
+        }
         .label{
             display: flex;
             text-align: left;
