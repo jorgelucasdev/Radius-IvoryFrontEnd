@@ -1,7 +1,6 @@
+@import "../../variaveis.scss";
+
 .loginbox {   
-    display: grid;
-    width: 80%;
-    margin: 0 auto 0;
     .text {
         .title{
             text-align: center;
@@ -33,7 +32,7 @@
             height: 30px;
             border-radius: 5px;
             border-style: solid;
-            border-color: #2E75B6;
+            border-color: $color;
             border-width: 1px;
         }
         .inputSenha {
@@ -41,14 +40,19 @@
             height: 30px;
             border-radius: 5px;
             border-style: solid;
-            border-color: #2E75B6;
+            border-color: $color;
             border-width: 1px;
         }
         .btnEntrar {
             margin: 1em auto 0;
             width: 100%;
+<<<<<<< HEAD
             height: 38px;
             background-color: #2E75B6;
+=======
+            height: 40px;
+            background-color: $color;
+>>>>>>> esqueciSenha
             color: #FFF;
             border-radius: 5px;
             border-style: solid;
