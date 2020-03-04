@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Autenticacao from "./pages/login/index";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './pages/login/login';
@@ -14,6 +14,7 @@ const Routes = () => (
             <Route path="/faleconosco/" component={FaleConosco} />
         </Switch>
     </BrowserRouter>
+    
 ); 
 
 export default Routes;

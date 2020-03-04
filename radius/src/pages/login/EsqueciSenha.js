@@ -8,7 +8,6 @@ export default class EsqueciSenha extends Component {
     render() {
         return (
             <div className={styles.esqueciSenha}>
-                {/* <FontAwesomeIcon icon={faAngleLeft}/> */}
                 <header className={styles.header}>
                     <p className={styles.title}>Esqueci minha senha</p>
                     <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
