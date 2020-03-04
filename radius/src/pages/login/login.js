@@ -11,7 +11,7 @@ function Login() {
                     <p className={styles.title}>Seja bem-vindo ao Radius</p>
                 
                 
-                    <p className={styles.insira}>Insira seus dados nos campor abaixo.</p>
+                    <p className={styles.insira}>Insira seus dados nos campo abaixo.</p>
                 
             </div>
             <Container className={styles.form}>

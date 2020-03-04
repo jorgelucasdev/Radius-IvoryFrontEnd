@@ -5,45 +5,24 @@ import Radius from "../../assets/images/logoRadius.png";
 import LogoIvory from "../../assets/images/logoIvory.png";
 import Login from "./login";
 import EsqueciSenha from "./EsqueciSenha";
-<<<<<<< HEAD
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FaleConosco from "./faleconosco";
-=======
-import {faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Routes from '../../routes';
->>>>>>> login
+import Routes from "../../routes";
 
 function Autenticacao() {
   return (
     <div className={styles.autenticacao}>
       <Container className={styles.container}>
         <Col md={8} className={styles.form}>
-<<<<<<< HEAD
           <Col sm={8}>
             <header className={styles.header}>
-              <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} />
+              <a to={"/"}>
+                <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} />
+              </a>
               <img src={Radius} className={styles.imgRadius} />
             </header>
-            {/* <EsqueciSenha /> */}
-            {/* <Login /> */}
-            <FaleConosco />
+            <Routes />
           </Col>
-=======
-
-<Col sm={8}>
-  
-<header className={styles.header}>
-          <FontAwesomeIcon icon={faAngleLeft} className={styles.icon}/>
-            <img src={Radius} className={styles.imgRadius} />
-          </header>
-          <Routes />
-
-</Col>
-
-          
->>>>>>> login
         </Col>
         <footer className={styles.footer}>
           <img src={LogoIvory} className={styles.logoFooter} />
