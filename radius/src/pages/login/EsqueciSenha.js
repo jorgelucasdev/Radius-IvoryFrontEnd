@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class EsqueciSenha extends Component {
     render() {
         return (
-            <Container className={styles.esqueciSenha}>
+            <div className={styles.esqueciSenha}>
                 {/* <FontAwesomeIcon icon={faAngleLeft}/> */}
                 <header className={styles.header}>
                     <p className={styles.title}>Esqueci minha senha</p>
                     <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
                 </header>
-                <Container className={styles.body}>
+                <div className={styles.body}>
                         <label className={styles.label}>Nome:</label>
                         <input type="text" className={styles.input} />
                         <label className={styles.label}>Email:</label>
@@ -21,8 +21,8 @@ export default class EsqueciSenha extends Component {
                         <label className={styles.label}>CNPJ:</label>
                         <input type="text" />
                         <button className={styles.btnEntrar}>REQUISITAR NOVA SENHA</button>
-                </Container>
-            </Container>
+                </div>
+            </div>
         )
     }
 }
