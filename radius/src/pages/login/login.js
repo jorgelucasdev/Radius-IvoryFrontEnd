@@ -22,7 +22,7 @@ function Login() {
                 <button className={styles.btnEntrar}>ENTRAR</button>
                 <Row className={styles.textEnd}>
                     <Col className={styles.textEsqueceu}><Link to={'/esquecisenha/'}>Esqueceu sua senha?</Link></Col>
-                    <Col className={styles.textFale}><a>Fale conosco</a></Col>
+                    <Col className={styles.textFale}><Link to={'/faleconosco/'}>Fale conosco</Link></Col>
                 </Row>
             </Container>
         </Container>
