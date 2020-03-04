@@ -1,5 +1,53 @@
+@font-face {
+    font-family: 'Baloo';
+    src: url('./assets/fonts/Baloo.woff2') format('woff2'),
+        url('./assets/fonts/Baloo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neutra Text';
+    src: url('./assets/fonts/NeutraText-Bold.woff2') format('woff2'),
+        url('./assets/fonts/NeutraText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neutra Text';
+    src: url('./assets/fonts/NeutraText-BoldItalic.woff2') format('woff2'),
+        url('./assets/fonts/NeutraText-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neutra Text';
+    src: url('./assets/fonts/NeutraText-BookItalic.woff2') format('woff2'),
+        url('./assets/fonts/NeutraText-BookItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Neutra Text';
+    src: url('./assets/fonts/NeutraText-Book.woff2') format('woff2'),
+        url('./assets/fonts/NeutraText-Book.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 body{
     margin: 0;
     padding: 0;
+}
+
+.App{
+    font-family: 'Neutra Text';
+    font-weight: 500;
+    img{
+        max-width: 100%;
+    }
 }
 
