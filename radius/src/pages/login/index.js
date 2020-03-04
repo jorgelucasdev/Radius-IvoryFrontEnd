@@ -7,6 +7,7 @@ import Login from "./login";
 import EsqueciSenha from "./EsqueciSenha";
 import {faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Routes from '../../routes';
 
 function Autenticacao() {
   return (
@@ -20,8 +21,7 @@ function Autenticacao() {
           <FontAwesomeIcon icon={faAngleLeft} className={styles.icon}/>
             <img src={Radius} className={styles.imgRadius} />
           </header>
-          <EsqueciSenha/>
-          {/* <Login /> */}
+          <Routes />
 
 </Col>
 
