@@ -1,0 +1,60 @@
+.layout {
+  display: flex;
+  //   justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .header {
+    background: #fff;
+    padding: 20px 0;
+    //border: 1px solid red;
+    .colLeft {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .iconMenu {
+        color: #2e75b4;
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 30px;
+      }
+
+      .imgLogo {
+        margin: 0 0 0 30px;
+      }
+    }
+
+    .colRight {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .iconSino {
+        color: #2e75b4;
+        width: 25px;
+        height: 20px;
+        margin: 0 15px 0 0;
+      }
+
+      span {
+        border: 1px solid red;
+        color: #2e75b4;
+        font-size: 14px;
+      }
+
+      .iconUser {
+        color: #2e75b4;
+        width: 25px;
+        height: 20px;
+        margin: 0 15px;
+      }
+
+      .iconSair {
+        color: #2e75b4;
+        width: 25px;
+        height: 20px;
+      }
+    }
+  }
+}
