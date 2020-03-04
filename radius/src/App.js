@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.scss";
-import Autenticacao from "./pages/login/index";
+import Index from "./pages/login/index";
+import Autenticacao from "./pages/login/";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routes from './routes';
 
 function App() {
   return (
     <div className="App">
-      <Autenticacao></Autenticacao>
+      <Index />
+      <Routes />
     </div>
   );
 }
