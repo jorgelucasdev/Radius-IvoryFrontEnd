@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  width: 250px;
+
+  .nav-link {
+    font-size: 18px;
+  }
+}

@@ -1,23 +1,22 @@
 .layout {
   display: flex;
-  //   justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
 
-  .header {
+  .cabecalho {
     background: #fff;
     padding: 20px 0;
-    //border: 1px solid red;
-    .colLeft {
+ 
+    .colEsquerda {
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      padding: 0;
 
       .iconMenu {
         color: #2e75b4;
         width: 30px;
         height: 30px;
-        margin: 0 0 0 30px;
       }
 
       .imgLogo {
@@ -25,36 +24,62 @@
       }
     }
 
-    .colRight {
+    .colDireita {
       display: flex;
       justify-content: flex-end;
+      padding: 0;
+
+      .divDireita {
+        align-items: center;
+        display: flex;
+
+        .iconSino {
+          color: #2e75b4;
+          width: 25px;
+          height: 20px;
+          margin: 0 15px 0 0;
+        }
+
+        span {
+          color: #2e75b4;
+          font-size: 14px;
+        }
+
+        .iconUser {
+          color: #2e75b4;
+          width: 25px;
+          height: 20px;
+          margin: 0 15px;
+        }
+
+        .iconSair {
+          color: #2e75b4;
+          width: 25px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .principal {
+    background: #e6e7e8;
+  }
+
+  .rodape {
+    background: #2e75b4;
+    padding: 15px 0;
+
+    .colRodape {
+      justify-content: center;
       align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .iconSino {
-        color: #2e75b4;
-        width: 25px;
-        height: 20px;
-        margin: 0 15px 0 0;
-      }
-
-      span {
-        border: 1px solid red;
-        color: #2e75b4;
-        font-size: 14px;
-      }
-
-      .iconUser {
-        color: #2e75b4;
-        width: 25px;
-        height: 20px;
-        margin: 0 15px;
-      }
-
-      .iconSair {
-        color: #2e75b4;
-        width: 25px;
-        height: 20px;
-      }
+    span {
+      color: #fff;
+      font-size: 12px;
+      line-height: 15px;
     }
   }
 }
