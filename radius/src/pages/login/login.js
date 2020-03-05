@@ -8,7 +8,7 @@ function Login() {
         <div className={styles.loginbox}>
             <div className={styles.text}>
                 <p className={styles.title}>Seja bem-vindo ao Radius</p>
-                <p className={styles.insira}>Insira seus dados nos campor abaixo.</p>
+                <p className={styles.insira}>Insira seus dados nos campos abaixo.</p>
             </div>
             <div className={styles.form}>
                 <label className={styles.labelUser}>Usuário:</label>
