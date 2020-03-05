@@ -1,0 +1,52 @@
+@import "../../variaveis.scss";
+
+.esqueciSenha{
+   
+   .header{
+        .title{    
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+        .subtitle{
+            text-align: center;
+            
+        }
+
+        .title, .subtitle{
+            color: $color;
+        }
+   }
+   
+   .body{
+        
+        
+        .label{
+            
+            margin: 0 0 3px;
+            color: $color;
+        }
+        input{
+            margin: 0 0 6px;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: $color;
+            border-width: 1px;
+        }
+        .btnEntrar {
+            margin: 1em auto 0;
+            width: 100%;
+            height: 35px;
+            border:  0px;
+            background-color: $color;
+            color: #FFF;
+            border-radius: 5px;
+            border-style: solid;
+            font-size: 13px;
+        }
+    }
+
+}
+  

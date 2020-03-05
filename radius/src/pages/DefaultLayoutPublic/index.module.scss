@@ -1,0 +1,69 @@
+.autenticacao {
+  background: url("../../assets/images/fundo.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  min-height: 657px;
+  display: flex;
+  align-items: center;
+  
+  .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+    .form {
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      padding: 30px 0 0px;
+      border-radius: 5px;
+      margin: 0 0 30px;
+      min-height: 460px;
+
+      .header{
+        display: flex;
+        justify-content: center;
+        margin: 0 0 25px;
+        
+        .icon{
+          position: absolute;
+          top: 0;
+          left: 10px;
+          font-size: 36px;
+          visibility:visible;
+          @media (min-width: 576px){
+            left: -10%;
+          }
+        }
+        
+        .imgRadius {
+          width: 123px;
+         
+        }
+      }
+
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      
+      p{
+        font-size: 12px;
+        color: #ffffff;
+        margin: 15px 0 0;
+      }
+      .logoFooter {
+    
+        margin-left: 0;
+        height: 47px;
+        width: 56px;
+        
+        
+      } 
+    }
+
+  }  
+  
+
+}
