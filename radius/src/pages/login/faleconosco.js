@@ -21,7 +21,7 @@ function FaleConosco() {
               <input type ="text" className={styles.input}></input>
           </Col>
 
-          {/* <Col md={{offset: 1}}> */}
+          {/* <Col className={styles.col2} md={{offset: 1}}> */}
           <Col className={styles.col2}>
               <label className={styles.label}>Email:</label>
               <input type ="text" className={styles.input}></input>
@@ -48,7 +48,13 @@ function FaleConosco() {
               <textarea className={styles.inputMensagem}></textarea>
           </Col>
         </Row>
+<<<<<<< Updated upstream
           <button className={styles.btnEnviar}>ENVIAR</button>
+=======
+        
+          <button className={styles.btnEnviar}>ENVIAR</button>
+        
+>>>>>>> Stashed changes
       </div>
     </div>
   );
