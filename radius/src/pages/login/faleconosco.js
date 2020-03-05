@@ -9,9 +9,16 @@ import {
 function FaleConosco() {
   return (
     <div className={styles.faleconosco}>
+<<<<<<< HEAD
       <Row className={styles.text}>
         <p className={styles.title}>Fale conosco</p>
       </Row>
+=======
+                <header className={styles.header}>
+                    <p className={styles.title}>Fale conosco</p>
+                    <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
+                </header>
+>>>>>>> faleconosco
 
       <div className={styles.form}>
         <Row>
@@ -24,7 +31,12 @@ function FaleConosco() {
             </Row>
           </Col>
 
+<<<<<<< HEAD
           <Col>
+=======
+          {/* <Col md={{offset: 1}}> */}
+          <Col className={styles.col2}>
+>>>>>>> faleconosco
             <Row>
               <label className={styles.label}>Email:</label>
             </Row>
