@@ -10,15 +10,19 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+  
     .form {
       display: flex;
       justify-content: center;
       background: #ffffff;
+<<<<<<< HEAD
       padding: 40px 0 40px;
+=======
+      padding: 40px 0 0px;
+>>>>>>> esqueciSenha
       border-radius: 5px;
       margin: 0 0 30px;
-      
+      min-height: 460px;
       
       .header{
         display: flex;
