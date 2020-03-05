@@ -1,18 +1,13 @@
 import React from "react";
 import styles from "./faleconosco.module.scss";
 import {
-  Container,
   Row,
   Col,
-  Form,
-  Grid,
-  FormGroup,
-  Button
 } from "react-bootstrap";
 
 function FaleConosco() {
   return (
-    <Container className={styles.faleconosco}>
+    <div className={styles.faleconosco}>
       <Row className={styles.text}>
         <p className={styles.title}>Fale conosco</p>
       </Row>
@@ -31,7 +26,7 @@ function FaleConosco() {
               <input className={styles.inputNome}></input>
             </Row>
           </Col>
-          
+
           <Col>
             <Row>
               <label className={styles.labelEmail}>Email:</label>
@@ -76,7 +71,7 @@ function FaleConosco() {
           <button className={styles.btnEnviar}>ENVIAR</button>
         </Row>
       </body>
-    </Container>
+    </div>
   );
 }
 export default FaleConosco;
