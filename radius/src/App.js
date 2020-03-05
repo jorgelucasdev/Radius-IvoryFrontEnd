@@ -31,16 +31,12 @@ const PublicRoute = ({ component: Component, ...rest }) => (
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-    <Index/>
-=======
       <BrowserRouter>
         <Switch>
           <PublicRoute path="/" component={DefaultLayoutPublic} />
           {/* <ProtectedRoute path="/" component={DefaultLayout} /> */}
         </Switch>
       </BrowserRouter>
->>>>>>> esqueciSenha
     </div>
   );
 }
