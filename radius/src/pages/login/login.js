@@ -14,7 +14,7 @@ function Login() {
                 <label className={styles.labelUser}>Usuário:</label>
                 <input className={styles.inputUser} />
                 <label className={styles.labelSenha}>Senha:</label>
-                <input className={styles.inputSenha} />
+                <input input type="password" className={styles.inputSenha} />
                 <button className={styles.btnEntrar}>ENTRAR</button>
                 <Row className={styles.textEnd}>
                     <Col className={styles.textEsqueceu}><Link to={'/esquecisenha'}>Esqueceu sua senha?</Link></Col>
