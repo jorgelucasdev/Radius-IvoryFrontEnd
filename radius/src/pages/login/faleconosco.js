@@ -2,11 +2,7 @@ import React from "react";
 import styles from "./faleconosco.module.scss";
 import {
   Row,
-<<<<<<< HEAD
-  Col
-=======
   Col,
->>>>>>> esqueciSenha
 } from "react-bootstrap";
 import {faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,16 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function FaleConosco() {
   return (
     <div className={styles.faleconosco}>
-<<<<<<< HEAD
-                <header className={styles.header}>
-                    <p className={styles.title}>Fale conosco</p>
-                    <p className={styles.subtitle}>Insira seus dados nos campos abaixo.</p>
-                </header>
-=======
       <Row className={styles.text}>
         <p className={styles.title}>Fale conosco</p>
       </Row>
->>>>>>> esqueciSenha
 
       <div className={styles.form}>
         <Row>
@@ -36,12 +25,7 @@ function FaleConosco() {
             </Row>
           </Col>
 
-<<<<<<< HEAD
-          {/* <Col md={{offset: 1}}> */}
-          <Col className={styles.col2}>
-=======
           <Col>
->>>>>>> esqueciSenha
             <Row>
               <label className={styles.label}>Email:</label>
             </Row>
@@ -85,11 +69,7 @@ function FaleConosco() {
         <Row>
           <button className={styles.btnEnviar}>ENVIAR</button>
         </Row>
-<<<<<<< HEAD
       </div>
-=======
-      </body>
->>>>>>> esqueciSenha
     </div>
   );
 }
