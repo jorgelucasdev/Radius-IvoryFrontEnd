@@ -17,59 +17,38 @@ function FaleConosco() {
       <div className={styles.form}>
         <Row>
           <Col>
-            <Row>
               <label className={styles.label}>Nome:</label>
-            </Row>
-            <Row>
               <input type ="text" className={styles.input}></input>
-            </Row>
           </Col>
 
           {/* <Col md={{offset: 1}}> */}
           <Col className={styles.col2}>
-            <Row>
               <label className={styles.label}>Email:</label>
-            </Row>
-            <Row>
               <input type ="text" className={styles.input}></input>
-            </Row>
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <Row>
               <label className={styles.label}>
                 Nome da Empresa:
               </label>
-            </Row>
-            <Row>
               <input type ="text" className={styles.input}></input>
-            </Row>
           </Col>
 
           <Col className={styles.col2}>
-            <Row>
               <label className={styles.label}>Assunto:</label>
-            </Row>
-            <Row>
               <input type ="text" className={styles.input}></input>
-            </Row>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Row>
+
               <label className={styles.label}>Mensagem:</label>
-            </Row>
-            <Row>
               <textarea className={styles.inputMensagem}></textarea>
-            </Row>
           </Col>
         </Row>
-        <Row>
           <button className={styles.btnEnviar}>ENVIAR</button>
-        </Row>
       </div>
     </div>
   );
