@@ -6,7 +6,8 @@ import {
   faBars,
   faBell,
   faUserCircle,
-  faSignOutAlt
+  faSignOutAlt,
+  faSearch
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LogoRadius from "../../assets/images/logoRadius.png";
@@ -17,31 +18,45 @@ function Home() {
     <div className={styles.layout}>
       <div>
         <header className={styles.cabecalho}>
-          <Container>
-            <Row>
-              <Col className={styles.colEsquerda} md={6}>
-                <div>
-                  <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
-                </div>
-                <div className={styles.imgLogo}>
-                  <img src={LogoRadius} />
-                </div>
-              </Col>
-              <Col className={styles.colDireita} md={6}>
-                <div className={styles.divDireita}>
-                  <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
-                  <span>Bem vindo, João Silva</span>
-                  <FontAwesomeIcon
-                    icon={faUserCircle}
-                    className={styles.iconUser}
-                  />
-                  <FontAwesomeIcon
-                    icon={faSignOutAlt}
-                    className={styles.iconSair}
-                  />
-                </div>
-              </Col>
-            </Row>
+          <Container className={styles.container}>
+            <Col md={10} className={styles.colPrincipal}>
+              <Row>
+                <Col className={styles.colEsquerda}>
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faBars}
+                      className={styles.iconMenu}
+                    />
+                  </div>
+                  <div className={styles.imgLogo}>
+                    <img src={LogoRadius} />
+                  </div>
+                </Col>
+                <Col className={styles.colDireita}>
+                  <div className={styles.divDireita}>
+                    <FontAwesomeIcon
+                      icon={faSearch}
+                      className={styles.iconPesquisa}
+                    />
+                    <input type="text" placeholder="Pesquisar"></input>
+
+                    <FontAwesomeIcon
+                      icon={faBell}
+                      className={styles.iconSino}
+                    />
+                    <span>Bem vindo, João Silva</span>
+                    <FontAwesomeIcon
+                      icon={faUserCircle}
+                      className={styles.iconUser}
+                    />
+                    <FontAwesomeIcon
+                      icon={faSignOutAlt}
+                      className={styles.iconSair}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
           </Container>
         </header>
         <Nav defaultActiveKey="/home" className="flex-column">
@@ -52,9 +67,11 @@ function Home() {
           <Nav.Link href="#">Gráficos</Nav.Link>
           <Nav.Link href="#">Base De Conhecimento</Nav.Link>
         </Nav>
-        {/* <main className={styles.principal}>
-          <p>Teste2</p>
-        </main> */}
+        <main className={styles.principal}>
+          <Container className={styles.containerPrincipal}>
+            <Col md={10} className={styles.colCentral}></Col>
+          </Container>
+        </main>
       </div>
       <footer className={styles.rodape}>
         <Container className={["flex"]}>
