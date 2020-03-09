@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.scss";
 import Autenticacao from "./pages/login";
-import Home from "./pages/home";
+import Main from "./pages/main";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Main />
       {/* <Autenticacao></Autenticacao> */}
     </div>
   );
