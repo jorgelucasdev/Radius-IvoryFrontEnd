@@ -3,15 +3,13 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import Main from "./pages/main";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { routesPublic, routesPrivate } from "./routes";
 
 import DefaultLayoutPublic from "./pages/DefaultLayoutPublic";
 import DefaultLayoutPrivate from "./pages/DefaultLayoutPrivate";
 
-const Auth = false;
+const Auth = true;
 
 const PublicRoute = ({ component: Component, route, ...rest }) => (
   <Route
