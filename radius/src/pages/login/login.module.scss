@@ -5,26 +5,26 @@
         .title{
             text-align: center;
             font-weight: bold;
-            margin: 0 auto 0;
             margin-bottom: 0px; 
+            color: $color;
         }      
         .insira {    
-            text-align: center;
-            margin: 6px auto 0; 
+            text-align: center; 
+            color: $color;
         }
     }
     .form{
-        text-align: center;
+        
         .labelUser {
-            display: flex;
-            text-align: left;
+            margin: 0 0 3px;
+            color: $color;
         }
         .labelSenha {
-            display: flex;
-            text-align: left;
+            margin: 0 0 3px;
+            color: $color;
         }
         .inputUser {
-            margin: 3px 0 12px;
+            margin: 0 0 6px;
             width: 100%;
             height: 30px;
             border-radius: 5px;
@@ -33,7 +33,7 @@
             border-width: 1px;
         }
         .inputSenha {
-            margin: 3px 0 12px;
+            margin: 0 0 6px;
             width: 100%;
             height: 30px;
             border-radius: 5px;
@@ -42,16 +42,28 @@
             border-width: 1px;
         }
         .btnEntrar {
-            margin: 5px auto 0;
+            margin: 1em auto 0;
             width: 100%;
-            height: 40px;
+            height: 35px;
+            border:  0px;
             background-color: $color;
             color: #FFF;
-            border-radius: 10px;
+            border-radius: 5px;
             border-style: solid;
+            font-size: 13px;
         }
         .textEnd {
             margin: 25px 0 0 0;
+            .textEsqueceu{
+                padding: 0;
+                text-align: left;
+                color: $color;
+            }
+            .textFale{
+                padding: 0;
+                text-align: right;
+                color: $color;
+            }
         }
     }
 }
