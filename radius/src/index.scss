@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  width: 250px;
+  background: #FFFFFF;
+  float: left;
+  clear: both;
+  min-height: calc(100vh - 75px - 103px);
+
+  .nav-link {
+    font-size: 18px;
+
+  }
+}
