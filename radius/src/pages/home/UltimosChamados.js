@@ -9,46 +9,46 @@ export default function UltimosChamados(){
         () => [
         
         {
-          firstName: 'Jean',
-          lastName: 'Araujo',
-          age: 24,
-          visits: 30,
-          progress:90,
-          status:'single'
-           
-              
+          chamado: '#16.008',
+          projeto: 'Trem Turístico',
+          empresa: 'VLI',
+          solicitante: 'Paulo Santos',
+          status: 'Ativo',
+          grupo:'Grupo 01',
+          atendente: 'Eventon Angêlo',
+          datacriacao: '12/02/2020' 
         }
     , 
-        {
-          firstName: 'Maria',
-          lastName: 'Paiva',
-          age: 50,
-          visits: 20,
-          progress:80,
-          status:'single'
-           
-              
-        }]
+    {
+        chamado: '#32.001',
+        projeto: 'Digital CD',
+        empresa: 'Unilever',
+        solicitante: 'Ana Lista',
+        status: 'Pendente',
+        grupo:'Grupo 02',
+        atendente: 'Aldilane Santos',
+        datacriacao: '10/01/2020' 
+      }]
     )
     
     const columns = React.useMemo(
         () => [
             {
-                Header: 'First Name',
-                accessor: 'firstName',
+                Header: 'Chamado',
+                accessor: 'chamado',
             },
             {
-                Header: 'Last Name',
-                accessor: 'lastName',
+                Header: 'Projeto',
+                accessor: 'projeto',
             },
             {
-                Header: 'Age',
-                accessor: 'age',
+                Header: 'Empresa',
+                accessor: 'empresa',
             sortType: 'basic'
             },
             {
-                Header: 'Visits',
-                accessor: 'visits',
+                Header: 'Solicitante',
+                accessor: 'solicitante',
             sortType: 'basic'
             },
             {
@@ -56,10 +56,20 @@ export default function UltimosChamados(){
                 accessor: 'status',
             },
             {
-                Header: 'Profile Progress',
-                accessor: 'progress',
+                Header: 'Grupo',
+                accessor: 'grupo',
             sortType: 'basic'
-            },   
+            },
+            {
+                Header: 'Atendente',
+                accessor: 'atendente',
+            sortType: 'basic'
+            },
+            {
+                Header: 'Data criação',
+                accessor: 'datacriacao',
+            sortType: 'basic'
+            }   
         ],
         []
     )
