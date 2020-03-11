@@ -1,0 +1,52 @@
+@import "../../variaveis.scss";
+
+.home {
+    margin-bottom: 20px;
+    .homeTitle {
+        margin: 5px 0;
+    }
+    .busca {
+        .headerBusca {
+            background: #262626;
+            height: 40px;
+            border-radius: 5px 5px 0 0;
+            color: #ffff;
+            font-size: 15px;
+        }
+        .bodyBusca {
+            padding: 10px 20px;
+            border-radius: 0 0 5px 5px;
+            .rowBusca {
+                .info {
+                    .input {
+                        margin: 0 0 6px;
+                        width: 100%;
+                        height: 30px;
+                        border-radius: 10px;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: $color;
+                    }
+                }
+                .info p {
+                    margin: 0 0 8px 0;
+                }
+                .infoBtn {
+                    display: flex;
+                    align-items: flex-end;
+                    .btnFiltrar {
+                        width: 100%;
+                        height: 30px;
+                        border-radius: 5px;
+                        border-style: solid;
+                        background-color: $color;
+                        margin: 0 0 6px 0;
+                        padding: 3px 6px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+        }
+    }
+}
