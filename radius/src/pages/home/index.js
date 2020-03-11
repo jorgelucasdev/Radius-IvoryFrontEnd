@@ -12,7 +12,7 @@ const Home = () => {
           <BuscarChamados />  
           <UltimosChamados/>
         </Col>
-   
+  
    
       
     </div>
