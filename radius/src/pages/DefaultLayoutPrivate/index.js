@@ -61,30 +61,34 @@ function DefaultLayoutPublic(props) {
             </Col>
           </Container>
         </header>
-        <Nav defaultActiveKey="/home" className="flex-column">
-          <Nav.Link href="#">Home</Nav.Link>
-          <NavDropdown
-            title="Chamados"
-            id="collasible-nav-dropdown"
-            className="dropright"
-          >
-            <NavDropdown.Item href="#">Novo</NavDropdown.Item>
-            <NavDropdown.Item href="#">Consulta</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown
-            title="Cadastro"
-            id="collasible-nav-dropdown"
-            className="dropright"
-          >
-            <NavDropdown.Item href="#">Sistema</NavDropdown.Item>
-            <NavDropdown.Item href="#">Cliente</NavDropdown.Item>
-            <NavDropdown.Item href="#">Usuário</NavDropdown.Item>
-            <NavDropdown.Item href="#">Funcionário</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="#">Gerenciamentos</Nav.Link>
-          <Nav.Link href="#">Gráficos</Nav.Link>
-          <Nav.Link href="#">Base De Conhecimento</Nav.Link>
-        </Nav>
+        <Navbar expand="lg" className="flex-column">
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav defaultActiveKey="/home" className="flex-column">
+              <Nav.Link href="#">Home</Nav.Link>
+              <NavDropdown
+                title="Chamados"
+                id="basic-nav-dropdown"
+                className="dropright"
+              >
+                <NavDropdown.Item href="#">Novo</NavDropdown.Item>
+                <NavDropdown.Item href="#">Consulta</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown
+                title="Cadastro"
+                id="basic-nav-dropdown"
+                className="dropright"
+              >
+                <NavDropdown.Item href="#">Sistema</NavDropdown.Item>
+                <NavDropdown.Item href="#">Cliente</NavDropdown.Item>
+                <NavDropdown.Item href="#">Usuário</NavDropdown.Item>
+                <NavDropdown.Item href="#">Funcionário</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="#">Gerenciamentos</Nav.Link>
+              <Nav.Link href="#">Gráficos</Nav.Link>
+              <Nav.Link href="#">Base De Conhecimento</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <main className={styles.principal}>
           <Container className={styles.containerPrincipal}>
             <Col md={10} className={styles.colCentral}>
