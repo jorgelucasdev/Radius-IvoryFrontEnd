@@ -1,8 +1,8 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table";
-import styles from "./index.module.scss";
+import styles from "./UltimosChamados.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSort } from "@fortawesome/free-solid-svg-icons";
+import { faSort, faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function UltimosChamados() {
   const data = React.useMemo(() => [
@@ -25,6 +25,33 @@ export default function UltimosChamados() {
       grupo: "Grupo 02",
       atendente: "Aldilane Santos",
       datacriacao: "10/01/2020"
+    }, {
+      chamado: "#28.090",
+      projeto: "Eurofarma",
+      empresa: "3MW",
+      solicitante: "Ana Roberto Silva",
+      status: "Concluido",
+      grupo: "Grupo 03",
+      atendente: "Humberto M.",
+      datacriacao: "18/12/2019"
+    }, {
+      chamado: "#16.008",
+      projeto: "SOU VLI",
+      empresa: "VLI",
+      solicitante: "Paula Schrodinger",
+      status: "Cancelado",
+      grupo: "Grupo 04",
+      atendente: "-",
+      datacriacao: "12/02/2020"
+    }, {
+      chamado: "#16.0051",
+      projeto: "Feedback",
+      empresa: "VLI",
+      solicitante: "Paulo Santos",
+      status: "Ativo",
+      grupo: "Grupo 05",
+      atendente: "Vinícius Araújo",
+      datacriacao: "12/02/2020"
     }
   ]);
 
@@ -72,7 +99,7 @@ export default function UltimosChamados() {
   );
   return (
     <div className={styles.colPrincipal}>
-      <p className={styles.header}>Ultimos Chamados</p>
+      <p className={styles.header}>Últimos Chamados</p>
       <div className={styles.content}>
         <Table columns={columns} data={data} />
       </div>
@@ -102,22 +129,20 @@ function Table({ data, columns }) {
             {headerGroup.headers.map(column => {
               console.log(column);
               return (
-                <th>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                   {!["chamado"].includes(column.id) ? (
-                    <span
-                      {...column.getHeaderProps(column.getSortByToggleProps())}
-                    >
-                      {column.isSorted ? (
-                        column.isSortedDesc ? (
-                          "▲"
-                        ) : (
-                          "▼"
-                        )
-                      ) : (
+                    <span>
+                      {column.isSorted ? (column.isSortedDesc ? ( <FontAwesomeIcon
+                          icon={faCaretUp}
+                          className={styles.arrow}
+                        />) : (<FontAwesomeIcon
+                          icon={faCaretDown}
+                          className={styles.arrow}
+                        />)) : (
                         <FontAwesomeIcon
                           icon={faSort}
-                          className={styles.iconInput}
+                          className={styles.arrow}
                         />
                       )}
                     </span>

@@ -21,7 +21,7 @@ function DefaultLayoutPublic(props) {
       <div>
         <header className={styles.cabecalho}>
           <Container className={styles.container}>
-            <Col md={10} className={styles.colPrincipal}>
+            <Col md={12} className={styles.colPrincipal}>
               <Row>
                 <Col className={styles.colEsquerda}>
                   <div>
@@ -61,7 +61,7 @@ function DefaultLayoutPublic(props) {
             </Col>
           </Container>
         </header>
-        <Navbar expand="lg" className="flex-column">
+        {/* <Navbar expand="lg" className="flex-column">
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav defaultActiveKey="/home" className="flex-column">
               <Nav.Link href="#">Home</Nav.Link>
@@ -88,10 +88,10 @@ function DefaultLayoutPublic(props) {
               <Nav.Link href="#">Base De Conhecimento</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-        </Navbar>
+        </Navbar> */}
         <main className={styles.principal}>
           <Container className={styles.containerPrincipal}>
-            <Col md={10} className={styles.colCentral}>
+            <Col md={12} className={styles.colCentral}>
               <BrowserRouter>
                 <Suspense fallback={<main>Carregando...</main>}>
                   <Switch>
