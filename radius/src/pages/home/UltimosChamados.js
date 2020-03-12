@@ -110,9 +110,9 @@ function Table({ data, columns }) {
                     >
                       {column.isSorted ? (
                         column.isSortedDesc ? (
-                          "1"
+                          "▲"
                         ) : (
-                          "2"
+                          "▼"
                         )
                       ) : (
                         <FontAwesomeIcon
