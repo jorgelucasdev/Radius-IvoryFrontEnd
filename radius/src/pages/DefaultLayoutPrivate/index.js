@@ -1,5 +1,5 @@
-import React, { Component, Suspense } from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import React, { Component, Suspense, useState } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styles from "./index.module.scss";
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import {
@@ -15,7 +15,7 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-
+  const [isOpen, updateIsOpen] = useState(false);
   return (
     <div className={styles.layout}>
       <div>
@@ -62,6 +62,7 @@ function DefaultLayoutPublic(props) {
           </Container>
         </header>
         <Navbar expand="lg" className="flex-column">
+          <Navbar.Toggle />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav defaultActiveKey="/home" className="flex-column">
               <Nav.Link href="#">Home</Nav.Link>
@@ -69,6 +70,16 @@ function DefaultLayoutPublic(props) {
                 title="Chamados"
                 id="basic-nav-dropdown"
                 className="dropright"
+                onMouseEnter={() => updateIsOpen(true)}
+                onMouseLeave={() => updateIsOpen(false)}
+                default={isOpen}
+
+                // onMouseOver={() => updateIsOpen(true)}
+                // onFocus={() => updateIsOpen(true)}
+                // onMouseLeave={() => updateIsOpen(false)}
+                // onBlur={() => updateIsOpen(false)}
+                // // toggle={() => updateIsOpen(!isOpen)}
+                // isopen={isOpen.toString()}
               >
                 <NavDropdown.Item href="#">Novo</NavDropdown.Item>
                 <NavDropdown.Item href="#">Consulta</NavDropdown.Item>
@@ -77,6 +88,12 @@ function DefaultLayoutPublic(props) {
                 title="Cadastro"
                 id="basic-nav-dropdown"
                 className="dropright"
+                onMouseOver={() => updateIsOpen(true)}
+                onFocus={() => updateIsOpen(true)}
+                onMouseLeave={() => updateIsOpen(false)}
+                onBlur={() => updateIsOpen(false)}
+                // toggle={() => updateIsOpen(!isOpen)}
+                isopen={isOpen.toString()}
               >
                 <NavDropdown.Item href="#">Sistema</NavDropdown.Item>
                 <NavDropdown.Item href="#">Cliente</NavDropdown.Item>
