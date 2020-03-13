@@ -12,14 +12,16 @@
         .headerBusca {
             border-radius: 10px 10px 0px 0px;
             background: #262626;
-            height: 40px;
+            padding: 18px 20px;
             color: #ffff;
-            font-size: 15px;
+            font-size: 18px;
+            font-weight: bold;
         }
         .bodyBusca {
-            padding: 10px 20px;
+            padding: 18px 20px;
             .rowBusca {
                 .info {
+                    font-size: 16px;
                     .input {
                         margin: 0 0 6px;
                         width: 100%;
@@ -44,7 +46,7 @@
                         background-color: $color;
                         margin: 0 0 6px 0;
                         padding: 3px 6px;
-                        font-size: 13px;
+                        font-size: 16px;
                     }
                 }
             }
