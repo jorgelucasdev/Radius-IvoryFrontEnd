@@ -31,6 +31,12 @@
                         border-width: 1px;
                         border-color: $color;
                     }
+                    .selectContainer {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: $color;  
+                        border-radius: 10px;                  
+                    }
                 }
                 .info p {
                     margin: 0 0 8px 0;
