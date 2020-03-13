@@ -9,7 +9,7 @@ import { routesPublic, routesPrivate } from "./routes";
 import DefaultLayoutPublic from "./pages/DefaultLayoutPublic";
 import DefaultLayoutPrivate from "./pages/DefaultLayoutPrivate";
 
-const Auth = true;
+const Auth = false;
 
 const PublicRoute = ({ component: Component, route, ...rest }) => (
   <Route

@@ -1,6 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,10 +16,17 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 import styles from "./index.module.scss";
 
-function DefaultLayoutPublic(props) {
+const DefaultLayoutPublic = props => {
+  const [pathname, setPathname] = useState(props.history.location.pathname);
   const { route } = props;
 
   console.log(props);
+
+  props.history.listen((location, action) => {
+    // location is an object like window.location
+    console.log(action, location.pathname, location.state);
+    setPathname(location.pathname);
+  });
 
   return (
     <div className={styles.autenticacao}>
@@ -21,9 +34,11 @@ function DefaultLayoutPublic(props) {
         <Col md={8} className={styles.form}>
           <Col sm={8}>
             <header className={styles.header}>
-              <Link to={"/login"}>
-                <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} />
-              </Link>
+              {pathname != "/login" ? (
+                <Link to={"/login"}>
+                  <FontAwesomeIcon icon={faAngleLeft} className={styles.icon} />
+                </Link>
+              ) : null}
 
               <img src={Radius} className={styles.imgRadius} />
             </header>
@@ -46,6 +61,6 @@ function DefaultLayoutPublic(props) {
       </Container>
     </div>
   );
-}
+};
 
-export default DefaultLayoutPublic;
+export default withRouter(DefaultLayoutPublic);
