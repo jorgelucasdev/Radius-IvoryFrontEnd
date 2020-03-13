@@ -2,7 +2,11 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import styles from "./UltimosChamados.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSort, faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSort,
+  faCaretUp,
+  faCaretDown
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function UltimosChamados() {
   const data = React.useMemo(() => [
@@ -25,7 +29,8 @@ export default function UltimosChamados() {
       grupo: "Grupo 02",
       atendente: "Aldilane Santos",
       datacriacao: "10/01/2020"
-    }, {
+    },
+    {
       chamado: "#28.090",
       projeto: "Eurofarma",
       empresa: "3MW",
@@ -34,7 +39,8 @@ export default function UltimosChamados() {
       grupo: "Grupo 03",
       atendente: "Humberto M.",
       datacriacao: "18/12/2019"
-    }, {
+    },
+    {
       chamado: "#16.008",
       projeto: "SOU VLI",
       empresa: "VLI",
@@ -43,7 +49,8 @@ export default function UltimosChamados() {
       grupo: "Grupo 04",
       atendente: "-",
       datacriacao: "12/02/2020"
-    }, {
+    },
+    {
       chamado: "#16.0051",
       projeto: "Feedback",
       empresa: "VLI",
@@ -128,26 +135,30 @@ function Table({ data, columns }) {
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => {
               console.log(column);
-              return (
+              return !["chamado"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
-                  {!["chamado"].includes(column.id) ? (
-                    <span>
-                      {column.isSorted ? (column.isSortedDesc ? ( <FontAwesomeIcon
+
+                  <span>
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <FontAwesomeIcon
                           icon={faCaretUp}
                           className={styles.arrow}
-                        />) : (<FontAwesomeIcon
+                        />
+                      ) : (
+                        <FontAwesomeIcon
                           icon={faCaretDown}
                           className={styles.arrow}
-                        />)) : (
-                        <FontAwesomeIcon
-                          icon={faSort}
-                          className={styles.arrow}
                         />
-                      )}
-                    </span>
-                  ) : null}
+                      )
+                    ) : (
+                      <FontAwesomeIcon icon={faSort} className={styles.arrow} />
+                    )}
+                  </span>
                 </th>
+              ) : (
+                <th>{column.render("Header")}</th>
               );
             })}
           </tr>
