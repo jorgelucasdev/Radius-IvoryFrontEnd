@@ -18,51 +18,40 @@ function DefaultLayoutPublic(props) {
   const [isOpen, updateIsOpen] = useState(false);
   return (
     <div className={styles.layout}>
-      <div>
-        <header className={styles.cabecalho}>
-          <Container className={styles.container}>
-            <Col md={10} className={styles.colPrincipal}>
-              <Row>
-                <Col className={styles.colEsquerda}>
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faBars}
-                      className={styles.iconMenu}
-                    />
-                  </div>
-                  <div className={styles.imgLogo}>
-                    <img src={LogoRadius} />
-                  </div>
-                </Col>
-                <Col className={styles.colDireita}>
-                  <div className={styles.divDireita}>
-                    <FontAwesomeIcon
-                      icon={faSearch}
-                      className={styles.iconPesquisa}
-                    />
-                    <input type="text" placeholder="Pesquisar"></input>
+      <div className="relative">
+      <header className={styles.cabecalho}>
+        <Row className={styles.principalCabecalho}>
+          <Col className={styles.colEsquerda}>
+            <div>
+              <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
+            </div>
+            <div className={styles.imgLogo}>
+              <img src={LogoRadius} />
+            </div>
+          </Col>
+          <Col className={styles.colDireita}>
+            <div className={styles.divDireita}>
+              <FontAwesomeIcon
+                icon={faSearch}
+                className={styles.iconPesquisa}
+              />
+              <input type="text" placeholder="Pesquisar"></input>
 
-                    <FontAwesomeIcon
-                      icon={faBell}
-                      className={styles.iconSino}
-                    />
-                    <span>Bem vindo, João Silva</span>
-                    <FontAwesomeIcon
-                      icon={faUserCircle}
-                      className={styles.iconUser}
-                    />
-                    <FontAwesomeIcon
-                      icon={faSignOutAlt}
-                      className={styles.iconSair}
-                    />
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Container>
-        </header>
-        <Navbar expand="lg" className="flex-column">
-          <Navbar.Toggle />
+              <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
+              <span>Bem vindo, João Silva</span>
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                className={styles.iconUser}
+              />
+              <FontAwesomeIcon
+                icon={faSignOutAlt}
+                className={styles.iconSair}
+              />
+            </div>
+          </Col>
+        </Row>
+      </header>
+        <Navbar expand="lg" className={["sidebar"]}>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav defaultActiveKey="/home" className="flex-column">
               <Nav.Link href="#">Home</Nav.Link>
@@ -107,26 +96,22 @@ function DefaultLayoutPublic(props) {
           </Navbar.Collapse>
         </Navbar>
         <main className={styles.principal}>
-          <Container className={styles.containerPrincipal}>
-            <Col md={10} className={styles.colCentral}>
-              <BrowserRouter>
-                <Suspense fallback={<main>Carregando...</main>}>
-                  <Switch>
-                    {routes.map((route, index) => {
-                      return route.component ? (
-                        <Route
-                          key={index}
-                          path={route.path}
-                          exact={route.exact}
-                          render={props => <route.component {...props} />}
-                        />
-                      ) : null;
-                    })}
-                  </Switch>
-                </Suspense>
-              </BrowserRouter>
-            </Col>
-          </Container>
+          <BrowserRouter>
+            <Suspense fallback={<main>Carregando...</main>}>
+              <Switch>
+                {routes.map((route, index) => {
+                  return route.component ? (
+                    <Route
+                      key={index}
+                      path={route.path}
+                      exact={route.exact}
+                      render={props => <route.component {...props} />}
+                    />
+                  ) : null;
+                })}
+              </Switch>
+            </Suspense>
+          </BrowserRouter>
         </main>
       </div>
       <footer className={styles.rodape}>

@@ -1,0 +1,67 @@
+.colPrincipal{
+    
+    .header{
+        border-radius: 8px 8px 0 0;
+        background: #262626;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 18px 20px;
+        margin: 0;
+
+    }
+    .content{
+        padding: 0 20px;
+        background:white;
+        border-radius: 0 0 8px 8px;
+        table{
+            width: 100%;
+        }
+       
+        th{
+            padding: 15px 0;
+            text-align: center;
+            color: #2E75B4;
+            border-bottom: 1px solid rgba(151,186 ,219, 0.5) ;
+            font-size: 16px;
+            .arrow{
+                margin: 0 0 0 7px;
+            }
+        }
+        tr{
+            text-align: center;
+            td{
+                font-size: 16px;
+                padding: 15px 0;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// .ultimasChamadas{
+    
+//     .cabecalho{
+//         border-radius: 5px 5px 0 0;
+//         background: #262626;
+//         color: white;
+//         padding: 0 15px;
+//     }
+//     .body{
+//         background: white;
+//         border-radius: 0 0 5px 5px;
+
+//         thead th{
+//             color: #007bff;
+//             border-bottom: 2px solid #97BADB;
+//         }
+//     }
+// }
