@@ -7,7 +7,8 @@ import {
   faBell,
   faUserCircle,
   faSignOutAlt,
-  faSearch
+  faSearch, 
+  faAngleRight
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LogoRadius from "../../assets/images/logoRadius.png";
@@ -15,87 +16,68 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(false);
+  const [isOpen, updateIsOpen] = useState(true);
   return (
     <div className={styles.layout}>
       <div className="relative">
-      <header className={styles.cabecalho}>
-        <Row className={styles.principalCabecalho}>
-          <Col className={styles.colEsquerda}>
-            <div>
-              <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
-            </div>
-            <div className={styles.imgLogo}>
-              <img src={LogoRadius} />
-            </div>
-          </Col>
-          <Col className={styles.colDireita}>
-            <div className={styles.divDireita}>
-              <FontAwesomeIcon
-                icon={faSearch}
-                className={styles.iconPesquisa}
-              />
-              <input type="text" placeholder="Pesquisar"></input>
+        <header className={styles.cabecalho}>
+          <Row className={[styles.principalCabecalho, !isOpen ? styles.active : null].join(' ')}>
+            <Col className={styles.colEsquerda}>
+              <div onClick={() => updateIsOpen(!isOpen)}>
+                <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
+              </div>
+              <div className={styles.imgLogo}>
+                <img src={LogoRadius} />
+              </div>
+            </Col>
+            <Col className={styles.colDireita}>
+              <div className={styles.divDireita}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  className={styles.iconPesquisa}
+                />
+                <input type="text" placeholder="Pesquisar"></input>
 
-              <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
-              <span>Bem vindo, João Silva</span>
-              <FontAwesomeIcon
-                icon={faUserCircle}
-                className={styles.iconUser}
-              />
-              <FontAwesomeIcon
-                icon={faSignOutAlt}
-                className={styles.iconSair}
-              />
-            </div>
-          </Col>
-        </Row>
-      </header>
-        <Navbar expand="lg" className={["sidebar"]}>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav defaultActiveKey="/home" className="flex-column">
-              <Nav.Link href="#">Home</Nav.Link>
-              <NavDropdown
-                title="Chamados"
-                id="basic-nav-dropdown"
-                className="dropright"
-                onMouseEnter={() => updateIsOpen(true)}
-                onMouseLeave={() => updateIsOpen(false)}
-                default={isOpen}
+                <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
+                <span>Bem vindo, João Silva</span>
+                <FontAwesomeIcon
+                  icon={faUserCircle}
+                  className={styles.iconUser}
+                />
+                <FontAwesomeIcon
+                  icon={faSignOutAlt}
+                  className={styles.iconSair}
+                />
+              </div>
+            </Col>
+          </Row>
+        </header>
+        <nav className={[styles.sidebar, !isOpen ? styles.active : null].join(' ')}>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+              <a href="#">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
-                // onMouseOver={() => updateIsOpen(true)}
-                // onFocus={() => updateIsOpen(true)}
-                // onMouseLeave={() => updateIsOpen(false)}
-                // onBlur={() => updateIsOpen(false)}
-                // // toggle={() => updateIsOpen(!isOpen)}
-                // isopen={isOpen.toString()}
-              >
-                <NavDropdown.Item href="#">Novo</NavDropdown.Item>
-                <NavDropdown.Item href="#">Consulta</NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown
-                title="Cadastro"
-                id="basic-nav-dropdown"
-                className="dropright"
-                onMouseOver={() => updateIsOpen(true)}
-                onFocus={() => updateIsOpen(true)}
-                onMouseLeave={() => updateIsOpen(false)}
-                onBlur={() => updateIsOpen(false)}
-                // toggle={() => updateIsOpen(!isOpen)}
-                isopen={isOpen.toString()}
-              >
-                <NavDropdown.Item href="#">Sistema</NavDropdown.Item>
-                <NavDropdown.Item href="#">Cliente</NavDropdown.Item>
-                <NavDropdown.Item href="#">Usuário</NavDropdown.Item>
-                <NavDropdown.Item href="#">Funcionário</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#">Gerenciamentos</Nav.Link>
-              <Nav.Link href="#">Gráficos</Nav.Link>
-              <Nav.Link href="#">Base De Conhecimento</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <main className={styles.principal}>
+              <ul>
+                <li><a href="#">Novo</a></li>
+                <li><a href="#">Consulta</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Cadastro <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
+              <ul>
+                <li><a href="#">Sistema</a></li>
+                <li><a href="#">Cliente</a></li>
+                <li><a href="#">Usuário</a></li>
+                <li><a href="#">Funcionário</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Gerenciamentos</a></li>
+            <li><a href="#">Gráficos</a></li>
+            <li><a href="#">Base De Conhecimento</a></li>
+          </ul>
+        </nav>
+        <main className={[styles.principal, !isOpen ? styles.active : null].join(' ')}>
           <BrowserRouter>
             <Suspense fallback={<main>Carregando...</main>}>
               <Switch>
