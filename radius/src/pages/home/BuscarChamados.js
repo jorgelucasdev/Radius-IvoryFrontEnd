@@ -46,8 +46,7 @@ export default function BuscarChamados() {
 
                         <Col className={styles.info}>
                             <p>Nº Chamado</p>
-                            <Select placeholder="" classNamePrefix={'select'}
-                                options={options} styles={customStyles} />
+                            <input className={styles.input} />
                         </Col>
 
                         <Col className={styles.info}>
@@ -62,17 +61,20 @@ export default function BuscarChamados() {
 
                         <Col className={styles.info}>
                             <p>Status</p>
-                            <input className={styles.input} />
+                            <Select placeholder="" classNamePrefix={'select'}
+                                options={options} styles={customStyles} />
                         </Col>
 
                         <Col className={styles.info}>
                             <p>Empresa</p>
-                            <input className={styles.input} />
+                            <Select placeholder="" classNamePrefix={'select'}
+                                options={options} styles={customStyles} />
                         </Col>
 
                         <Col className={styles.info}>
                             <p>Projeto</p>
-                            <input className={styles.input} />
+                            <Select placeholder="" classNamePrefix={'select'}
+                                options={options} styles={customStyles} />
                         </Col>
 
                         <Col className={styles.infoBtn}>
