@@ -134,7 +134,7 @@ function Table({ data, columns }) {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => {
-              console.log(column);
+              {/* console.log(column); */}
               return !["chamado"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
