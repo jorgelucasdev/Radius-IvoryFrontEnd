@@ -4,56 +4,6 @@ th::selection {
 .flex {
   display: flex;
 }
-.relative{
+.relative {
   position: relative;
-}
-.sidebar {
-  width: 250px;
-  background: #ffffff;
-  position: absolute;
-  top: 75px;
-  height: calc(100% - 75px);
-  min-height: calc(100vh - 75px - 103px);
-  padding: 0px;
-  align-items: flex-start;
-
-  &.navbar-light {
-    .navbar-nav {
-      width: 100%;
-      .nav-link {
-        color: #2e75b4;
-        font-size: 18px;
-        box-shadow: 0 2px 3px 0 rgba(38, 38, 38, 0.25);
-        padding: 8px 15px;
-
-        &:hover {
-          color: #fff;
-          background: #81acd3;
-        }
-      }
-    }
-  }
-
-  .dropright {
-    .dropdown-toggle::after {
-      top: 16px;
-      right: 15px;
-      position: absolute;
-    }
-  }
-
-  .dropdown-menu {
-    padding: 0px;
-
-    .dropdown-item {
-      padding: 8px 15px;
-      font-size: 18px;
-      box-shadow: 0 2px 3px 0 rgba(38, 38, 38, 0.25);
-
-      &:hover {
-        color: #fff;
-        background: #81acd3;
-      }
-    }
-  }
 }
