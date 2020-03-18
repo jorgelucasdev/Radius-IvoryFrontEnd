@@ -20,8 +20,14 @@
         }
     }
     
-    .btn:active{
+    .btn:hover{
         background:  #2E75B4;
+       .icon{
+            color:  white;
+       }
+    }
+    .btn:active{
+        background: #81ACD3;
        .icon{
             color:  white;
        }
