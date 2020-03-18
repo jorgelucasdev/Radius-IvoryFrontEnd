@@ -6,7 +6,7 @@ import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useFormik } from "formik";
-import styled from 'styled-components';
+import 'styled-components';
 import './AuxStyles.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -30,23 +30,12 @@ export default function BuscarChamados() {
 
     const customStyles = {
         menu: (provided, state) => ({
-            ...provided,
-            width: state.selectProps.width,
-            borderBottom: '1px dotted pink',
-            color: state.selectProps.menuColor,
-            padding: 20,
+          ...provided,
         }),
-
-        control: (_, { selectProps: { width } }) => ({
-            width: width
-        }),
-
-        singleValue: (provided, state) => {
-            const opacity = state.isDisabled ? 0.5 : 1;
-            const transition = 'opacity 300ms';
-
-            return { ...provided, opacity, transition };
-        }
+      
+        control: (_, { selectProps: { width }}) => ({
+            
+        })
     }
 
     const [startDate, setStartDate] = useState(new Date());
@@ -79,6 +68,7 @@ export default function BuscarChamados() {
                                 dateFormat="dd/MM/yyyy"
                                 selected={formik.values.dataInicial}
                                 locale="pt-BR"
+                                showPopperArrow={false}
                                 onChange={date => {
                                     formik.setFieldValue("dataInicial", date);
                                 }}
@@ -94,6 +84,7 @@ export default function BuscarChamados() {
                                 dateFormat="dd/MM/yyyy"
                                 selected={formik.values.dataFinal}
                                 locale="pt-BR"
+                                showPopperArrow={false}
                                 onChange={date => {
                                     formik.setFieldValue("dataFinal", date);
                                 }}

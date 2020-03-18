@@ -20,3 +20,11 @@
     top: 35px; 
     right: 22px;
 }
+
+.BuscarChamados_data__2ycY1 {
+    padding: 0 0 0 10px;
+}
+
+.BuscarChamados_data__2ycY1:focus {
+    outline: none;
+}
