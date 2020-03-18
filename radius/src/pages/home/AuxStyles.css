@@ -10,3 +10,13 @@
 .select__indicator-separator {
     visibility: hidden;
 }
+
+.select__indicators {
+    padding: 0 5px 0 0;
+}
+
+.icon-calendario {
+    position: absolute;
+    top: 35px; 
+    right: 22px;
+}
