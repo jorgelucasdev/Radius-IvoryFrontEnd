@@ -65,6 +65,10 @@ $tamanhoSidebar: 250px;
             font-size: 12px;
           }
 
+          input:focus{
+            outline: none
+          }
+
           .iconSino {
             color: #2e75b4;
             width: 25px;
