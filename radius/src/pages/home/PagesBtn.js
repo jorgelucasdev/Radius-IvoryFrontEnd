@@ -11,8 +11,6 @@ export default function PagesBtn() {
             <button>2</button>
             <button>3</button>
             <button><FontAwesomeIcon icon={faAngleRight} className={styles.icon} /></button>
-            
-            <i className={'icon-sino'}></i>
         </div>
     )
 }

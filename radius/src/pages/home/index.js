@@ -4,6 +4,7 @@ import { useTable, useSortBy } from "react-table";
 import UltimosChamados from "./UltimosChamados";
 import BuscarChamados from "./BuscarChamados";
 import PagesBtn from "./PagesBtn"
+import FooterBtn from "./FooterBtn"
 import styles from "./index.module.scss";
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <BuscarChamados />
       <UltimosChamados />
       <PagesBtn/> 
+      <FooterBtn/>
     </div>
   );
 };
