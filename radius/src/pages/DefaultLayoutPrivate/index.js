@@ -54,7 +54,7 @@ function DefaultLayoutPublic(props) {
         </header>
         <nav className={[styles.sidebar, !isOpen ? styles.active : null].join(' ')}>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
               <a href="#">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
@@ -67,7 +67,7 @@ function DefaultLayoutPublic(props) {
               <a href="#">Cadastro <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
               <ul>
                 <li><a href="#">Sistema</a></li>
-                <li><a href="#">Cliente</a></li>
+                <li><a href="/Cadastro/CadastroClientes">Cliente</a></li>
                 <li><a href="#">Usuário</a></li>
                 <li><a href="#">Funcionário</a></li>
               </ul>

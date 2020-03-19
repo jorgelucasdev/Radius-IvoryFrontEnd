@@ -1,0 +1,25 @@
+.conteudo {
+  h1 {
+    font-size: 18px;
+    padding: 25px 0;
+    margin: 0px;
+  }
+
+  .conteudoPrincipal {
+    margin-bottom: 20px;
+    .novoCliente {
+      border-radius: 10px 10px 10px 10px;
+      .headerNovoCliente {
+        border-radius: 10px 10px 0px 0px;
+        background: #262626;
+        padding: 18px 20px;
+        color: #ffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .bodyNovoCliente {
+        padding: 18px 20px;
+      }
+    }
+  }
+}
