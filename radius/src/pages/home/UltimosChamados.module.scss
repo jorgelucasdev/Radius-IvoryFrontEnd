@@ -24,9 +24,19 @@
             color: #2E75B4;
             border-bottom: 1px solid rgba(151,186 ,219, 0.5) ;
             font-size: 16px;
-            .arrow{
+            .setas{
                 margin: 0 0 0 7px;
+                .setaCima{
+                    vertical-align: text-top;
+                    font-size: 7px;
+                   
+                }
+                .setaBaixo{
+                    vertical-align: text-bottom;
+                    font-size: 7px;
+                }
             }
+            
         }
         tr{
             text-align: center;

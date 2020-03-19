@@ -1,8 +1,6 @@
 .footerBtn{
     display: flex;
-    .teste{
-        background-color: blue;
-    }
+  
     .btn{
         font-size: 30px;
         margin: 25px 25px 0 0;
@@ -13,16 +11,25 @@
         background: white;
         outline: none;
         
-        p{
-            font-size: 10px;
-            margin: 3px 0 0 0;
+        .icon{
             color: #2E75B4;
+            p{
+                font-size: 10px;
+                margin: 3px 0 0 0;
+            }
         }
     }
-    // .btn:active{
-    //     background:  #2E75B4;
-    //     p{
-    //         color:  white
-    //     }
-    // }
+    
+    .btn:hover{
+        background:  #2E75B4;
+       .icon{
+            color:  white;
+       }
+    }
+    .btn:active{
+        background: #81ACD3;
+       .icon{
+            color:  white;
+       }
+    }
 }
