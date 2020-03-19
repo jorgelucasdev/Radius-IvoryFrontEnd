@@ -4,13 +4,12 @@ import styles from "./index.module.scss";
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import {
   faBars,
-  faBell,
   faUserCircle,
-  faSignOutAlt,
-  faSearch, 
   faAngleRight
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import 'styled-components';
+import './AuxStyles.css';
 import LogoRadius from "../../assets/images/logoRadius.png";
 import LogoIvory from "../../assets/images/logoIvory.png";
 
@@ -32,22 +31,17 @@ function DefaultLayoutPublic(props) {
             </Col>
             <Col className={styles.colDireita}>
               <div className={styles.divDireita}>
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  className={styles.iconPesquisa}
-                />
+               
+                <i className={'icon-pesquisa'}></i>
                 <input type="text" placeholder="Pesquisar"></input>
 
-                <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
+                <i className={'icon-sino'}></i>
                 <span>Bem vindo, João Silva</span>
                 <FontAwesomeIcon
                   icon={faUserCircle}
                   className={styles.iconUser}
                 />
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  className={styles.iconSair}
-                />
+                <i className={'icon-logoff'}></i>
               </div>
             </Col>
           </Row>

@@ -51,12 +51,6 @@ $tamanhoSidebar: 250px;
           align-items: center;
           display: flex;
 
-          .iconPesquisa {
-            width: 14px;
-            height: 14px;
-            margin: 0 5px 0 0;
-          }
-
           input {
             border-top: none;
             border-left: none;
@@ -69,13 +63,6 @@ $tamanhoSidebar: 250px;
             outline: none
           }
 
-          .iconSino {
-            color: #2e75b4;
-            width: 25px;
-            height: 20px;
-            margin: 0 15px 0 0;
-          }
-
           span {
             color: #2e75b4;
             font-size: 12px;
@@ -86,12 +73,6 @@ $tamanhoSidebar: 250px;
             width: 25px;
             height: 20px;
             margin: 0 15px;
-          }
-
-          .iconSair {
-            color: #2e75b4;
-            width: 25px;
-            height: 20px;
           }
         }
       }
