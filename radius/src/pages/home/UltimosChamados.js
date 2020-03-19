@@ -139,21 +139,15 @@ function Table({ data, columns }) {
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
-                  <span>
+                  <span className={styles.setas}>
                     {column.isSorted ? (
                       column.isSortedDesc ? (
-                        <FontAwesomeIcon
-                          icon={faCaretUp}
-                          className={styles.arrow}
-                        />
+                        <i className={[styles.setaCima, 'icon-setacima'].join(' ')}/>
                       ) : (
-                        <FontAwesomeIcon
-                          icon={faCaretDown}
-                          className={styles.arrow}
-                        />
+                        <i className={[styles.setaBaixo, 'icon-setabaixo'].join(' ')}/>
                       )
                     ) : (
-                      <FontAwesomeIcon icon={faSort} className={styles.arrow} />
+                      <i className={'icon-setasduplas'}/>
                     )}
                   </span>
                 </th>
