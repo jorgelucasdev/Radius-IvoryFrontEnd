@@ -7,9 +7,11 @@
 
   .conteudoPrincipal {
     margin-bottom: 20px;
+
     .novoCliente {
-      border-radius: 10px 10px 10px 10px;
+      border-radius: 10px;
       width: 850px;
+
       .headerNovoCliente {
         border-radius: 10px 10px 0px 0px;
         background: #262626;
@@ -18,8 +20,50 @@
         font-size: 18px;
         font-weight: bold;
       }
+
       .bodyNovoCliente {
         padding: 18px 20px;
+
+        .rowInputs {
+          label {
+            font-size: 14px;
+          }
+
+          input {
+            border-radius: 10px;
+            font-size: 14px;
+          }
+
+          .calendario {
+            border: 1px solid #ced4da;
+            width: 179.5px;
+            height: 31px;
+            font-size: 14px;
+            padding: 4px 8px;
+          }
+        }
+
+        .rowButtons {
+          margin: 30px 0px;
+
+          span {
+            font-size: 14px;
+            color: red;
+          }
+
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0px;
+
+            button {
+              border-radius: 10px;
+              width: 179.5px;
+              height: 31px;
+              padding: 0px;
+            }
+          }
+        }
       }
     }
   }

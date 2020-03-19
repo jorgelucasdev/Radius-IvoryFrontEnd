@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import styles from "./CadastroClientes.module.scss";
-import { Row, Col, Card, Form } from "react-bootstrap";
+import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
@@ -14,8 +14,8 @@ const CadastroClientes = () => {
 
   const formik = useFormik({
     initialValues: {
-      dataInicial: "",
-      dataFinal: ""
+      dataCadastro: "",
+      dataContrato: ""
     }
   });
   return (
@@ -28,7 +28,7 @@ const CadastroClientes = () => {
             Novo Cliente
           </Card.Header>
           <Card.Body className={styles.bodyNovoCliente}>
-            <Row>
+            <Row className={styles.rowInputs}>
               <Col>
                 <Form>
                   <Form.Group controlId="formCNPJ">
@@ -47,7 +47,7 @@ const CadastroClientes = () => {
               </Col>
             </Row>
 
-            <Row>
+            <Row className={styles.rowInputs}>
               <Col>
                 <Form>
                   <Form.Group controlId="formNomeFantasia">
@@ -66,7 +66,7 @@ const CadastroClientes = () => {
               </Col>
             </Row>
 
-            <Row>
+            <Row className={styles.rowInputs}>
               <Col md={6}>
                 <Form>
                   <Form.Group controlId="formEndereco">
@@ -93,7 +93,7 @@ const CadastroClientes = () => {
               </Col>
             </Row>
 
-            <Row>
+            <Row className={styles.rowInputs}>
               <Col>
                 <Form>
                   <Form.Group controlId="formNomeFantasia">
@@ -115,15 +115,17 @@ const CadastroClientes = () => {
                   <Form.Group controlId="formEmail">
                     <Form.Label>Data cadastro:</Form.Label>
                     <DatePicker
-                      name="dataInicial"
-                      dateFormat="dd/MM/yyyy"
-                      selected={formik.values.dataInicial}
-                      locale="pt-BR"
                       showPopperArrow={false}
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataCadastro}
+                      locale="pt-BR"
+                      name="dataCadastro"
                       onChange={date => {
-                        formik.setFieldValue("dataInicial", date);
+                        formik.setFieldValue("dataCadastro", date);
                       }}
-                      className={styles.data}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      className={styles.calendario}
                     />
                     <i className={"icon-calendario"}></i>
                   </Form.Group>
@@ -134,19 +136,30 @@ const CadastroClientes = () => {
                   <Form.Group controlId="formEmail">
                     <Form.Label>Encerramento contrato:</Form.Label>
                     <DatePicker
-                      name="dataInicial"
-                      dateFormat="dd/MM/yyyy"
-                      selected={formik.values.dataInicial}
-                      locale="pt-BR"
                       showPopperArrow={false}
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataContrato}
+                      locale="pt-BR"
+                      name="dataContrato"
                       onChange={date => {
-                        formik.setFieldValue("dataInicial", date);
+                        formik.setFieldValue("dataContrato", date);
                       }}
-                      className={styles.data}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      className={styles.calendario}
                     />
                     <i className={"icon-calendario"}></i>
                   </Form.Group>
                 </Form>
+              </Col>
+            </Row>
+            <Row className={styles.rowButtons}>
+              <Col>
+              <span>*Todos os campos são obrigatórios</span>
+              </Col>
+              <Col className={styles.buttons}>
+                <Button variant="secondary" className={styles.btn1}>Cancelar</Button>
+                <Button variant="primary">Salvar</Button>
               </Col>
             </Row>
           </Card.Body>
