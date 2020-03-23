@@ -3,7 +3,8 @@ import styles from "./BuscarChamados.module.scss";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
-import DatePicker from 'react-datepicker';
+import DatePicker, { registerLocale } from "react-datepicker";
+import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
 import { useFormik } from "formik";
 import 'styled-components';
@@ -16,6 +17,8 @@ import {
 
 export default function BuscarChamados() {
     
+    registerLocale("pt-BR", ptBR);
+    
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -24,7 +27,7 @@ export default function BuscarChamados() {
     
     const DropdownIndicator = props => {
         return (
-            <FontAwesomeIcon icon={faSort} className={styles.arrow} />
+            <i className={[styles.arrow ,'icon-setasduplas'].join(' ')}></i>
         );
     };
 
@@ -56,12 +59,12 @@ export default function BuscarChamados() {
 
                     <Row className={styles.rowBusca}>
 
-                        <Col className={styles.info}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.info}>
                             <label>Nº Chamado</label>
                             <input className={styles.input} />
                         </Col>
 
-                        <Col className={styles.infoData}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.infoData}>
                             <label className={styles.labelData}>Data inicial</label>
                             <DatePicker
                                 name="dataInicial"
@@ -74,10 +77,10 @@ export default function BuscarChamados() {
                                 }}
                                 className={styles.data}
                             />
-                             <i className={'icon-calendario'}></i>
+                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
                         </Col>
 
-                        <Col className={styles.infoData}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.infoData}>
                             <label className={styles.labelData}>Data final</label>
                             <DatePicker
                                 name="dataFinal"
@@ -90,10 +93,10 @@ export default function BuscarChamados() {
                                 }}
                                 className={styles.data}               
                             />
-                             <i className={'icon-calendario'}></i>
+                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
                         </Col>
 
-                        <Col className={styles.info}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.info}>
                             <label>Status</label>
                             <Select placeholder="" classNamePrefix={'select'}
                                 options={options} styles={customStyles}
@@ -101,7 +104,7 @@ export default function BuscarChamados() {
                             />
                         </Col>
 
-                        <Col className={styles.info}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.info}>
                             <label>Empresa</label>
                             <Select placeholder="" classNamePrefix={'select'}
                                 options={options} styles={customStyles}
@@ -109,14 +112,14 @@ export default function BuscarChamados() {
                             />
                         </Col>
 
-                        <Col className={styles.info}>
+                        <Col xs={12} sm={6} md={4} lg={4} xl className={styles.info}>
                             <label>Projeto</label>
                             <Select placeholder="" classNamePrefix={'select'}
                                 options={options} styles={customStyles}
                                 components={{ DropdownIndicator }} />
                         </Col>
 
-                        <Col className={styles.infoBtn}>
+                        <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
                             <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
                         </Col>
 
