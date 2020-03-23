@@ -246,6 +246,7 @@ const CadastroUsuarios = props => {
                     <Cleave
                       name="telefone"
                       id=""
+                      placeholder="(XX) XXXX-XXXX"
                       options={{
                         blocks: [5, 3],
                         delimiter: "-",
@@ -265,6 +266,7 @@ const CadastroUsuarios = props => {
                     <Cleave
                       name="celular"
                       id=""
+                      placeholder="(XX) 9XXXX-XXXX"
                       options={{ phone: true, phoneRegionCode: "BR" }}
                       value={formik.values.celular}
                       onChange={formik.handleChange}
@@ -287,6 +289,7 @@ const CadastroUsuarios = props => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         autoComplete="off"
+                        placeholder="(XX) 9XXXX-XXXX"
                         />
                         {formik.errors.whatsapp && formik.touched.whatsapp ? (
                         <div className={styles.msgError}>
@@ -343,7 +346,7 @@ const CadastroUsuarios = props => {
         <div className={styles.conteudoAside}>
           <Card className={styles.usuarios}>
             <Card.Header as="h5" className={styles.headerUsuarios}>
-              Usuarios
+              Usuários
             </Card.Header>
             <Card.Body className={styles.bodyListagemUsuarios}>
               <div className={styles.button}>
