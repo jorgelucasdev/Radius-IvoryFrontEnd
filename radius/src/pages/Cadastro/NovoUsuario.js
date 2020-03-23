@@ -185,36 +185,58 @@ const CadastroUsuarios = props => {
                     ) : null}
                   </Col>
                   <Col>
-                    <label for="">Data de Início:</label>
-                    <input
-                      type="text"
-                      name="dataInicio"
-                      id=""
-                      value={formik.values.dataInicio}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      autoComplete="off"
-                    ></input>
-                    {formik.errors.dataInicio && formik.touched.dataInicio ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.dataInicio}
-                      </div>
-                    ) : null}
+                    <Form>
+                      <Form.Group controlId="formEmail">
+                        <Form.Label>Data de Início:</Form.Label>
+                        <DatePicker
+                          showPopperArrow={false}
+                          dateFormat="dd/MM/yyyy"
+                          selected={formik.values.dataInicio}
+                          locale="pt-BR"
+                          name="dataInicio"
+                          onChange={date => {
+                            formik.setFieldValue("dataInicio", date);
+                          }}
+                          onBlur={formik.handleBlur}
+                          autoComplete="off"
+                          className={styles.calendario}
+                        />
+                        <i className={"icon-calendario"}></i>
+                        {formik.errors.dataInicio &&
+                        formik.touched.dataInicio ? (
+                          <div className={styles.msgError}>
+                            {formik.errors.dataInicio}
+                          </div>
+                        ) : null}
+                      </Form.Group>
+                    </Form>
                   </Col>
                   <Col>
-                    <label for="">Data de Fim:</label>
-                    <SelectBox
-                      value={formik.values.dataFim}
-                      name={"dataFim"}
-                      id=""
-                      placeholder={"Selecione"}
-                      onChange={formik.setFieldValue}
-                      onBlur={formik.setFieldTouched}
-                      error={formik.errors.dataFim}
-                      touched={formik.touched.dataFim}
-                      styleMsgError={styles.msgError}
-                      options={options}
-                    />
+                  <Form>
+                      <Form.Group controlId="formEmail">
+                        <Form.Label>Data de Fim:</Form.Label>
+                        <DatePicker
+                          showPopperArrow={false}
+                          dateFormat="dd/MM/yyyy"
+                          selected={formik.values.dataFim}
+                          locale="pt-BR"
+                          name="dataFim"
+                          onChange={date => {
+                            formik.setFieldValue("dataFim", date);
+                          }}
+                          onBlur={formik.handleBlur}
+                          autoComplete="off"
+                          className={styles.calendario}
+                        />
+                        <i className={"icon-calendario"}></i>
+                        {formik.errors.dataFim &&
+                        formik.touched.dataFim ? (
+                          <div className={styles.msgError}>
+                            {formik.errors.dataFim}
+                          </div>
+                        ) : null}
+                      </Form.Group>
+                    </Form>
                   </Col>
                 </Row>
 
@@ -256,31 +278,21 @@ const CadastroUsuarios = props => {
                     ) : null}
                   </Col>
                   <Col>
-                    <Form>
-                      <Form.Group controlId="formEmail">
-                        <Form.Label>WhatsApp:</Form.Label>
-                        <DatePicker
-                          showPopperArrow={false}
-                          dateFormat="dd/MM/yyyy"
-                          selected={formik.values.whatsapp}
-                          locale="pt-BR"
-                          name="whatsapp"
-                          onChange={date => {
-                            formik.setFieldValue("whatsapp", date);
-                          }}
-                          onBlur={formik.handleBlur}
-                          autoComplete="off"
-                          className={styles.calendario}
+                    <label for="">WhatsApp:</label>
+                        <Cleave
+                        name="whatsapp"
+                        id=""
+                        options={{ phone: true, phoneRegionCode: "BR" }}
+                        value={formik.values.whatsapp}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        autoComplete="off"
                         />
-                        <i className={"icon-calendario"}></i>
-                        {formik.errors.whatsapp &&
-                        formik.touched.whatsapp ? (
-                          <div className={styles.msgError}>
+                        {formik.errors.whatsapp && formik.touched.whatsapp ? (
+                        <div className={styles.msgError}>
                             {formik.errors.whatsapp}
-                          </div>
+                        </div>
                         ) : null}
-                      </Form.Group>
-                    </Form>
                   </Col>
                   <Col>
                     <Form>
