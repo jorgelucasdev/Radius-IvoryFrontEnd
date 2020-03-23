@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import styles from "./CadastroClientes.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import SelectBox from "../../components/SelectBox";
@@ -21,7 +22,48 @@ const CadastroClientes = props => {
     { value: "vanilla", label: "Vanilla" }
   ];
 
+  const validarCampos = Yup.object().shape({
+    cnpj: Yup.string()
+      .nullable()
+      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .required("Campo obrigatório"),
+    razaoSocial: Yup.string()
+      .nullable()
+      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .required("Campo obrigatório"),
+    nomeFantasia: Yup.string()
+      .nullable()
+      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .required("Campo obrigatório"),
+    email: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    endereco: Yup.string()
+      .nullable()
+      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .required("Campo obrigatório"),
+    cidade: Yup.string()
+      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .required("Campo obrigatório"),
+    uf: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    cep: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    telefone: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    dataCadastro: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    dataContrato: Yup.string()
+      .nullable()
+      .required("Campo obrigatório")
+  });
+
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       cnpj: "",
       razaoSocial: "",
@@ -34,14 +76,16 @@ const CadastroClientes = props => {
       telefone: "",
       dataCadastro: "",
       dataContrato: ""
-    }
+    },
+    validationSchema: validarCampos,
+    onSubmit: ""
   });
   return (
     <div className={styles.principal}>
       <h1>Home > Cadastro > Clientes</h1>
 
       <div className={styles.conteudo}>
-        <form>
+        <form onSubmit={formik.handleSubmit}>
           <div className={styles.conteudoSection}>
             <Card className={styles.novoCliente}>
               <Card.Header as="h5" className={styles.headerNovoCliente}>
@@ -49,35 +93,114 @@ const CadastroClientes = props => {
               </Card.Header>
               <Card.Body className={styles.bodyNovoCliente}>
                 <Row className={styles.rowInputs}>
-                  <Col className={styles.teste}>
+                  <Col>
                     <label for="">CNPJ:</label>
-                    <input type="text" name="cnpj" id=""></input>
+                    <input
+                      type="text"
+                      name="cnpj"
+                      id=""
+                      value={formik.values.cnpj}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.cnpj && formik.touched.cnpj ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.cnpj}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <label for="">Razão Social:</label>
-                    <input type="text" name="razaoSocial" id=""></input>
+                    <input
+                      type="text"
+                      name="razaoSocial"
+                      id=""
+                      value={formik.values.razaoSocial}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.razaoSocial && formik.touched.razaoSocial ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.razaoSocial}
+                      </div>
+                    ) : null}
                   </Col>
                 </Row>
 
                 <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">Nome Fantasia:</label>
-                    <input type="text" name="nomeFantasia" id=""></input>
+                    <input
+                      type="text"
+                      name="nomeFantasia"
+                      id=""
+                      value={formik.values.nomeFantasia}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.nomeFantasia &&
+                    formik.touched.nomeFantasia ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.nomeFantasia}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <label for="">Email:</label>
-                    <input type="text" name="email" id=""></input>
+                    <input
+                      type="text"
+                      name="email"
+                      id=""
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.email && formik.touched.email ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.email}
+                      </div>
+                    ) : null}
                   </Col>
                 </Row>
 
                 <Row className={styles.rowInputs}>
                   <Col md={6}>
                     <label for="">Endereço:</label>
-                    <input type="text" name="endereco" id=""></input>
+                    <input
+                      type="text"
+                      name="endereco"
+                      id=""
+                      value={formik.values.endereco}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.endereco && formik.touched.endereco ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.endereco}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <label for="">Cidade:</label>
-                    <input type="text" name="cidade" id=""></input>
+                    <input
+                      type="text"
+                      name="cidade"
+                      id=""
+                      value={formik.values.cidade}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.cidade && formik.touched.cidade ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.cidade}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <label for="">UF:</label>
@@ -107,7 +230,14 @@ const CadastroClientes = props => {
                         delimiter: "-",
                         numericOnly: true
                       }}
+                      value={formik.values.cep}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
                     />
+                    {formik.errors.cep && formik.touched.cep ? (
+                      <div className={styles.msgError}>{formik.errors.cep}</div>
+                    ) : null}
                   </Col>
                   <Col>
                     <label for="">Telefone:</label>
@@ -115,7 +245,16 @@ const CadastroClientes = props => {
                       name="telefone"
                       id=""
                       options={{ phone: true, phoneRegionCode: "BR" }}
+                      value={formik.values.telefone}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
                     />
+                    {formik.errors.telefone && formik.touched.telefone ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.telefone}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <Form>
@@ -135,6 +274,12 @@ const CadastroClientes = props => {
                           className={styles.calendario}
                         />
                         <i className={"icon-calendario"}></i>
+                        {formik.errors.dataCadastro &&
+                        formik.touched.dataCadastro ? (
+                          <div className={styles.msgError}>
+                            {formik.errors.dataCadastro}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Form>
                   </Col>
@@ -156,13 +301,19 @@ const CadastroClientes = props => {
                           className={styles.calendario}
                         />
                         <i className={"icon-calendario"}></i>
+                        {formik.errors.dataContrato &&
+                        formik.touched.dataContrato ? (
+                          <div className={styles.msgError}>
+                            {formik.errors.dataContrato}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Form>
                   </Col>
                 </Row>
                 <Row className={styles.rowButtons}>
                   <Col>
-                    <span>*Todos os campos são obrigatórios</span>
+                    <span>* Todos os campos são obrigatórios</span>
                   </Col>
                   <Col className={styles.buttons}>
                     <Col>
