@@ -7,3 +7,27 @@ th::selection {
 .relative {
   position: relative;
 }
+
+.react-select-container {
+  .react-select__control {
+    border-radius: 10px;
+    font-size: 14px;
+    height: 35px;
+    min-height: 35px;
+
+    .react-select__value-container {
+      display: contents;
+
+      .react-select__placeholder,
+      .react-select__single-value {
+        padding: 5px;
+      }
+    }
+
+    .react-select__indicators {
+      display: initial;
+    }
+  }
+}
+
+
