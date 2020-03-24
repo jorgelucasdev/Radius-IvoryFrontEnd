@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from './NovoUsuario.module.scss'
+import styles from "./NovoUsuario.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import SelectBox from "../../components/SelectBox";
 import Cleave from "cleave.js/react";
@@ -9,6 +9,7 @@ import CleavePhone from "cleave.js/dist/addons/cleave-phone.br";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
+import Select from "react-select";
 import "styled-components";
 import "./AuxStyles.css";
 
@@ -16,10 +17,27 @@ const CadastroUsuarios = props => {
   registerLocale("pt-BR", ptBR);
   const [startDate, setStartDate] = useState(new Date());
 
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
+  // const options = [
+  //   { value: "chocolate", label: "Chocolate" },
+  //   { value: "strawberry", label: "Strawberry" },
+  //   { value: "vanilla", label: "Vanilla" }
+  // ];
+  const DropdownIndicator = props => {
+    return <i className={[styles.arrow, "icon-setasduplas"].join(" ")}></i>;
+  };
+
+  const customStyles = {
+    menu: (provided, state) => ({
+      ...provided
+    }),
+
+    control: (_, { selectProps: { width } }) => ({})
+  };
+  const StatusOptions = [
+    { value: "ativo", label: "Ativo" },
+    { value: "pendente", label: "Pendente" },
+    { value: "cancelado", label: "Cancelado" },
+    { value: "concluido", label: "Concluido" }
   ];
 
   const validarCampos = Yup.object().shape({
@@ -59,6 +77,12 @@ const CadastroUsuarios = props => {
       .required("Campo obrigatório"),
     dataAniversario: Yup.string()
       .nullable()
+      .required("Campo obrigatório"),
+    observacoes: Yup.string()
+      .nullable()
+      .required("Campo obrigatório"),
+    status: Yup.string()
+      .nullable()
       .required("Campo obrigatório")
   });
 
@@ -75,14 +99,15 @@ const CadastroUsuarios = props => {
       telefone: "",
       celular: "",
       whatsapp: "",
-      dataAniversario: ""
+      dataAniversario: "",
+      observacoes: "",
+      status: ""
     },
     validationSchema: validarCampos,
     onSubmit: ""
   });
   return (
     <div className={styles.principal}>
-
       <div className={styles.conteudo}>
         <form onSubmit={formik.handleSubmit}>
           <div className={styles.conteudoSection}>
@@ -121,9 +146,7 @@ const CadastroUsuarios = props => {
                       autoComplete="off"
                     ></input>
                     {formik.errors.cpf && formik.touched.cpf ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.cpf}
-                      </div>
+                      <div className={styles.msgError}>{formik.errors.cpf}</div>
                     ) : null}
                   </Col>
                 </Row>
@@ -140,8 +163,7 @@ const CadastroUsuarios = props => {
                       onBlur={formik.handleBlur}
                       autoComplete="off"
                     ></input>
-                    {formik.errors.cargo &&
-                    formik.touched.cargo ? (
+                    {formik.errors.cargo && formik.touched.cargo ? (
                       <div className={styles.msgError}>
                         {formik.errors.cargo}
                       </div>
@@ -212,7 +234,7 @@ const CadastroUsuarios = props => {
                     </Form>
                   </Col>
                   <Col>
-                  <Form>
+                    <Form>
                       <Form.Group controlId="formEmail">
                         <Form.Label>Data de Fim:</Form.Label>
                         <DatePicker
@@ -229,8 +251,7 @@ const CadastroUsuarios = props => {
                           className={styles.calendario}
                         />
                         <i className={"icon-calendario"}></i>
-                        {formik.errors.dataFim &&
-                        formik.touched.dataFim ? (
+                        {formik.errors.dataFim && formik.touched.dataFim ? (
                           <div className={styles.msgError}>
                             {formik.errors.dataFim}
                           </div>
@@ -258,7 +279,9 @@ const CadastroUsuarios = props => {
                       autoComplete="off"
                     />
                     {formik.errors.telefone && formik.touched.telefone ? (
-                      <div className={styles.msgError}>{formik.errors.telefone}</div>
+                      <div className={styles.msgError}>
+                        {formik.errors.telefone}
+                      </div>
                     ) : null}
                   </Col>
                   <Col>
@@ -281,21 +304,21 @@ const CadastroUsuarios = props => {
                   </Col>
                   <Col>
                     <label for="">WhatsApp:</label>
-                        <Cleave
-                        name="whatsapp"
-                        id=""
-                        options={{ phone: true, phoneRegionCode: "BR" }}
-                        value={formik.values.whatsapp}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        autoComplete="off"
-                        placeholder="(XX) 9XXXX-XXXX"
-                        />
-                        {formik.errors.whatsapp && formik.touched.whatsapp ? (
-                        <div className={styles.msgError}>
-                            {formik.errors.whatsapp}
-                        </div>
-                        ) : null}
+                    <Cleave
+                      name="whatsapp"
+                      id=""
+                      options={{ phone: true, phoneRegionCode: "BR" }}
+                      value={formik.values.whatsapp}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      placeholder="(XX) 9XXXX-XXXX"
+                    />
+                    {formik.errors.whatsapp && formik.touched.whatsapp ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.whatsapp}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <Form>
@@ -325,16 +348,62 @@ const CadastroUsuarios = props => {
                     </Form>
                   </Col>
                 </Row>
+
+                <Row className={styles.rowInputs}>
+                  <Col>
+                    <label for="">Observações:</label>
+                    <input
+                      type="text"
+                      name="observacoes"
+                      id=""
+                      value={formik.values.observacoes}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                    ></input>
+                    {formik.errors.observacoes && formik.touched.observacoes ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.nome}
+                      </div>
+                    ) : null}
+                  </Col>
+                </Row>
+
+                <Row className={styles.rowInputs}>
+                  <Col>
+                    <label for="">Status:</label>
+                    {/* <Select placeholder="Selecione" classNamePrefix={'select'}
+                                options={StatusOptions} styles={customStyles}
+                                components={{ DropdownIndicator }} className={styles.select}
+                            /> */}
+                    <Select
+                      value={formik.values.status}
+                      name={"status"}
+                      id=""
+                      placeholder={"Selecione"}
+                      onChange={formik.setFieldValue}
+                      onBlur={formik.setFieldTouched}
+                      error={formik.errors.status}
+                      touched={formik.touched.status}
+                      styleMsgError={styles.msgError}
+                      options={StatusOptions}
+                      styles={customStyles}
+                      className={styles.select}
+                      components={{ DropdownIndicator }}
+                    />
+                  </Col>
+                </Row>
+
                 <Row className={styles.rowButtons}>
                   <Col>
                     <span>* Todos os campos são obrigatórios</span>
                   </Col>
                   <Col className={styles.buttons}>
                     <Col>
-                      <Button variant="secondary">Cancelar</Button>
+                      <Button variant="secondary">CANCELAR</Button>
                     </Col>
                     <Col>
-                      <Button variant="primary">Salvar</Button>
+                      <Button variant="primary">SALVAR</Button>
                     </Col>
                   </Col>
                 </Row>
