@@ -11,7 +11,12 @@ function ButtonCustom(props) {
           {props.title}
         </Card.Header>
         <Card.Body className={styles.body}>
-          <div className={styles.button}>
+          <div
+            className={styles.button}
+            onClick={() => {
+              props.onClick();
+            }}
+          >
             <FontAwesomeIcon icon={props.icon} className={styles.icon} />
             <div className={styles.desc}>
               <span>{props.desc}</span>
