@@ -13,7 +13,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
 import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CadastroClientes = props => {
   registerLocale("pt-BR", ptBR);
