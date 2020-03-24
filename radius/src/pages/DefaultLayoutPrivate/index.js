@@ -61,7 +61,7 @@ function DefaultLayoutPublic(props) {
               <a href="#">Cadastro <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
               <ul>
                 <li><a href="#">Sistema</a></li>
-                <li><a href="/Cadastro/CadastroClientes">Cliente</a></li>
+                <li><a href="/Cadastro/ListagemClientes">Cliente</a></li>
                 <li><a href="#">Usuário</a></li>
                 <li><a href="#">Funcionário</a></li>
               </ul>

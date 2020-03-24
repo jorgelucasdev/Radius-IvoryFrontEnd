@@ -7,6 +7,7 @@ const FaleConosco = lazy(() => import("./pages/login/faleconosco"));
 
 // rotas privadas
 const Home = lazy(() => import("./pages/home"));
+const ListagemClientes = lazy(() => import("./pages/Cadastro/ListagemClientes"));
 const CadastroClientes = lazy(() => import("./pages/Cadastro/CadastroClientes"));
 
 export const routesPublic = {
@@ -19,6 +20,7 @@ const Error404 = props => <div>Erro 404</div>;
 
 export const routesPrivate = [
   { path: "/", exact: true, component: Home },
+  { path: "/Cadastro/ListagemClientes", exact: true, component: ListagemClientes},
   { path: "/Cadastro/CadastroClientes", exact: true, component: CadastroClientes},
   {
     path: "",

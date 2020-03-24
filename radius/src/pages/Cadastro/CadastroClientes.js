@@ -13,9 +13,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
 import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 const CadastroClientes = props => {
   registerLocale("pt-BR", ptBR);
+
+  const history = useHistory();
   const [startDate, setStartDate] = useState(new Date());
 
   const options = [
@@ -335,6 +338,7 @@ const CadastroClientes = props => {
             title={"Clientes"}
             icon={faUserFriends}
             desc={"LISTAGEM CLIENTES"}
+            onClick={() => history.push("/Cadastro/ListagemClientes")}
           ></ButtonCustom>
         </div>
       </div>

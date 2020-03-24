@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import styles from "./ListagemClientes.module.scss";
 import ButtonCustom from "../../components/ButtonCustom";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 const ListagemClientes = () => {
+  const history = useHistory();
+
   return (
     <div className={styles.principal}>
       <h1>Home > Cadastro > Clientes</h1>
@@ -17,6 +20,7 @@ const ListagemClientes = () => {
             title={"Novo Cliente"}
             icon={faPlusCircle}
             desc={"CADASTRAR CLIENTE"}
+            onClick={() => history.push("/Cadastro/CadastroClientes")}
           ></ButtonCustom>
         </div>
       </div>
