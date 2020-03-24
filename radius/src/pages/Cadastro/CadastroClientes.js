@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import styles from "./CadastroClientes.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import SelectBox from "../../components/SelectBox";
+import ButtonCustom from "../../components/ButtonCustom";
 import Cleave from "cleave.js/react";
 import CleavePhone from "cleave.js/dist/addons/cleave-phone.br";
 import DatePicker, { registerLocale } from "react-datepicker";
@@ -11,6 +12,8 @@ import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
+import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CadastroClientes = props => {
   registerLocale("pt-BR", ptBR);
@@ -328,26 +331,12 @@ const CadastroClientes = props => {
             </Card>
           </div>
         </form>
-
         <div className={styles.conteudoAside}>
-          <Card className={styles.clientes}>
-            <Card.Header as="h5" className={styles.headerClientes}>
-              Clientes
-            </Card.Header>
-            <Card.Body className={styles.bodyListagemClientes}>
-              <div className={styles.button}>
-                <div className={styles.icon}>
-                  <i className={"icon-listagemclientes"}></i>
-                </div>
-                <div className={styles.desc}>
-                  <span>
-                    LISTAGEM <br />
-                    CLIENTES
-                  </span>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
+          <ButtonCustom
+            title={"Clientes"}
+            icon={faUserFriends}
+            desc={"LISTAGEM CLIENTES"}
+          ></ButtonCustom>
         </div>
       </div>
     </div>
