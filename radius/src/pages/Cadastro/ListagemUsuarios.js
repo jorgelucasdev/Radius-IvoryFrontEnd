@@ -22,35 +22,39 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <i className={'icon-setasduplas'}/>
+      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
     },
     {
       nome: "-",
       email: "-",
       dataInicio: "-",
       dataFim: "-",
-      status: "-"
+      status: "-",
+      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
     },
     {
       nome: "-",
       email: "-",
       dataInicio: "-",
       dataFim: "-",
-      status: "-"
+      status: "-",
+      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
     },
     {
       nome: "-",
       email: "-",
       dataInicio: "-",
       dataFim: "-",
-      status: "-"
+      status: "-",
+      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
     },
     {
       nome: "-",
       email: "-",
       dataInicio: "-",
       dataFim: "-",
-      status: "-"
+      status: "-",
+      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
     }
   ]);
 
@@ -99,7 +103,7 @@ const ListagemUsuarios = props => {
             <Card.Body className={styles.bodyCadastroUsuarios}>
               <div className={styles.button}>
                 <div className={styles.icon}>
-                  <i className={"icon-listagemclientes"}></i>
+                  <i className={"icon-novochamado"}></i>
                 </div>
                 <div className={styles.desc}>
                   <span>

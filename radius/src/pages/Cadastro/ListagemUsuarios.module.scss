@@ -49,13 +49,21 @@
                   }
               }
               
-          }
-          tr{
+            }
+            tr{
               td{
                   font-size: 16px;
                   padding: 15px 0;
               }
-          }
+            }
+            .editar {
+              color: #2E75B4;
+            }
+            .btnEditar {
+              border-style: unset;
+              background: white;
+              outline: none;
+            }
           }
         }
       }
@@ -105,6 +113,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
   
                 span {
                   font-size: 12px;
