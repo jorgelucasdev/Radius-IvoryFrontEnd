@@ -14,7 +14,6 @@ import "styled-components";
 import "./AuxStyles.css";
 
 const ListagemUsuarios = props => {
-  
   const data = React.useMemo(() => [
     {
       nome: "-",
@@ -22,7 +21,11 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nome: "-",
@@ -30,7 +33,11 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nome: "-",
@@ -38,7 +45,11 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nome: "-",
@@ -46,7 +57,11 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nome: "-",
@@ -54,7 +69,11 @@ const ListagemUsuarios = props => {
       dataInicio: "-",
       dataFim: "-",
       status: "-",
-      iconEditar: <button className={styles.btnEditar}><i className={"icon-editar"}></i></button>
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     }
   ]);
 
@@ -86,22 +105,23 @@ const ListagemUsuarios = props => {
       },
       {
         Header: "",
-        accessor: "iconEditar",
+        accessor: "iconEditar"
       }
     ],
     []
   );
-  
-  return (
-    <div className={styles.conteudo}>
 
+  return (
+    <div>{/*Div provisoria*/}
+      <h1>Home > Cadastro > Usuário</h1>
+      <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
           <Card className={styles.usuarios}>
             <Card.Header as="h5" className={styles.headerUsuarios}>
               Novo Usuário
             </Card.Header>
             <Card.Body className={styles.bodyCadastroUsuarios}>
-              <div className={styles.button}>
+              <a href="/Cadastro/CadastroUsuarios" className={styles.button}>
                 <div className={styles.icon}>
                   <i className={"icon-novochamado"}></i>
                 </div>
@@ -111,23 +131,23 @@ const ListagemUsuarios = props => {
                     USUÁRIO
                   </span>
                 </div>
-              </div>
+              </a>
             </Card.Body>
           </Card>
         </div>
 
-      <div className={styles.conteudoSection}>
-        <Card className={styles.listaUsuarios}>
-          <Card.Header as="h5" className={styles.headerLista}>
-            Usuários
-          </Card.Header>
-          <Card.Body className={styles.bodyListaUsuarios}>
-            <Table columns={columns} data={data} />
-          </Card.Body>
-        </Card>
+        <div className={styles.conteudoSection}>
+          <Card className={styles.listaUsuarios}>
+            <Card.Header as="h5" className={styles.headerLista}>
+              Usuários
+            </Card.Header>
+            <Card.Body className={styles.bodyListaUsuarios}>
+              <Table columns={columns} data={data} />
+            </Card.Body>
+          </Card>
+        </div>
       </div>
-
-      </div>
+    </div> //Div provisoria
   );
 };
 
@@ -152,7 +172,9 @@ function Table({ data, columns }) {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => {
-              {/* console.log(column); */}
+              {
+                /* console.log(column); */
+              }
               return !["iconEditar"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
@@ -160,12 +182,20 @@ function Table({ data, columns }) {
                   <span className={styles.setas}>
                     {column.isSorted ? (
                       column.isSortedDesc ? (
-                        <i className={[styles.setaCima, 'icon-setacima'].join(' ')}/>
+                        <i
+                          className={[styles.setaCima, "icon-setacima"].join(
+                            " "
+                          )}
+                        />
                       ) : (
-                        <i className={[styles.setaBaixo, 'icon-setabaixo'].join(' ')}/>
+                        <i
+                          className={[styles.setaBaixo, "icon-setabaixo"].join(
+                            " "
+                          )}
+                        />
                       )
                     ) : (
-                      <i className={'icon-setasduplas'}/>
+                      <i className={"icon-setasduplas"} />
                     )}
                   </span>
                 </th>

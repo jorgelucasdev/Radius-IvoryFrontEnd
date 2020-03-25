@@ -425,7 +425,7 @@ const CadastroUsuarios = props => {
               Usuários
             </Card.Header>
             <Card.Body className={styles.bodyListagemUsuarios}>
-              <div className={styles.button}>
+              <a href="/Cadastro/ListagemUsuarios" className={styles.button}>
                 <div className={styles.icon}>
                   <i className={"icon-listagemclientes"}></i>
                 </div>
@@ -435,7 +435,7 @@ const CadastroUsuarios = props => {
                     USUÁRIOS
                   </span>
                 </div>
-              </div>
+              </a>
             </Card.Body>
           </Card>
         </div>

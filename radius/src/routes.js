@@ -9,6 +9,7 @@ const FaleConosco = lazy(() => import("./pages/login/faleconosco"));
 const Home = lazy(() => import("./pages/home"));
 const CadastroClientes = lazy(() => import("./pages/Cadastro/CadastroClientes"));
 const CadastroUsuarios = lazy(() => import("./pages/Cadastro/CadastroUsuarios"));
+const ListagemUsuarios = lazy(() => import("./pages/Cadastro/ListagemUsuarios"));
 
 export const routesPublic = {
   login: { path: "/login", component: Login },
@@ -22,6 +23,7 @@ export const routesPrivate = [
   { path: "/", exact: true, component: Home },
   { path: "/Cadastro/CadastroClientes", exact: true, component: CadastroClientes},
   { path: "/Cadastro/CadastroUsuarios", exact: true, component: CadastroUsuarios},
+  { path: "/Cadastro/ListagemUsuarios", exact: true, component: ListagemUsuarios},
   {
     path: "",
     exact: true,
