@@ -48,7 +48,7 @@ const ListagemClientes = () => {
                   <Col>
                     <label for="">Nome Cliente:</label>
                     <input
-                      type="text"
+                      type="search"
                       name="nomeCliente"
                       id=""
                       autoComplete="off"

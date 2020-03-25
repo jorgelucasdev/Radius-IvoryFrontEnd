@@ -33,7 +33,7 @@ function DefaultLayoutPublic(props) {
               <div className={styles.divDireita}>
                
                 <i className={'icon-pesquisa'}></i>
-                <input type="text" placeholder="Pesquisar"></input>
+                <input type="search" placeholder="Pesquisar"></input>
 
                 <i className={'icon-sino'}></i>
                 <span>Bem vindo, João Silva</span>
