@@ -9,7 +9,7 @@ const CadastroUsuarios = props => {
   return (
     <div className={styles.principal}>
       <h1>Home > Cadastro > Usuário</h1>
-        <NovoUsuario/>
+      <NovoUsuario />
     </div>
   );
 };

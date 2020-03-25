@@ -28,11 +28,14 @@ const CadastroUsuarios = props => {
 
   const customStyles = {
     menu: (provided, state) => ({
-      ...provided
+      ...provided,
     }),
+  
+    control: (_, { selectProps: { width }}) => ({
+        
+    })
+}
 
-    control: (_, { selectProps: { width } }) => ({})
-  };
   const StatusOptions = [
     { value: "ativo", label: "Ativo" },
     { value: "pendente", label: "Pendente" },
@@ -401,23 +404,14 @@ const CadastroUsuarios = props => {
                       styleMsgError={styles.msgError}
                       options={StatusOptions}
                       styles={customStyles}
-                      className={styles.select}
+                      classNamePrefix={'select'}
                       components={{ DropdownIndicator }}
                     />
-                  </Col>
-                </Row>
-
-                <Row className={styles.rowButtons}>
-                  <Col>
                     <span>* Todos os campos são obrigatórios</span>
                   </Col>
                   <Col className={styles.buttons}>
-                    <Col>
                       <Button variant="secondary">CANCELAR</Button>
-                    </Col>
-                    <Col>
                       <Button variant="primary">SALVAR</Button>
-                    </Col>
                   </Col>
                 </Row>
               </Card.Body>
