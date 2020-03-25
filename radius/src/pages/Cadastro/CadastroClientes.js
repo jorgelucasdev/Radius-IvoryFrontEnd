@@ -104,6 +104,7 @@ const CadastroClientes = props => {
                       type="text"
                       name="cnpj"
                       id=""
+                      placeholder=" xx.xxx.xxx/xxxx-xx"
                       value={formik.values.cnpj}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -250,6 +251,7 @@ const CadastroClientes = props => {
                       name="telefone"
                       id=""
                       options={{ phone: true, phoneRegionCode: "BR" }}
+                      placeholder="(xxx) xxxxx-xxxx"
                       value={formik.values.telefone}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
