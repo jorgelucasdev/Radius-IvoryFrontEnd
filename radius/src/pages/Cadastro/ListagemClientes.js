@@ -25,7 +25,7 @@ const ListagemClientes = () => {
 
   return (
     <div className={styles.principal}>
-      <h1>Home > Cadastro > Clientes</h1>
+      <h1>Cadastro > <span>Clientes</span></h1>
 
       <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
