@@ -43,37 +43,37 @@ const CadastroUsuarios = props => {
   const validarCampos = Yup.object().shape({
     nome: Yup.string()
       .nullable()
-      .min(5, "O campo precisa ter um mínino de 5 caracteres")
       .required("Campo obrigatório"),
     cpf: Yup.string()
       .nullable()
-      .min(5, "O campo precisa ter um mínino de 5 caracteres")
+      .min(14, "O campo precisa ter um mínino de 11 caracteres")
       .required("Campo obrigatório"),
     cargo: Yup.string()
       .nullable()
-      .min(5, "O campo precisa ter um mínino de 5 caracteres")
       .required("Campo obrigatório"),
     setor: Yup.string()
       .nullable()
       .required("Campo obrigatório"),
     email: Yup.string()
+      .email("Email inválido")
       .nullable()
-      .min(5, "O campo precisa ter um mínino de 5 caracteres")
       .required("Campo obrigatório"),
     dataInicio: Yup.string()
-      .min(5, "O campo precisa ter um mínino de 5 caracteres")
       .required("Campo obrigatório"),
     dataFim: Yup.string()
       .nullable()
       .required("Campo obrigatório"),
     telefone: Yup.string()
       .nullable()
+      .min(14, "O campo precisa ter um mínino de 8 caracteres")
       .required("Campo obrigatório"),
     celular: Yup.string()
       .nullable()
+      .min(15, "O campo precisa ter um mínino de 9 caracteres")
       .required("Campo obrigatório"),
     whatsapp: Yup.string()
       .nullable()
+      .min(15, "O campo precisa ter um mínino de 9 caracteres")
       .required("Campo obrigatório"),
     dataAniversario: Yup.string()
       .nullable()
@@ -136,15 +136,20 @@ const CadastroUsuarios = props => {
                   </Col>
                   <Col>
                     <label for="">CPF:</label>
-                    <input
-                      type="text"
+                    <Cleave
                       name="cpf"
                       id=""
+                      placeholder="XXX.XXX.XXX-XX"
+                      options={{
+                        blocks: [3,3,3,2],
+                        delimiters: [".",".","-"],
+                        numericOnly: true,
+                      }}
                       value={formik.values.cpf}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
-                    ></input>
+                    />
                     {formik.errors.cpf && formik.touched.cpf ? (
                       <div className={styles.msgError}>{formik.errors.cpf}</div>
                     ) : null}
@@ -269,9 +274,9 @@ const CadastroUsuarios = props => {
                       id=""
                       placeholder="(XX) XXXX-XXXX"
                       options={{
-                        blocks: [5, 3],
-                        delimiter: "-",
-                        numericOnly: true
+                        blocks: [0,2,4,4],
+                        delimiters: ["(",") ","-"],
+                        numericOnly: true,
                       }}
                       value={formik.values.telefone}
                       onChange={formik.handleChange}
@@ -290,7 +295,11 @@ const CadastroUsuarios = props => {
                       name="celular"
                       id=""
                       placeholder="(XX) 9XXXX-XXXX"
-                      options={{ phone: true, phoneRegionCode: "BR" }}
+                      options={{
+                        blocks: [0,2,5,4],
+                        delimiters: ["(",") ","-"],
+                        numericOnly: true,
+                      }}
                       value={formik.values.celular}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -304,21 +313,25 @@ const CadastroUsuarios = props => {
                   </Col>
                   <Col>
                     <label for="">WhatsApp:</label>
-                    <Cleave
-                      name="whatsapp"
-                      id=""
-                      options={{ phone: true, phoneRegionCode: "BR" }}
-                      value={formik.values.whatsapp}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      autoComplete="off"
-                      placeholder="(XX) 9XXXX-XXXX"
-                    />
-                    {formik.errors.whatsapp && formik.touched.whatsapp ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.whatsapp}
-                      </div>
-                    ) : null}
+                        <Cleave
+                        name="whatsapp"
+                        id=""
+                        options={{
+                          blocks: [0,2,4,4],
+                          delimiters: ["(",") 9","-"],
+                          numericOnly: true,
+                        }}
+                        value={formik.values.whatsapp}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        autoComplete="off"
+                        placeholder="(XX) 9XXXX-XXXX"
+                        />
+                        {formik.errors.whatsapp && formik.touched.whatsapp ? (
+                        <div className={styles.msgError}>
+                            {formik.errors.whatsapp}
+                        </div>
+                        ) : null}
                   </Col>
                   <Col>
                     <Form>
