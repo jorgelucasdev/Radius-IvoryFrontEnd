@@ -93,10 +93,10 @@ const CadastroClientes = props => {
         <form onSubmit={formik.handleSubmit}>
           <div className={styles.conteudoSection}>
             <Card className={styles.novoCliente}>
-              <Card.Header as="h5" className={styles.headerNovoCliente}>
+              <Card.Header as="h5" className={styles.header}>
                 Novo Cliente
               </Card.Header>
-              <Card.Body className={styles.bodyNovoCliente}>
+              <Card.Body className={styles.body}>
                 <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">CNPJ:</label>
@@ -264,58 +264,50 @@ const CadastroClientes = props => {
                     ) : null}
                   </Col>
                   <Col>
-                    <Form>
-                      <Form.Group controlId="formEmail">
-                        <Form.Label>Data cadastro:</Form.Label>
-                        <DatePicker
-                          showPopperArrow={false}
-                          dateFormat="dd/MM/yyyy"
-                          selected={formik.values.dataCadastro}
-                          locale="pt-BR"
-                          name="dataCadastro"
-                          onChange={date => {
-                            formik.setFieldValue("dataCadastro", date);
-                          }}
-                          onBlur={formik.handleBlur}
-                          autoComplete="off"
-                          className={styles.calendario}
-                        />
-                        <i className={"icon-calendario"}></i>
-                        {formik.errors.dataCadastro &&
-                        formik.touched.dataCadastro ? (
-                          <div className={styles.msgError}>
-                            {formik.errors.dataCadastro}
-                          </div>
-                        ) : null}
-                      </Form.Group>
-                    </Form>
+                    <label>Data cadastro:</label>
+                    <DatePicker
+                      showPopperArrow={false}
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataCadastro}
+                      locale="pt-BR"
+                      name="dataCadastro"
+                      onChange={date => {
+                        formik.setFieldValue("dataCadastro", date);
+                      }}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      className={styles.calendario}
+                    />
+                    <i className={"icon-calendario"}></i>
+                    {formik.errors.dataCadastro &&
+                    formik.touched.dataCadastro ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.dataCadastro}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
-                    <Form>
-                      <Form.Group controlId="formEmail">
-                        <Form.Label>Encerramento contrato:</Form.Label>
-                        <DatePicker
-                          showPopperArrow={false}
-                          dateFormat="dd/MM/yyyy"
-                          selected={formik.values.dataContrato}
-                          locale="pt-BR"
-                          name="dataContrato"
-                          onChange={date => {
-                            formik.setFieldValue("dataContrato", date);
-                          }}
-                          onBlur={formik.handleBlur}
-                          autoComplete="off"
-                          className={styles.calendario}
-                        />
-                        <i className={"icon-calendario"}></i>
-                        {formik.errors.dataContrato &&
-                        formik.touched.dataContrato ? (
-                          <div className={styles.msgError}>
-                            {formik.errors.dataContrato}
-                          </div>
-                        ) : null}
-                      </Form.Group>
-                    </Form>
+                    <label>Encerramento contrato:</label>
+                    <DatePicker
+                      showPopperArrow={false}
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataContrato}
+                      locale="pt-BR"
+                      name="dataContrato"
+                      onChange={date => {
+                        formik.setFieldValue("dataContrato", date);
+                      }}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      className={styles.calendario}
+                    />
+                    <i className={"icon-calendario"}></i>
+                    {formik.errors.dataContrato &&
+                    formik.touched.dataContrato ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.dataContrato}
+                      </div>
+                    ) : null}
                   </Col>
                 </Row>
                 <Row className={styles.rowButtons}>
@@ -324,7 +316,14 @@ const CadastroClientes = props => {
                   </Col>
                   <Col className={styles.buttons}>
                     <Col>
-                      <Button variant="secondary">Cancelar</Button>
+                      <Button
+                        variant="secondary"
+                        onClick={() =>
+                          history.push("/Cadastro/ListagemClientes")
+                        }
+                      >
+                        Cancelar
+                      </Button>
                     </Col>
                     <Col>
                       <Button variant="primary">Salvar</Button>

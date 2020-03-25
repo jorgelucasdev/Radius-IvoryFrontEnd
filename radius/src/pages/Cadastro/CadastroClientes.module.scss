@@ -12,13 +12,13 @@
     flex-direction: row;
 
     .conteudoSection {
-      margin: 0 0 20px 0;
+      margin: 0 0 20px 0px;
 
       .novoCliente {
         border-radius: 10px;
         width: 820px;
 
-        .headerNovoCliente {
+        .header {
           border-radius: 10px 10px 0px 0px;
           background: #262626;
           padding: 18px 20px;
@@ -27,7 +27,7 @@
           font-weight: bold;
         }
 
-        .bodyNovoCliente {
+        .body {
           padding: 18px 20px;
 
           .rowInputs {
