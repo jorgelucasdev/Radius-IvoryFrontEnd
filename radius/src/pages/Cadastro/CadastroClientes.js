@@ -324,11 +324,11 @@ const CadastroClientes = props => {
                           history.push("/Cadastro/ListagemClientes")
                         }
                       >
-                        Cancelar
+                        CANCELAR
                       </Button>
                     </div>
-                    <div>
-                      <Button variant="primary">Salvar</Button>
+                    <div className={styles.btnSalvar}>
+                      <Button variant="primary">SALVAR</Button>
                     </div>
                   </Col>
                 </Row>

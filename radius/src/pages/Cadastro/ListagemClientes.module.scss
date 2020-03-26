@@ -57,6 +57,7 @@
                 font-size: 14px;
                 padding: 4px 8px;
                 margin: 40px 0;
+                background-color: $color;
               }
 
               .calendario {
@@ -117,6 +118,22 @@
             }
           }
         }
+      }
+
+      .btnVoltar{
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0px;
+        
+
+        button{
+          border-radius: 10px;
+          font-size: 14px;
+          width: 150px;
+          height: 40px;
+          background-color: $color;
+        }
+      
       }
     }
 

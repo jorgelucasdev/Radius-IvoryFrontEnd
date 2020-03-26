@@ -131,7 +131,7 @@ const ListagemClientes = () => {
       email: "3mw@3mw.com.br",
       dataCadastro: "05/05/0005",
       status: "Pendente"
-    },
+    }
   ]);
 
   const columns = React.useMemo(
@@ -153,7 +153,7 @@ const ListagemClientes = () => {
         Header: "Status",
         accessor: "status",
         sortType: "basic"
-      },
+      }
     ],
     []
   );
@@ -237,6 +237,15 @@ const ListagemClientes = () => {
             <div className={styles.tabela}>
               <Table columns={columns} data={data} />
             </div>
+          </div>
+
+          <div className={styles.btnVoltar}>
+            <Button
+              variant="primary"
+              onClick={() => history.push("/")}
+            >
+              VOLTAR
+            </Button>
           </div>
         </div>
       </div>
