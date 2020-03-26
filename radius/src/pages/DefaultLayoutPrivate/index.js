@@ -62,7 +62,7 @@ function DefaultLayoutPublic(props) {
               <ul>
                 <li><a href="#">Sistema</a></li>
                 <li><a href="/Cadastro/ListagemClientes">Cliente</a></li>
-                <li><a href="#">Usuário</a></li>
+                <li><a href="/Cadastro/ListagemUsuarios">Usuário</a></li>
                 <li><a href="#">Funcionário</a></li>
               </ul>
             </li>
