@@ -36,7 +36,7 @@ function Table({ data, columns }) {
               {
                 /* console.log(column); */
               }
-              return !["email"].includes(column.id) ? (
+              return !["email", "iconEditar"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
@@ -100,37 +100,67 @@ const ListagemClientes = () => {
       nomeFantasia: "Ivory",
       email: "ivory@ivory.com.br",
       dataCadastro: "00/00/0000",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "VLI",
       email: "vli@vli.com.br",
       dataCadastro: "01/01/0001",
-      status: "Cancelado"
+      status: "Cancelado",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Unilever",
       email: "unilever@unilever.com.br",
       dataCadastro: "02/02/0002",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Ale",
       email: "ale@ale.com.br",
       dataCadastro: "03/03/0003",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Prefeitura de Betim",
       email: "prfBetim@prfBetim.com.br",
       dataCadastro: "04/04/0004",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "3MW",
       email: "3mw@3mw.com.br",
       dataCadastro: "05/05/0005",
-      status: "Pendente"
+      status: "Pendente",
+      iconEditar: (
+        <button className={styles.btnEditar}>
+          <i className={"icon-editar"}></i>
+        </button>
+      )
     }
   ]);
 
@@ -138,11 +168,13 @@ const ListagemClientes = () => {
     () => [
       {
         Header: "Nome Fantasia",
-        accessor: "nomeFantasia"
+        accessor: "nomeFantasia",
+        sortType: "basic"
       },
       {
         Header: "E-mail",
-        accessor: "email"
+        accessor: "email",
+        sortType: "basic"
       },
       {
         Header: "Data Cadastro",
@@ -153,6 +185,10 @@ const ListagemClientes = () => {
         Header: "Status",
         accessor: "status",
         sortType: "basic"
+      },
+      {
+        Header: "",
+        accessor: "iconEditar"
       }
     ],
     []
@@ -240,10 +276,7 @@ const ListagemClientes = () => {
           </div>
 
           <div className={styles.btnVoltar}>
-            <Button
-              variant="primary"
-              onClick={() => history.push("/")}
-            >
+            <Button variant="primary" onClick={() => history.push("/")}>
               VOLTAR
             </Button>
           </div>

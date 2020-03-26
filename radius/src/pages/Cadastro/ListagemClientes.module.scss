@@ -73,7 +73,7 @@
       }
 
       .listaClientes {
-        margin: 20px 0 0 0 ;
+        margin: 20px 0 0 0;
         .header {
           border-radius: 10px 10px 0px 0px;
           background: #262626;
@@ -117,23 +117,27 @@
               padding: 15px 0;
             }
           }
+
+          .btnEditar {
+            border-style: unset;
+            background: white;
+            outline: none;
+          }
         }
       }
 
-      .btnVoltar{
+      .btnVoltar {
         display: flex;
         justify-content: flex-end;
         margin: 20px 0px;
-        
 
-        button{
+        button {
           border-radius: 10px;
           font-size: 14px;
           width: 150px;
           height: 40px;
           background-color: $color;
         }
-      
       }
     }
 
