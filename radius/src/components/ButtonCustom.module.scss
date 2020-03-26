@@ -1,4 +1,4 @@
-@import "../variaveis.scss"; 
+@import "../variaveis.scss";
 
 .conteudoButton {
   .header {
@@ -48,6 +48,18 @@
             font-size: 12px;
             color: $color;
             text-align: center;
+          }
+        }
+      }
+
+      .button:hover {
+        background-color: $color;
+
+        .icon,
+        .desc {
+          color: #fff;
+          span {
+            color: #fff;
           }
         }
       }
