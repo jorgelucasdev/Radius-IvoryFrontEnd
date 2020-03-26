@@ -78,14 +78,16 @@
 
             .buttons {
               display: flex;
+              justify-content: space-around;
               padding: 0px;
-              margin: 0px;
+              width: 100%;
 
               button {
                 border-radius: 10px;
                 width: 172px;
                 height: 35px;
                 padding: 0px;
+                margin: 0 15px 0;
               }
             }
           }

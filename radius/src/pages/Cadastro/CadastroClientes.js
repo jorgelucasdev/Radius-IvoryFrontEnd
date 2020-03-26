@@ -87,7 +87,9 @@ const CadastroClientes = props => {
   });
   return (
     <div className={styles.principal}>
-      <h1>Cadastro > Clientes > <span>Novo Cliente</span></h1>
+      <h1>
+        Cadastro > Clientes > <span>Novo Cliente</span>
+      </h1>
 
       <div className={styles.conteudo}>
         <form onSubmit={formik.handleSubmit}>
@@ -315,7 +317,7 @@ const CadastroClientes = props => {
                     <span>* Todos os campos são obrigatórios</span>
                   </Col>
                   <Col className={styles.buttons}>
-                    <Col>
+                    <div>
                       <Button
                         variant="secondary"
                         onClick={() =>
@@ -324,10 +326,10 @@ const CadastroClientes = props => {
                       >
                         Cancelar
                       </Button>
-                    </Col>
-                    <Col>
+                    </div>
+                    <div>
                       <Button variant="primary">Salvar</Button>
-                    </Col>
+                    </div>
                   </Col>
                 </Row>
               </Card.Body>
