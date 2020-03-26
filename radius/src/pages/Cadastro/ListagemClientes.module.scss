@@ -6,7 +6,7 @@
     padding: 25px 0;
     margin: 0px;
 
-    span{
+    span {
       color: $color;
     }
   }
@@ -17,10 +17,11 @@
 
     .conteudoSection {
       margin: 0 0 20px 0px;
+
       .filtroClientes {
         .filtro {
           border-radius: 10px;
-          width: 820px;
+          width: 100%;
 
           .header {
             border-radius: 10px 10px 0px 0px;
@@ -71,6 +72,51 @@
       }
 
       .listaClientes {
+        margin: 20px 0 0 0 ;
+        .header {
+          border-radius: 10px 10px 0px 0px;
+          background: #262626;
+          color: #ffff;
+          font-size: 18px;
+          font-weight: bold;
+          padding: 18px 20px;
+          margin: 0;
+        }
+
+        .tabela {
+          padding: 0 20px;
+          background: white;
+          border-radius: 0 0 10px 10px;
+          table {
+            width: 100%;
+          }
+
+          th {
+            padding: 15px 0;
+            text-align: center;
+            color: $color;
+            border-bottom: 1px solid rgba(151, 186, 219, 0.5);
+            font-size: 14px;
+            .setas {
+              margin: 0 0 0 7px;
+              .setaCima {
+                vertical-align: text-top;
+                font-size: 7px;
+              }
+              .setaBaixo {
+                vertical-align: text-bottom;
+                font-size: 7px;
+              }
+            }
+          }
+          tr {
+            text-align: center;
+            td {
+              font-size: 14px;
+              padding: 15px 0;
+            }
+          }
+        }
       }
     }
 

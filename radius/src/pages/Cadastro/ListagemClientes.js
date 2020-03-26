@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ListagemClientes.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useTable, useSortBy } from "react-table";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,6 +11,77 @@ import { useFormik } from "formik";
 import ButtonCustom from "../../components/ButtonCustom";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+
+function Table({ data, columns }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = useTable(
+    {
+      columns,
+      data
+    },
+    useSortBy
+  );
+
+  return (
+    <table {...getTableProps()}>
+      <thead>
+        {headerGroups.map(headerGroup => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map(column => {
+              {
+                /* console.log(column); */
+              }
+              return !["email"].includes(column.id) ? (
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+
+                  <span className={styles.setas}>
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <i
+                          className={[styles.setaCima, "icon-setacima"].join(
+                            " "
+                          )}
+                        />
+                      ) : (
+                        <i
+                          className={[styles.setaBaixo, "icon-setabaixo"].join(
+                            " "
+                          )}
+                        />
+                      )
+                    ) : (
+                      <i className={"icon-setasduplas"} />
+                    )}
+                  </span>
+                </th>
+              ) : (
+                <th>{column.render("Header")}</th>
+              );
+            })}
+          </tr>
+        ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map(cell => {
+                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+}
 
 const ListagemClientes = () => {
   registerLocale("pt-BR", ptBR);
@@ -23,9 +95,74 @@ const ListagemClientes = () => {
     }
   });
 
+  const data = React.useMemo(() => [
+    {
+      nomeFantasia: "Ivory",
+      email: "ivory@ivory.com.br",
+      dataCadastro: "00/00/0000",
+      status: "Ativo"
+    },
+    {
+      nomeFantasia: "VLI",
+      email: "vli@vli.com.br",
+      dataCadastro: "01/01/0001",
+      status: "Cancelado"
+    },
+    {
+      nomeFantasia: "Unilever",
+      email: "unilever@unilever.com.br",
+      dataCadastro: "02/02/0002",
+      status: "Ativo"
+    },
+    {
+      nomeFantasia: "Ale",
+      email: "ale@ale.com.br",
+      dataCadastro: "03/03/0003",
+      status: "Ativo"
+    },
+    {
+      nomeFantasia: "Prefeitura de Betim",
+      email: "prfBetim@prfBetim.com.br",
+      dataCadastro: "04/04/0004",
+      status: "Ativo"
+    },
+    {
+      nomeFantasia: "3MW",
+      email: "3mw@3mw.com.br",
+      dataCadastro: "05/05/0005",
+      status: "Pendente"
+    },
+  ]);
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Nome Fantasia",
+        accessor: "nomeFantasia"
+      },
+      {
+        Header: "E-mail",
+        accessor: "email"
+      },
+      {
+        Header: "Data Cadastro",
+        accessor: "dataCadastro",
+        sortType: "basic"
+      },
+      {
+        Header: "Status",
+        accessor: "status",
+        sortType: "basic"
+      },
+    ],
+    []
+  );
+
   return (
     <div className={styles.principal}>
-      <h1>Cadastro > <span>Clientes</span></h1>
+      <h1>
+        Cadastro > <span>Clientes</span>
+      </h1>
 
       <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
@@ -95,7 +232,12 @@ const ListagemClientes = () => {
             </Card>
           </div>
 
-          <div className={styles.listaClientes}></div>
+          <div className={styles.listaClientes}>
+            <p className={styles.header}>Clientes</p>
+            <div className={styles.tabela}>
+              <Table columns={columns} data={data} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
