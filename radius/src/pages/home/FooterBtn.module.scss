@@ -1,0 +1,35 @@
+.footerBtn{
+    display: flex;
+  
+    .btn{
+        font-size: 30px;
+        margin: 25px 25px 0 0;
+        height: 90px;
+        width:  95px;
+        border-radius: 8px;
+        border-style: unset;
+        background: white;
+        outline: none;
+        
+        .icon{
+            color: #2E75B4;
+            p{
+                font-size: 10px;
+                margin: 3px 0 0 0;
+            }
+        }
+    }
+    
+    .btn:hover{
+        background:  #2E75B4;
+       .icon{
+            color:  white;
+       }
+    }
+    .btn:active{
+        background: #81ACD3;
+       .icon{
+            color:  white;
+       }
+    }
+}

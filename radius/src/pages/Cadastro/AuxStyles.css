@@ -1,0 +1,37 @@
+@import "../../variaveis.scss";
+
+.icon-calendario {
+  position: absolute;
+  top: 46px;
+  right: 22px;
+  color: #2e75b4;
+}
+
+.icon-novochamado {
+  color: #2e75b4;
+}
+
+.icon-listagemclientes {
+  color: #2e75b4;
+}
+
+.icon-editar {
+  color: #2e75b4;
+}
+
+.select__control {
+  display: flex;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2e75b6;
+  border-radius: 10px;
+  height: 35px;
+}
+
+.select__indicator-separator {
+  visibility: hidden;
+}
+
+.select__indicators {
+  padding: 0 5px 0 0;
+}

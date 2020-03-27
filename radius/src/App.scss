@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Baloo";
+  src: url("./assets/fonts/Baloo.woff2") format("woff2"),
+    url("./assets/fonts/Baloo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neutra Text";
+  src: url("./assets/fonts/NeutraText-Bold.woff2") format("woff2"),
+    url("./assets/fonts/NeutraText-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neutra Text";
+  src: url("./assets/fonts/NeutraText-BoldItalic.woff2") format("woff2"),
+    url("./assets/fonts/NeutraText-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neutra Text";
+  src: url("./assets/fonts/NeutraText-BookItalic.woff2") format("woff2"),
+    url("./assets/fonts/NeutraText-BookItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neutra Text";
+  src: url("./assets/fonts/NeutraText-Book.woff2") format("woff2"),
+    url("./assets/fonts/NeutraText-Book.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'home-icons';
+  src: url('./assets/fonts/home-icons.eot?51839475');
+  src: url('./assets/fonts/home-icons.eot?51839475#iefix') format('embedded-opentype'),
+       url('./assets/fonts/home-icons.woff2?51839475') format('woff2'),
+       url('./assets/fonts/home-icons.woff?51839475') format('woff'),
+       url('./assets/fonts/home-icons.ttf?51839475') format('truetype'),
+       url('./assets/fonts/home-icons.svg?51839475#home-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "home-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  // width: 1em;
+  // margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  // line-height: 1em;
+  // margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+ 
+.icon-calendario:before { content: '\e800'; } /* '' */
+.icon-baseconhecimento:before { content: '\e81b'; } /* '' */
+.icon-graficos:before { content: '\e802'; } /* '' */
+.icon-novochamado:before { content: '\e803'; } /* '' */
+.icon-setabaixo:before { content: '\e804'; } /* '' */
+.icon-setacima:before { content: '\e805'; } /* '' */
+.icon-setasduplas:before { content: '\e806'; } /* '' */
+.icon-logoff:before { content: '\e807'; } /* '' */
+.icon-pesquisa:before { content: '\e808'; } /* '' */
+.icon-sino:before { content: '\e809'; } /* '' */
+.icon-user:before { content: '\e80a'; } /* '' */
+.icon-listagemclientes:before { content: '\e816'; } /* '' */
+.icon-editar:before { content: '\e817'; } /* '' */
+.icon-excluir:before { content: '\e818'; } /* '' */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: "Montserrat";
+  font-weight: normal;
+  img {
+    max-width: 100%;
+  }
+}
