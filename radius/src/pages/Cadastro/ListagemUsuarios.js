@@ -12,6 +12,7 @@ import { useTable, useSortBy } from "react-table";
 import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
+import Select from "react-select";
 
 const ListagemUsuarios = props => {
   const data = React.useMemo(() => [
@@ -77,6 +78,32 @@ const ListagemUsuarios = props => {
     }
   ]);
 
+  const StatusOptions = [
+    { value: "ativo", label: "Ativo" },
+    { value: "pendente", label: "Pendente" },
+    { value: "cancelado", label: "Cancelado" },
+    { value: "concluido", label: "Concluido" }
+  ];
+
+  const DropdownIndicator = props => {
+    return <i className={[styles.arrow, "icon-setasduplas"].join(" ")}></i>;
+  };
+
+  const customStyles = {
+    menu: (provided, state) => ({
+      ...provided
+    }),
+
+    control: (_, { selectProps: { width } }) => ({})
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      dataInicial: "",
+      dataFinal: ""
+    }
+  });
+
   const columns = React.useMemo(
     () => [
       {
@@ -112,7 +139,8 @@ const ListagemUsuarios = props => {
   );
 
   return (
-    <div>{/*Div provisoria*/}
+    <div>
+      {/*Div provisoria*/}
       <h1>Home > Cadastro > Usuário</h1>
       <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
@@ -137,6 +165,72 @@ const ListagemUsuarios = props => {
         </div>
 
         <div className={styles.conteudoSection}>
+          {/* FiltroUsuarios */}
+          <div className={styles.conteudoFiltros}>
+          <Card className={styles.busca}>
+                <Card.Header as="h5" className={styles.headerBusca}>Buscar Usuários</Card.Header>
+                <Card.Body className={styles.bodyBusca}>
+
+                    <Row className={styles.rowBusca}>
+
+                        <Col className={styles.info}>
+                            <label>Nome de Usuário</label>
+                            <input className={styles.input} />
+                        </Col>
+
+                        <Col className={styles.infoData}>
+                            <label className={styles.labelData}>Período de Início</label>
+                            <DatePicker
+                                name="dataInicial"
+                                dateFormat="dd/MM/yyyy"
+                                selected={formik.values.dataInicial}
+                                locale="pt-BR"
+                                showPopperArrow={false}
+                                onChange={date => {
+                                    formik.setFieldValue("dataInicial", date);
+                                }}
+                                className={styles.data}
+                            />
+                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
+                        </Col>
+
+                        <Col className={styles.infoData}>
+                            <label className={styles.labelData}>Período de Fim</label>
+                            <DatePicker
+                                name="dataFinal"
+                                dateFormat="dd/MM/yyyy"
+                                selected={formik.values.dataFinal}
+                                locale="pt-BR"
+                                showPopperArrow={false}
+                                onChange={date => {
+                                    formik.setFieldValue("dataFinal", date);
+                                }}
+                                className={styles.data}               
+                            />
+                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
+                        </Col>
+
+                        <Col  className={styles.info}>
+                            <label>Status</label>
+                            <Select placeholder="" classNamePrefix={'select'}
+                                options={StatusOptions} styles={customStyles}
+                                components={{ DropdownIndicator }} 
+                            />
+                        </Col>
+
+
+                        <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
+                            <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
+                        </Col>
+
+                    </Row>
+
+                </Card.Body>
+            </Card>
+            </div>                
+
+
+          {/* listaUsuarios */}
           <Card className={styles.listaUsuarios}>
             <Card.Header as="h5" className={styles.headerLista}>
               Usuários
@@ -145,6 +239,8 @@ const ListagemUsuarios = props => {
               <Table columns={columns} data={data} />
             </Card.Body>
           </Card>
+
+          
         </div>
       </div>
     </div> //Div provisoria
