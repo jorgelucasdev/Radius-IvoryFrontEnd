@@ -7,14 +7,20 @@ import SelectBox from "../../components/SelectBox";
 import Cleave from "cleave.js/react";
 import CleavePhone from "cleave.js/dist/addons/cleave-phone.br";
 import DatePicker, { registerLocale } from "react-datepicker";
+import ButtonCustom from "../../components/ButtonCustom";
 import ptBR from "date-fns/locale/pt-BR";
 import { useTable, useSortBy } from "react-table";
 import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
 import Select from "react-select";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 const ListagemUsuarios = props => {
+
+  const history = useHistory();
+
   const data = React.useMemo(() => [
     {
       nome: "-",
@@ -141,27 +147,15 @@ const ListagemUsuarios = props => {
   return (
     <div>
       {/*Div provisoria*/}
-      <h1>Home > Cadastro > Usuário</h1>
+      <h1>Home > Cadastro > <span>Usuário</span></h1>
       <div className={styles.conteudo}>
-        <div className={styles.conteudoAside}>
-          <Card className={styles.usuarios}>
-            <Card.Header as="h5" className={styles.headerUsuarios}>
-              Novo Usuário
-            </Card.Header>
-            <Card.Body className={styles.bodyCadastroUsuarios}>
-              <a href="/Cadastro/CadastroUsuarios" className={styles.button}>
-                <div className={styles.icon}>
-                  <i className={"icon-novochamado"}></i>
-                </div>
-                <div className={styles.desc}>
-                  <span>
-                    CADASTRAR <br />
-                    USUÁRIO
-                  </span>
-                </div>
-              </a>
-            </Card.Body>
-          </Card>
+      <div className={styles.conteudoAside}>
+          <ButtonCustom
+            title={"Novo Usuário"}
+            icon={faPlusCircle}
+            desc={"CADASTRAR USUÁRIO"}
+            onClick={() => history.push("/Cadastro/CadastroUsuarios")}
+          ></ButtonCustom>
         </div>
 
         <div className={styles.conteudoSection}>
