@@ -1,3 +1,5 @@
+@import "./variaveis.scss";
+
 th::selection {
   background: transparent;
 }
@@ -8,26 +10,34 @@ th::selection {
   position: relative;
 }
 
+.react-datepicker-wrapper{
+  width: 100%;
+}
+
 .react-select-container {
   .react-select__control {
     border-radius: 10px;
     font-size: 14px;
     height: 35px;
     min-height: 35px;
+    border-color: $color;
 
-    .react-select__value-container {
-      display: contents;
+    .react-select__placeholder,
+    .react-select__single-value {
+      padding: 5px;
+    }
 
-      .react-select__placeholder,
-      .react-select__single-value {
-        padding: 5px;
+    .react-select__input {
+      input {
+        height: auto !important;
       }
     }
 
-    .react-select__indicators {
-      display: initial;
+    .react-select__dropdown-indicator,
+    .react-select__clear-indicator {
+      svg {
+        color: $color;
+      }
     }
   }
 }
-
-

@@ -29,7 +29,7 @@ $tamanhoSidebar: 250px;
         align-items: center;
         padding: 0;
         .iconMenu {
-          color: #2e75b4;
+          color: $color;
           width: 30px;
           height: 30px;
         }
@@ -64,12 +64,12 @@ $tamanhoSidebar: 250px;
           }
 
           span {
-            color: #2e75b4;
+            color: $color;
             font-size: 12px;
           }
 
           .iconUser {
-            color: #2e75b4;
+            color: $color;
             width: 25px;
             height: 20px;
             margin: 0 15px;
@@ -113,14 +113,14 @@ $tamanhoSidebar: 250px;
           text-decoration: none;
           box-shadow: 0 2px 3px 0 rgba(38, 38, 38, 0.25);
           padding: 8px 15px;
-          color: #2e75b4;
+          color: $color;
           .iconSeta {
             top: 13px;
             right: 15px;
             position: absolute;
           }
           &:hover {
-            background: #2e75b4;
+            background: $color;
             color: #fff;
           }
           & + ul {
@@ -153,7 +153,7 @@ $tamanhoSidebar: 250px;
   }
 
   .rodape {
-    background: #2e75b4;
+    background: $color;
     padding: 15px 0;
 
     .colRodape {

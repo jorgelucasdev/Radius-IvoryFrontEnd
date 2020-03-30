@@ -33,7 +33,7 @@ function DefaultLayoutPublic(props) {
               <div className={styles.divDireita}>
                
                 <i className={'icon-pesquisa'}></i>
-                <input type="text" placeholder="Pesquisar"></input>
+                <input type="search" placeholder="Pesquisar"></input>
 
                 <i className={'icon-sino'}></i>
                 <span>Bem vindo, João Silva</span>
@@ -61,7 +61,7 @@ function DefaultLayoutPublic(props) {
               <a href="#">Cadastro <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
               <ul>
                 <li><a href="#">Sistema</a></li>
-                <li><a href="/Cadastro/CadastroClientes">Cliente</a></li>
+                <li><a href="/Cadastro/ListagemClientes">Cliente</a></li>
                 <li><a href="/Cadastro/ListagemUsuarios">Usuário</a></li>
                 <li><a href="#">Funcionário</a></li>
               </ul>
