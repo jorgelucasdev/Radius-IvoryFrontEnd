@@ -151,7 +151,7 @@ const ListagemUsuarios = props => {
       <div className={styles.conteudo}>
       <div className={styles.conteudoAside}>
           <ButtonCustom
-            title={"Novo Usuário"}
+            title={"Novo Usuário"} 
             icon={faPlusCircle}
             desc={"CADASTRAR USUÁRIO"}
             onClick={() => history.push("/Cadastro/CadastroUsuarios")}
