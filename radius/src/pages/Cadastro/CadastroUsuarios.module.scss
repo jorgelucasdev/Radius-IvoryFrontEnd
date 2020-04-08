@@ -13,12 +13,16 @@
     display: flex;
     flex-direction: row;
 
+    form {
+      width: 100%;
+    }
+
     .conteudoSection {
       margin: 0 0 20px 0;
 
       .novoUsuario {
         border-radius: 10px;
-        width: 820px;
+        width: 100%;
 
         .headerNovoUsuario {
           border-radius: 10px 10px 0px 0px;

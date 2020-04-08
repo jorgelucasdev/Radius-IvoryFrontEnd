@@ -14,6 +14,7 @@ h1 {
 
   .conteudoSection {
     margin: 0 0 20px 0;
+    width: 100%;
     .conteudoFiltros {
       margin: 0 0 20px 0;
       .busca {
@@ -31,7 +32,7 @@ h1 {
           padding: 18px 20px;
           .rowBusca {
             .info {
-              font-size: 16px;
+              font-size: 14px;
               .input {
                 margin: 0 0 6px;
                 padding: 0 0 0 10px;
@@ -70,10 +71,11 @@ h1 {
               display: flex;
               flex-direction: column;
               position: relative;
-              font-size: 16px;
+              font-size: 14px;
               .data {
                 width: 100%;
                 height: 30px;
+                padding: 0 0 0 10px;
                 border-radius: 10px;
                 border-style: solid;
                 border-width: 1px;
@@ -93,9 +95,9 @@ h1 {
                 border-radius: 5px;
                 border-style: solid;
                 background-color: $color;
-                margin: 31px 0 0;
+                margin: 29px 0 0;
                 padding: 3px 6px;
-                font-size: 16px;
+                font-size: 14px;
               }
               .btnFiltrar:active {
                 background: #81acd3;
@@ -120,6 +122,7 @@ h1 {
       .bodyListaUsuarios {
         padding: 18px 20px;
         background: #ffff;
+        border-radius: 0 0 10px 10px;
 
         table {
           width: 100%;
@@ -157,10 +160,22 @@ h1 {
         }
       }
     }
+    .btnVoltar {
+      display: flex;
+      justify-content: flex-end;
+      margin: 20px 0px;
+      button {
+        border-radius: 10px;
+        font-size: 14px;
+        width: 150px;
+        height: 40px;
+        background-color: $color;
+      }
+    }
   }
   .conteudoAside {
     float: right;
     clear: both;
-    margin: 0 20px 20px;
+    margin: 0 20px 20px 0;
   }
 }
