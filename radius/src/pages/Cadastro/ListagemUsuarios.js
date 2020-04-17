@@ -149,7 +149,7 @@ const ListagemUsuarios = props => {
       {/*Div provisoria*/}
       <h1>Home > Cadastro > <span>Usuário</span></h1>
       <div className={styles.conteudo}>
-      <div className={styles.conteudoAside}>
+        <div className={styles.conteudoAside}>
           <ButtonCustom
             title={"Novo Usuário"} 
             icon={faPlusCircle}
@@ -161,67 +161,67 @@ const ListagemUsuarios = props => {
         <div className={styles.conteudoSection}>
           {/* FiltroUsuarios */}
           <div className={styles.conteudoFiltros}>
-          <Card className={styles.busca}>
-                <Card.Header as="h5" className={styles.headerBusca}>Buscar Usuários</Card.Header>
-                <Card.Body className={styles.bodyBusca}>
+            <Card className={styles.busca}>
+              <Card.Header as="h5" className={styles.headerBusca}>Buscar Usuários</Card.Header>
+              <Card.Body className={styles.bodyBusca}>
 
-                    <Row className={styles.rowBusca}>
+                <Row className={styles.rowBusca}>
 
-                        <Col className={styles.info}>
-                            <label>Nome de Usuário</label>
-                            <input className={styles.input} />
-                        </Col>
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                    <label>Nome de Usuário</label>
+                    <input className={styles.input} />
+                  </Col>
 
-                        <Col className={styles.infoData}>
-                            <label className={styles.labelData}>Período de Início</label>
-                            <DatePicker
-                                name="dataInicial"
-                                dateFormat="dd/MM/yyyy"
-                                selected={formik.values.dataInicial}
-                                locale="pt-BR"
-                                showPopperArrow={false}
-                                onChange={date => {
-                                    formik.setFieldValue("dataInicial", date);
-                                }}
-                                className={styles.data}
-                            />
-                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
-                        </Col>
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                    <label className={styles.labelData}>Período de Início</label>
+                    <DatePicker
+                      name="dataInicial"
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataInicial}
+                      locale="pt-BR"
+                      showPopperArrow={false}
+                      onChange={date => {
+                        formik.setFieldValue("dataInicial", date);
+                      }}
+                      className={styles.data}
+                    />
+                    <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
+                  </Col>
 
-                        <Col className={styles.infoData}>
-                            <label className={styles.labelData}>Período de Fim</label>
-                            <DatePicker
-                                name="dataFinal"
-                                dateFormat="dd/MM/yyyy"
-                                selected={formik.values.dataFinal}
-                                locale="pt-BR"
-                                showPopperArrow={false}
-                                onChange={date => {
-                                    formik.setFieldValue("dataFinal", date);
-                                }}
-                                className={styles.data}               
-                            />
-                             <i className={[styles.calendar ,'icon-calendario'].join(' ')}></i>
-                        </Col>
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                    <label className={styles.labelData}>Período de Fim</label>
+                    <DatePicker
+                      name="dataFinal"
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataFinal}
+                      locale="pt-BR"
+                      showPopperArrow={false}
+                      onChange={date => {
+                        formik.setFieldValue("dataFinal", date);
+                      }}
+                      className={styles.data}
+                    />
+                    <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
+                  </Col>
 
-                        <Col  className={styles.info}>
-                            <label>Status</label>
-                            <Select placeholder="" classNamePrefix={'select'}
-                                options={StatusOptions} styles={customStyles}
-                                components={{ DropdownIndicator }} 
-                            />
-                        </Col>
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                    <label>Status</label>
+                    <Select placeholder="" classNamePrefix={'select'}
+                      options={StatusOptions} styles={customStyles}
+                      components={{ DropdownIndicator }}
+                    />
+                  </Col>
 
 
-                        <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
-                            <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
-                        </Col>
+                  <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
+                    <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
+                  </Col>
 
-                    </Row>
+                </Row>
 
-                </Card.Body>
+              </Card.Body>
             </Card>
-            </div>                
+          </div>
 
 
           {/* listaUsuarios */}
@@ -234,7 +234,15 @@ const ListagemUsuarios = props => {
             </Card.Body>
           </Card>
 
-          
+          <div className={styles.btnVoltar}>
+            <Button 
+              variant="primary"
+              onClick={() => history.push("/")}
+            >
+              VOLTAR
+            </Button> 
+          </div>
+
         </div>
       </div>
     </div> //Div provisoria
@@ -278,20 +286,20 @@ function Table({ data, columns }) {
                           )}
                         />
                       ) : (
-                        <i
-                          className={[styles.setaBaixo, "icon-setabaixo"].join(
-                            " "
-                          )}
-                        />
-                      )
+                          <i
+                            className={[styles.setaBaixo, "icon-setabaixo"].join(
+                              " "
+                            )}
+                          />
+                        )
                     ) : (
-                      <i className={"icon-setasduplas"} />
-                    )}
+                        <i className={"icon-setasduplas"} />
+                      )}
                   </span>
                 </th>
               ) : (
-                <th>{column.render("Header")}</th>
-              );
+                  <th>{column.render("Header")}</th>
+                );
             })}
           </tr>
         ))}
