@@ -1,19 +1,19 @@
 {
-    "short_name": "Radius",
-    "name": "Radius",
+    "short_name": "radius",
+    "name": "radius",
     "icons": [
       {
-        "src": "favicon.ico",
+        "src": "logoR.ico",
         "sizes": "64x64 32x32 24x24 16x16",
         "type": "image/x-icon"
       },
       {
-        "src": "logo192.png",
+        "src": "logoR.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "logo512.png",
+        "src": "logoR.png",
         "type": "image/png",
         "sizes": "512x512"
       }

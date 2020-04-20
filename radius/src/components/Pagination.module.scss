@@ -1,0 +1,19 @@
+.pageNumbers {
+  text-align: right;
+  margin: 15px 0 0 0;
+  padding: 0 0 15px 0;
+  button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    margin: 0 0 0 10px;
+    color: #2e75b4;
+    outline: none;
+  }
+  button:active {
+    background: #2e75b4;
+    color: white;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ListagemClientes.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
-import { useTable, useSortBy } from "react-table";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,79 +8,10 @@ import "styled-components";
 import "./AuxStyles.css";
 import { useFormik } from "formik";
 import ButtonCustom from "../../components/ButtonCustom";
+import Table from '../../components/Table';
+import Pagination from "../../components/Pagination";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
-
-function Table({ data, columns }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
-  } = useTable(
-    {
-      columns,
-      data
-    },
-    useSortBy
-  );
-
-  return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => {
-              {
-                /* console.log(column); */
-              }
-              return !["email", "iconEditar"].includes(column.id) ? (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-
-                  <span className={styles.setas}>
-                    {column.isSorted ? (
-                      column.isSortedDesc ? (
-                        <i
-                          className={[styles.setaCima, "icon-setacima"].join(
-                            " "
-                          )}
-                        />
-                      ) : (
-                        <i
-                          className={[styles.setaBaixo, "icon-setabaixo"].join(
-                            " "
-                          )}
-                        />
-                      )
-                    ) : (
-                      <i className={"icon-setasduplas"} />
-                    )}
-                  </span>
-                </th>
-              ) : (
-                <th>{column.render("Header")}</th>
-              );
-            })}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-}
 
 const ListagemClientes = () => {
   registerLocale("pt-BR", ptBR);
@@ -91,8 +21,8 @@ const ListagemClientes = () => {
     enableReinitialize: true,
     initialValues: {
       dataCadastro: "",
-      dataEncerramento: ""
-    }
+      dataEncerramento: "",
+    },
   });
 
   const data = React.useMemo(() => [
@@ -105,7 +35,12 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
     },
     {
       nomeFantasia: "VLI",
@@ -116,7 +51,12 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
     },
     {
       nomeFantasia: "Unilever",
@@ -127,7 +67,12 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
     },
     {
       nomeFantasia: "Ale",
@@ -138,7 +83,12 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
     },
     {
       nomeFantasia: "Prefeitura de Betim",
@@ -149,7 +99,12 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
     },
     {
       nomeFantasia: "3MW",
@@ -160,8 +115,13 @@ const ListagemClientes = () => {
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
-      )
-    }
+      ),
+      iconExcluir: (
+        <button className={styles.btnExcluir}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      ),
+    },
   ]);
 
   const columns = React.useMemo(
@@ -169,27 +129,31 @@ const ListagemClientes = () => {
       {
         Header: "Nome Fantasia",
         accessor: "nomeFantasia",
-        sortType: "basic"
+        sortType: "basic",
       },
       {
         Header: "E-mail",
         accessor: "email",
-        sortType: "basic"
+        sortType: "basic",
       },
       {
         Header: "Data Cadastro",
         accessor: "dataCadastro",
-        sortType: "basic"
+        sortType: "basic",
       },
       {
         Header: "Status",
         accessor: "status",
-        sortType: "basic"
+        sortType: "basic",
       },
       {
         Header: "",
-        accessor: "iconEditar"
-      }
+        accessor: "iconEditar",
+      },
+      {
+        Header: "",
+        accessor: "iconExcluir",
+      },
     ],
     []
   );
@@ -235,7 +199,7 @@ const ListagemClientes = () => {
                       selected={formik.values.dataCadastro}
                       locale="pt-BR"
                       name="dataCadastro"
-                      onChange={date => {
+                      onChange={(date) => {
                         formik.setFieldValue("dataCadastro", date);
                       }}
                       autoComplete="off"
@@ -251,7 +215,7 @@ const ListagemClientes = () => {
                       selected={formik.values.dataEncerramento}
                       locale="pt-BR"
                       name="dataEncerramento"
-                      onChange={date => {
+                      onChange={(date) => {
                         formik.setFieldValue("dataEncerramento", date);
                       }}
                       autoComplete="off"
@@ -273,6 +237,10 @@ const ListagemClientes = () => {
             <div className={styles.tabela}>
               <Table columns={columns} data={data} />
             </div>
+          </div>
+
+          <div>
+            <Pagination></Pagination>
           </div>
 
           <div className={styles.btnVoltar}>

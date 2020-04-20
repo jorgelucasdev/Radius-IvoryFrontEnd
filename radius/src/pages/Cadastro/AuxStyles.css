@@ -19,6 +19,10 @@
   color: #2e75b4;
 }
 
+.icon-excluir{
+  color: red;
+}
+
 .select__control {
   display: flex;
   border-style: solid;
