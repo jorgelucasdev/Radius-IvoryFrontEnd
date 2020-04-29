@@ -1,0 +1,28 @@
+@import "../../variaveis.scss";
+
+.select__control {
+    display: flex;
+    border: solid 1px #2e75b6;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.select__valueContainer {
+    padding: 0 10px;
+}
+
+.select__indicator-separator {
+    visibility: hidden;
+}
+
+.select__indicators {
+    padding: 0 5px 0 0;
+}
+
+.BuscarChamados_data__2ycY1 {
+    padding: 0 0 0 8px;
+}
+
+.BuscarChamados_data__2ycY1:focus {
+    outline: none;
+}
