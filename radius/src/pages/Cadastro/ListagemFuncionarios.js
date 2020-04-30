@@ -168,7 +168,7 @@ const ListagemFuncionarios = props => {
                 <Row className={styles.rowBusca}>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-                    <label>Nome de Funcionário</label>
+                    <label>Nome do Funcionário</label>
                     <input className={styles.input} />
                   </Col>
 

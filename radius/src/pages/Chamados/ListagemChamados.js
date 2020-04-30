@@ -23,65 +23,75 @@ const ListagemChamados = props => {
 
   const data = React.useMemo(() => [
     {
-      nome: "-",
-      email: "-",
+      codigoChamado: "-",
+      nomeEmpresa: "-",
+      nomeProjeto: "-",
       dataInicio: "-",
       dataFim: "-",
+      responsavel: "-",
       status: "-",
-      iconEditar: (
+      iconDetalhes: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
       )
     },
     {
-      nome: "-",
-      email: "-",
+      codigoChamado: "-",
+      nomeEmpresa: "-",
+      nomeProjeto: "-",
       dataInicio: "-",
       dataFim: "-",
+      responsavel: "-",
       status: "-",
-      iconEditar: (
+      iconDetalhes: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
       )
     },
     {
-      nome: "-",
-      email: "-",
+      codigoChamado: "-",
+      nomeEmpresa: "-",
+      nomeProjeto: "-",
       dataInicio: "-",
       dataFim: "-",
+      responsavel: "-",
       status: "-",
-      iconEditar: (
+      iconDetalhes: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
       )
     },
     {
-      nome: "-",
-      email: "-",
+      codigoChamado: "-",
+      nomeEmpresa: "-",
+      nomeProjeto: "-",
       dataInicio: "-",
       dataFim: "-",
+      responsavel: "-",
       status: "-",
-      iconEditar: (
+      iconDetalhes: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
       )
     },
     {
-      nome: "-",
-      email: "-",
+      codigoChamado: "-",
+      nomeEmpresa: "-",
+      nomeProjeto: "-",
       dataInicio: "-",
       dataFim: "-",
+      responsavel: "-",
       status: "-",
-      iconEditar: (
+      iconDetalhes: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
         </button>
       )
-    }
+    },
   ]);
 
   const StatusOptions = [
@@ -113,32 +123,42 @@ const ListagemChamados = props => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Nome",
-        accessor: "nome",
+        Header: "Código do Chamado",
+        accessor: "codigoChamado",
         sortType: "basic"
       },
       {
-        Header: "E-mail",
-        accessor: "email",
+        Header: "Nome da Empresa",
+        accessor: "nomeEmpresa",
         sortType: "basic"
       },
       {
-        Header: "Data de Início",
+        Header: "Nome do Projeto",
+        accessor: "nomeProjeto",
+        sortType: "basic"
+      },
+      {
+        Header: "Data de Início do Chamado",
         accessor: "dataInicio",
         sortType: "basic"
       },
       {
-        Header: "Data de Fim",
+        Header: "Data de Fim do Projeto",
         accessor: "dataFim",
         sortType: "basic"
       },
       {
+        Header: "Responsável",
+        accessor: "responsavel",
+        sortType: "basic"
+      },
+      {
         Header: "Status",
-        accessor: "status"
+        accessor: "status",
       },
       {
         Header: "",
-        accessor: "iconEditar"
+        accessor: "iconDetalhes"
       }
     ],
     []
@@ -147,14 +167,14 @@ const ListagemChamados = props => {
   return (
     <div>
       {/*Div provisoria*/}
-      <h1>Home > Cadastro > <span>Usuário</span></h1>
+      <h1>Home > <span>Chamados</span></h1>
       <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
           <ButtonCustom
-            title={"Novo Usuário"} 
+            title={"Novo Chamado"} 
             icon={faPlusCircle}
-            desc={"CADASTRAR USUÁRIO"}
-            onClick={() => history.push("/Cadastro/CadastroUsuarios")}
+            desc={"CADASTRAR CHAMADO"}
+            onClick={() => history.push("#")}
           ></ButtonCustom>
         </div>
 
@@ -162,18 +182,28 @@ const ListagemChamados = props => {
           {/* FiltroUsuarios */}
           <div className={styles.conteudoFiltros}>
             <Card className={styles.busca}>
-              <Card.Header as="h5" className={styles.headerBusca}>Buscar Usuários</Card.Header>
+              <Card.Header as="h5" className={styles.headerBusca}>Buscar Chamados</Card.Header>
               <Card.Body className={styles.bodyBusca}>
 
                 <Row className={styles.rowBusca}>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-                    <label>Nome de Usuário</label>
+                    <label>Empresa</label>
+                    <input className={styles.input} />
+                  </Col>
+
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                    <label>CNPJ</label>
+                    <input className={styles.input} />
+                  </Col>
+
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                    <label>Nome do Projeto</label>
                     <input className={styles.input} />
                   </Col>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
-                    <label className={styles.labelData}>Período de Início</label>
+                    <label className={styles.labelData}>Período de Inclusão</label>
                     <DatePicker
                       name="dataInicial"
                       dateFormat="dd/MM/yyyy"
@@ -189,7 +219,7 @@ const ListagemChamados = props => {
                   </Col>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
-                    <label className={styles.labelData}>Período de Fim</label>
+                    <label className={styles.labelData}>Período de Encerramento</label>
                     <DatePicker
                       name="dataFinal"
                       dateFormat="dd/MM/yyyy"
@@ -203,15 +233,6 @@ const ListagemChamados = props => {
                     />
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
-
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-                    <label>Status</label>
-                    <Select placeholder="" classNamePrefix={'select'}
-                      options={StatusOptions} styles={customStyles}
-                      components={{ DropdownIndicator }}
-                    />
-                  </Col>
-
 
                   <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
                     <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
@@ -227,7 +248,7 @@ const ListagemChamados = props => {
           {/* listaUsuarios */}
           <Card className={styles.listaUsuarios}>
             <Card.Header as="h5" className={styles.headerLista}>
-              Usuários
+              Chamados
             </Card.Header>
             <Card.Body className={styles.bodyListaUsuarios}>
               <Table columns={columns} data={data} />
@@ -273,7 +294,7 @@ function Table({ data, columns }) {
               {
                 /* console.log(column); */
               }
-              return !["iconEditar"].includes(column.id) ? (
+              return !["iconDetalhes"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
