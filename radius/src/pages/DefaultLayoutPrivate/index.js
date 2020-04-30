@@ -50,11 +50,11 @@ function DefaultLayoutPublic(props) {
           <ul>
             <li><a href="/">Home</a></li>
             <li>
-              <a href="#">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
+              <a href="/Chamados/ListagemChamados">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
               <ul>
                 <li><a href="#">Novo</a></li>
-                <li><a href="#">Consulta</a></li>
+                <li><a href="/Chamados/ListagemChamados">Consulta</a></li>
               </ul>
             </li>
             <li>
@@ -63,7 +63,9 @@ function DefaultLayoutPublic(props) {
                 <li><a href="#">Sistema</a></li>
                 <li><a href="/Cadastro/ListagemClientes">Cliente</a></li>
                 <li><a href="/Cadastro/ListagemUsuarios">Usuário</a></li>
-                <li><a href="#">Funcionário</a></li>
+                <li><a href="/Cadastro/ListagemFuncionarios">Funcionário</a></li>
+                <li><a href="/Cadastro/ListagemProjetos">Projetos</a></li>
+                <li><a href="/Cadastro/ListagemCatalogo">Opções de Catálogo</a></li>
               </ul>
             </li>
             <li><a href="#">Gerenciamentos</a></li>
