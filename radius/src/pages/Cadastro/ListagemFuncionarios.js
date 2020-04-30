@@ -154,7 +154,7 @@ const ListagemFuncionarios = props => {
             title={"Novo Funcionário"} 
             icon={faPlusCircle}
             desc={"CADASTRAR FUNCIONÁRIO"}
-            onClick={() => history.push("#")}
+            onClick={() => history.push("/Cadastro/CadastroFuncionarios")}
           ></ButtonCustom>
         </div>
 
