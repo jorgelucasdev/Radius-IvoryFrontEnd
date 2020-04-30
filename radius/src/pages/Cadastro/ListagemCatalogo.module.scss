@@ -1,0 +1,181 @@
+@import "../../variaveis.scss";
+h1 {
+  font-size: 18px;
+  padding: 25px 0;
+  margin: 0px;
+  span {
+    color: $color;
+  }
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: row;
+
+  .conteudoSection {
+    margin: 0 0 20px 0;
+    width: 100%;
+    .conteudoFiltros {
+      margin: 0 0 20px 0;
+      .busca {
+        border-radius: 10px 10px 10px 10px;
+
+        .headerBusca {
+          border-radius: 10px 10px 0px 0px;
+          background: #262626;
+          padding: 18px 20px;
+          color: #ffff;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .bodyBusca {
+          padding: 18px 20px;
+          .rowBusca {
+            .info {
+              font-size: 14px;
+              .input {
+                margin: 0 0 6px;
+                padding: 0 0 0 10px;
+                width: 100%;
+                height: 30px;
+                border-radius: 10px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: $color;
+              }
+              .input:focus {
+                outline: none;
+              }
+              .selectContainer {
+                border-style: solid;
+                border-width: 1px;
+                border-color: $color;
+                border-radius: 10px;
+              }
+              .data {
+                width: 100%;
+                height: 30px;
+                border-radius: 10px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: $color;
+              }
+              .arrow {
+                color: #2e75b4;
+              }
+            }
+            .info p {
+              margin: 0 0 8px 0;
+            }
+            .infoData {
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              font-size: 14px;
+              .data {
+                width: 100%;
+                height: 30px;
+                padding: 0 0 0 10px;
+                border-radius: 10px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: $color;
+              }
+              .calendar {
+                position: absolute;
+                top: 35px;
+                right: 22px;
+                color: #2e75b4;
+              }
+            }
+            .infoBtn {
+              .btnFiltrar {
+                width: 100%;
+                height: 30px;
+                border-radius: 5px;
+                border-style: solid;
+                background-color: $color;
+                margin: 29px 0 0;
+                padding: 3px 6px;
+                font-size: 14px;
+              }
+              .btnFiltrar:active {
+                background: #81acd3;
+              }
+            }
+          }
+        }
+      }
+    }
+    .listaUsuarios {
+      border-radius: 10px;
+
+      .headerLista {
+        border-radius: 10px 10px 0px 0px;
+        background: #262626;
+        padding: 18px 20px;
+        color: #ffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .bodyListaUsuarios {
+        padding: 18px 20px;
+        background: #ffff;
+        border-radius: 0 0 10px 10px;
+
+        table {
+          width: 100%;
+        }
+        th {
+          padding: 15px 0;
+          color: #2e75b4;
+          border-bottom: 1px solid rgba(151, 186, 219, 0.5);
+          font-size: 16px;
+          .setas {
+            margin: 0 0 0 7px;
+            .setaCima {
+              vertical-align: text-top;
+              font-size: 7px;
+            }
+            .setaBaixo {
+              vertical-align: text-bottom;
+              font-size: 7px;
+            }
+          }
+        }
+        tr {
+          td {
+            font-size: 16px;
+            padding: 15px 0;
+          }
+        }
+        .editar {
+          color: #2e75b4;
+        }
+        .btnEditar {
+          border-style: unset;
+          background: white;
+          outline: none;
+        }
+      }
+    }
+    .btnVoltar {
+      display: flex;
+      justify-content: flex-end;
+      margin: 20px 0px;
+      button {
+        border-radius: 10px;
+        font-size: 14px;
+        width: 150px;
+        height: 40px;
+        background-color: $color;
+      }
+    }
+  }
+  .conteudoAside {
+    float: right;
+    clear: both;
+    margin: 0 20px 20px 0;
+  }
+}
