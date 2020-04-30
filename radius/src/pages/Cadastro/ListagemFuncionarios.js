@@ -25,7 +25,7 @@ const ListagemFuncionarios = props => {
     {
       nome: "-",
       email: "-",
-      dataInicio: "-",
+      dataCadastro: "-",
       dataFim: "-",
       status: "-",
       iconEditar: (
@@ -37,7 +37,7 @@ const ListagemFuncionarios = props => {
     {
       nome: "-",
       email: "-",
-      dataInicio: "-",
+      dataCadastro: "-",
       dataFim: "-",
       status: "-",
       iconEditar: (
@@ -49,7 +49,7 @@ const ListagemFuncionarios = props => {
     {
       nome: "-",
       email: "-",
-      dataInicio: "-",
+      dataCadastro: "-",
       dataFim: "-",
       status: "-",
       iconEditar: (
@@ -61,7 +61,7 @@ const ListagemFuncionarios = props => {
     {
       nome: "-",
       email: "-",
-      dataInicio: "-",
+      dataCadastro: "-",
       dataFim: "-",
       status: "-",
       iconEditar: (
@@ -73,7 +73,7 @@ const ListagemFuncionarios = props => {
     {
       nome: "-",
       email: "-",
-      dataInicio: "-",
+      dataCadastro: "-",
       dataFim: "-",
       status: "-",
       iconEditar: (
@@ -85,10 +85,10 @@ const ListagemFuncionarios = props => {
   ]);
 
   const StatusOptions = [
-    { value: "ativo", label: "Ativo" },
-    { value: "pendente", label: "Pendente" },
-    { value: "cancelado", label: "Cancelado" },
-    { value: "concluido", label: "Concluido" }
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" }
   ];
 
   const DropdownIndicator = props => {
@@ -123,8 +123,8 @@ const ListagemFuncionarios = props => {
         sortType: "basic"
       },
       {
-        Header: "Data de Início",
-        accessor: "dataInicio",
+        Header: "Data do Cadastro",
+        accessor: "dataCadastro",
         sortType: "basic"
       },
       {
@@ -147,14 +147,14 @@ const ListagemFuncionarios = props => {
   return (
     <div>
       {/*Div provisoria*/}
-      <h1>Home > Cadastro > <span>Usuário</span></h1>
+      <h1>Home > Cadastro > <span>Funcionário</span></h1>
       <div className={styles.conteudo}>
         <div className={styles.conteudoAside}>
           <ButtonCustom
-            title={"Novo Usuário"} 
+            title={"Novo Funcionário"} 
             icon={faPlusCircle}
-            desc={"CADASTRAR USUÁRIO"}
-            onClick={() => history.push("/Cadastro/CadastroUsuarios")}
+            desc={"CADASTRAR FUNCIONÁRIO"}
+            onClick={() => history.push("#")}
           ></ButtonCustom>
         </div>
 
@@ -162,13 +162,13 @@ const ListagemFuncionarios = props => {
           {/* FiltroUsuarios */}
           <div className={styles.conteudoFiltros}>
             <Card className={styles.busca}>
-              <Card.Header as="h5" className={styles.headerBusca}>Buscar Usuários</Card.Header>
+              <Card.Header as="h5" className={styles.headerBusca}>Buscar Funcionário</Card.Header>
               <Card.Body className={styles.bodyBusca}>
 
                 <Row className={styles.rowBusca}>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-                    <label>Nome de Usuário</label>
+                    <label>Nome de Funcionário</label>
                     <input className={styles.input} />
                   </Col>
 
@@ -227,7 +227,7 @@ const ListagemFuncionarios = props => {
           {/* listaUsuarios */}
           <Card className={styles.listaUsuarios}>
             <Card.Header as="h5" className={styles.headerLista}>
-              Usuários
+              Funcionários
             </Card.Header>
             <Card.Body className={styles.bodyListaUsuarios}>
               <Table columns={columns} data={data} />
