@@ -33,6 +33,7 @@ h1 {
           .rowBusca {
             .info {
               font-size: 14px;
+              margin: 0 0 10px 0;
               .input {
                 margin: 0 0 6px;
                 padding: 0 0 0 10px;
@@ -95,7 +96,7 @@ h1 {
                 border-radius: 5px;
                 border-style: solid;
                 background-color: $color;
-                margin: 29px 0 0;
+                margin: 10px 0 0;
                 padding: 3px 6px;
                 font-size: 14px;
               }
