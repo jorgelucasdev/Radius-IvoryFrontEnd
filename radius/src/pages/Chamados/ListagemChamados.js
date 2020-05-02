@@ -14,7 +14,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import "styled-components";
 import "./AuxStyles.css";
 import Select from "react-select";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 const ListagemChamados = props => {
@@ -32,7 +33,7 @@ const ListagemChamados = props => {
       status: "-",
       iconDetalhes: (
         <button className={styles.btnEditar}>
-          <i className={"icon-editar"}></i>
+          <FontAwesomeIcon icon={faInfoCircle} className={styles.detalhesIcon} />
         </button>
       )
     },
@@ -46,7 +47,7 @@ const ListagemChamados = props => {
       status: "-",
       iconDetalhes: (
         <button className={styles.btnEditar}>
-          <i className={"icon-editar"}></i>
+          <FontAwesomeIcon icon={faInfoCircle} className={styles.detalhesIcon} />
         </button>
       )
     },
@@ -60,7 +61,7 @@ const ListagemChamados = props => {
       status: "-",
       iconDetalhes: (
         <button className={styles.btnEditar}>
-          <i className={"icon-editar"}></i>
+          <FontAwesomeIcon icon={faInfoCircle} className={styles.detalhesIcon} />
         </button>
       )
     },
@@ -74,7 +75,7 @@ const ListagemChamados = props => {
       status: "-",
       iconDetalhes: (
         <button className={styles.btnEditar}>
-          <i className={"icon-editar"}></i>
+          <FontAwesomeIcon icon={faInfoCircle} className={styles.detalhesIcon} />
         </button>
       )
     },
@@ -88,7 +89,7 @@ const ListagemChamados = props => {
       status: "-",
       iconDetalhes: (
         <button className={styles.btnEditar}>
-          <i className={"icon-editar"}></i>
+          <FontAwesomeIcon icon={faInfoCircle} className={styles.detalhesIcon} />
         </button>
       )
     },
