@@ -17,7 +17,7 @@ const ListagemCatalogo = lazy(() => import("./pages/Cadastro/ListagemCatalogo"))
 const ListagemProjetos = lazy(() => import("./pages/Cadastro/ListagemProjetos"));
 const ListagemFuncionarios = lazy(() => import("./pages/Cadastro/ListagemFuncionarios"));
 const CadastroProjetos = lazy(() => import("./pages/Cadastro/CadastroProjetos"));
-const ListagemUsuarios = lazy(() => import("./pages/Cadastro/ListagemUsuarios"));
+
 
 export const routesPublic = {
   login: { path: "/login", component: Login },
@@ -34,6 +34,7 @@ export const routesPrivate = [
   { path: "/Cadastro/ListagemUsuarios", exact: true, component: ListagemUsuarios},
   { path: "/Cadastro/CadastroUsuarios", exact: true, component: CadastroUsuarios},
   { path: "/Cadastro/ListagemUsuarios", exact: true, component: ListagemUsuarios},
+  { path: "/Cadastro/CadastroProjetos", exact: true, component: CadastroProjetos},
   {
     path: "",
     exact: true,

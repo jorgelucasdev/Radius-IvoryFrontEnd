@@ -115,10 +115,10 @@ const CadastroUsuarios = (props) => {
               <Card.Body className={styles.bodyNovoUsuario}>
                 <Row className={styles.rowInputs}>
                   <Col>
-                    <label for="">Empresa:</label>
-                    <Select
+                    <label for="">Empresas:</label>
+                    <SelectBox
                       value={formik.values.empresa}
-                      name={"empresas"}
+                      name={"empresa"}
                       id=""
                       placeholder={"Selecione"}
                       onChange={formik.setFieldValue}
@@ -127,15 +127,7 @@ const CadastroUsuarios = (props) => {
                       touched={formik.touched.empresa}
                       styleMsgError={styles.msgError}
                       options={Empresas}
-                      styles={customStyles}
-                      classNamePrefix={"select"}
-                      components={{ DropdownIndicator }}
                     />
-                    {formik.errors.empresa && formik.touched.empresa ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.empresa}
-                      </div>
-                    ) : null}
                   </Col>
                 </Row>
                 <Row className={styles.rowInputs}>
@@ -197,7 +189,7 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-                <br></br>
+
                 <Row className={styles.rowInputs}>
                   <Col md={6}>
                     <label for="">Responsável:</label>
@@ -258,60 +250,6 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-
-                {/* <Row className={styles.rowInputs}>
-                  <Col md={6}>
-                  <label for="">Responsável:</label>
-                    <input
-                      type="text"
-                      name="responsavel"
-                      id=""
-                      value={formik.values.responsavel}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      autoComplete="off"
-                    ></input>
-                    {formik.errors.responsavel && formik.touched.responsavel ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.responsavel}
-                      </div>
-                    ) : null}
-                  </Col>
-                  <Col>
-                  <label for="">Setor:</label>
-                    <input
-                      type="text"
-                      name="setorResponsavel"
-                      id=""
-                      value={formik.values.setorResponsavel}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      autoComplete="off"
-                    ></input>
-                    {formik.errors.setorResponsavel &&
-                    formik.touched.setorResponsavel ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.setorResponsavel}
-                      </div>
-                    ) : null}
-
-                  </Col>
-                  <Col>
-                    <label for="">UF:</label>
-                    <SelectBox
-                      value={formik.values.uf}
-                      name={"uf"}
-                      id=""
-                      placeholder={"Selecione"}
-                      onChange={formik.setFieldValue}
-                      onBlur={formik.setFieldTouched}
-                      error={formik.errors.uf}
-                      touched={formik.touched.uf}
-                      styleMsgError={styles.msgError}
-                      options={Empresas}
-                    />
-                  </Col>
-                </Row> */}
 
                 <Row className={styles.rowInputs}>
                   <Col>
@@ -497,6 +435,7 @@ const CadastroUsuarios = (props) => {
                       type="text"
                       name="apresentacao"
                       id=""
+                      // className={styles.textbox}
                       value={formik.values.apresentacao}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -572,7 +511,7 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-                <br></br>
+
                 <Row className={styles.rowInputs}>
                   <Col className={styles.buttons}>
                     <Button variant="secondary">CANCELAR</Button>
