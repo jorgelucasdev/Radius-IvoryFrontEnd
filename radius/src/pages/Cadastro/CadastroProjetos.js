@@ -189,7 +189,7 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-
+                <br></br>
                 <Row className={styles.rowInputs}>
                   <Col md={6}>
                     <label for="">Responsável:</label>
@@ -333,7 +333,7 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-                <br></br>
+                
                 <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">Nome do projeto:</label>
@@ -511,7 +511,7 @@ const CadastroUsuarios = (props) => {
                     ) : null}
                   </Col>
                 </Row>
-
+                <br></br>
                 <Row className={styles.rowInputs}>
                   <Col className={styles.buttons}>
                     <Button variant="secondary">CANCELAR</Button>
@@ -528,7 +528,7 @@ const CadastroUsuarios = (props) => {
             title={"Projetos"}
             icon={faUserFriends}
             desc={"LISTAGEM PROJETOS"}
-            onClick={() => history.push("/Cadastro/ListagemUsuarios")}
+            onClick={() => history.push("/Cadastro/ListagemProjetos")}
           ></ButtonCustom>
         </div>
       </div>
