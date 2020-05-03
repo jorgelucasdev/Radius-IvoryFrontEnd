@@ -123,11 +123,11 @@ const CadastroCatalogos = props => {
                 <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">Prioridade:</label>
-                    {/* <Select placeholder="Selecione" classNamePrefix={'select'}
+                    <Select placeholder="Selecione" classNamePrefix={'select'}
                                 options={StatusOptions} styles={customStyles}
                                 components={{ DropdownIndicator }} className={styles.info}
-                            /> */}
-                    <Select
+                            />
+                    {/* <Select
                     placeholder="Selecione" classNamePrefix={'select'}
                     options={StatusOptions} styles={customStyles}
                     components={{ DropdownIndicator }} className={styles.select}
@@ -144,7 +144,7 @@ const CadastroCatalogos = props => {
                       styles={customStyles}
                       classNamePrefix={'select'}
                       components={{ DropdownIndicator }}
-                    />
+                    /> */}
                     {formik.errors.prioridade && formik.touched.prioridade ? (
                       <div className={styles.msgError}>
                         {formik.errors.prioridade}
@@ -208,7 +208,7 @@ const CadastroCatalogos = props => {
           <ButtonCustom
             title={"Catálogos"}
             icon={faUserFriends}
-            desc={"Opções de Catálogo"}
+            desc={"OPÇÕES DE CATÁLOGO"}
             onClick={() => history.push("/Cadastro/ListagemCatalogo")}
           ></ButtonCustom>
         </div>
