@@ -167,12 +167,17 @@ const ListagemFuncionarios = props => {
 
                 <Row className={styles.rowBusca}>
 
+<<<<<<< HEAD
                   <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
                     <label>Nome de Funcionário</label>
+=======
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.info}>
+                    <label>Nome do Funcionário</label>
+>>>>>>> projetos
                     <input className={styles.input} />
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Início</label>
                     <DatePicker
                       name="dataInicial"
@@ -188,7 +193,7 @@ const ListagemFuncionarios = props => {
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Fim</label>
                     <DatePicker
                       name="dataFinal"
@@ -204,7 +209,7 @@ const ListagemFuncionarios = props => {
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.info}>
                     <label>Status</label>
                     <Select placeholder="" classNamePrefix={'select'}
                       options={StatusOptions} styles={customStyles}
