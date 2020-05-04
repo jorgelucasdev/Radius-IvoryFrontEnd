@@ -16,14 +16,13 @@ import "./AuxStyles.css";
 import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-const CadastroFuncionarios = props => {
+const CadastroFuncionarios = (props) => {
   registerLocale("pt-BR", ptBR);
 
   const history = useHistory();
   const [startDate, setStartDate] = useState(new Date());
 
-
-  const DropdownIndicator = props => {
+  const DropdownIndicator = (props) => {
     return <i className={[styles.arrow, "icon-setasduplas"].join(" ")}></i>;
   };
 
@@ -31,42 +30,31 @@ const CadastroFuncionarios = props => {
     menu: (provided, state) => ({
       ...provided,
     }),
-  
-    control: (_, { selectProps: { width }}) => ({
-        
-    })
-}
+
+    control: (_, { selectProps: { width } }) => ({}),
+  };
 
   const StatusOptions = [
     { value: "ativo", label: "Ativo" },
     { value: "pendente", label: "Pendente" },
     { value: "cancelado", label: "Cancelado" },
-    { value: "concluido", label: "Concluido" }
+    { value: "concluido", label: "Concluido" },
   ];
 
   const validarCampos = Yup.object().shape({
-    nome: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
+    nome: Yup.string().nullable().required("Campo obrigatório"),
     cpf: Yup.string()
       .nullable()
       .min(14, "O campo precisa ter um mínino de 11 caracteres")
       .required("Campo obrigatório"),
-    cargo: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-    setor: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
+    cargo: Yup.string().nullable().required("Campo obrigatório"),
+    setor: Yup.string().nullable().required("Campo obrigatório"),
     email: Yup.string()
       .email("Email inválido")
       .nullable()
       .required("Campo obrigatório"),
-    dataInicio: Yup.string()
-      .required("Campo obrigatório"),
-    dataFim: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
+    dataInicio: Yup.string().required("Campo obrigatório"),
+    dataFim: Yup.string().nullable().required("Campo obrigatório"),
     telefone: Yup.string()
       .nullable()
       .min(14, "O campo precisa ter um mínino de 8 caracteres")
@@ -79,15 +67,9 @@ const CadastroFuncionarios = props => {
       .nullable()
       .min(15, "O campo precisa ter um mínino de 9 caracteres")
       .required("Campo obrigatório"),
-    dataAniversario: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-    observacoes: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-    status: Yup.string()
-      .nullable()
-      .required("Campo obrigatório")
+    dataAniversario: Yup.string().nullable().required("Campo obrigatório"),
+    observacoes: Yup.string().nullable().required("Campo obrigatório"),
+    status: Yup.string().nullable().required("Campo obrigatório"),
   });
 
   const formik = useFormik({
@@ -105,14 +87,14 @@ const CadastroFuncionarios = props => {
       whatsapp: "",
       dataAniversario: "",
       observacoes: "",
-      status: ""
+      status: "",
     },
     validationSchema: validarCampos,
-    onSubmit: ""
+    onSubmit: "",
   });
   return (
     <div className={styles.principal}>
-       <h1>
+      <h1>
         Cadastro > Funcionário > <span>Novo Funcionário</span>
       </h1>
       <div className={styles.conteudo}>
@@ -148,8 +130,8 @@ const CadastroFuncionarios = props => {
                       id=""
                       placeholder="XXX.XXX.XXX-XX"
                       options={{
-                        blocks: [3,3,3,2],
-                        delimiters: [".",".","-"],
+                        blocks: [3, 3, 3, 2],
+                        delimiters: [".", ".", "-"],
                         numericOnly: true,
                       }}
                       value={formik.values.cpf}
@@ -228,7 +210,7 @@ const CadastroFuncionarios = props => {
                           selected={formik.values.dataInicio}
                           locale="pt-BR"
                           name="dataInicio"
-                          onChange={date => {
+                          onChange={(date) => {
                             formik.setFieldValue("dataInicio", date);
                           }}
                           onBlur={formik.handleBlur}
@@ -255,7 +237,7 @@ const CadastroFuncionarios = props => {
                           selected={formik.values.dataFim}
                           locale="pt-BR"
                           name="dataFim"
-                          onChange={date => {
+                          onChange={(date) => {
                             formik.setFieldValue("dataFim", date);
                           }}
                           onBlur={formik.handleBlur}
@@ -281,8 +263,8 @@ const CadastroFuncionarios = props => {
                       id=""
                       placeholder="(XX) XXXX-XXXX"
                       options={{
-                        blocks: [0,2,4,4],
-                        delimiters: ["(",") ","-"],
+                        blocks: [0, 2, 4, 4],
+                        delimiters: ["(", ") ", "-"],
                         numericOnly: true,
                       }}
                       value={formik.values.telefone}
@@ -303,8 +285,8 @@ const CadastroFuncionarios = props => {
                       id=""
                       placeholder="(XX) 9XXXX-XXXX"
                       options={{
-                        blocks: [0,2,5,4],
-                        delimiters: ["(",") ","-"],
+                        blocks: [0, 2, 5, 4],
+                        delimiters: ["(", ") ", "-"],
                         numericOnly: true,
                       }}
                       value={formik.values.celular}
@@ -320,25 +302,25 @@ const CadastroFuncionarios = props => {
                   </Col>
                   <Col>
                     <label for="">WhatsApp:</label>
-                        <Cleave
-                        name="whatsapp"
-                        id=""
-                        options={{
-                          blocks: [0,2,4,4],
-                          delimiters: ["(",") 9","-"],
-                          numericOnly: true,
-                        }}
-                        value={formik.values.whatsapp}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        autoComplete="off"
-                        placeholder="(XX) 9XXXX-XXXX"
-                        />
-                        {formik.errors.whatsapp && formik.touched.whatsapp ? (
-                        <div className={styles.msgError}>
-                            {formik.errors.whatsapp}
-                        </div>
-                        ) : null}
+                    <Cleave
+                      name="whatsapp"
+                      id=""
+                      options={{
+                        blocks: [0, 2, 4, 4],
+                        delimiters: ["(", ") 9", "-"],
+                        numericOnly: true,
+                      }}
+                      value={formik.values.whatsapp}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      autoComplete="off"
+                      placeholder="(XX) 9XXXX-XXXX"
+                    />
+                    {formik.errors.whatsapp && formik.touched.whatsapp ? (
+                      <div className={styles.msgError}>
+                        {formik.errors.whatsapp}
+                      </div>
+                    ) : null}
                   </Col>
                   <Col>
                     <Form>
@@ -350,7 +332,7 @@ const CadastroFuncionarios = props => {
                           selected={formik.values.dataAniversario}
                           locale="pt-BR"
                           name="dataAniversario"
-                          onChange={date => {
+                          onChange={(date) => {
                             formik.setFieldValue("dataAniversario", date);
                           }}
                           onBlur={formik.handleBlur}
@@ -396,7 +378,7 @@ const CadastroFuncionarios = props => {
                                 options={StatusOptions} styles={customStyles}
                                 components={{ DropdownIndicator }} className={styles.select}
                             /> */}
-                    <Select
+                    <SelectBox
                       value={formik.values.status}
                       name={"status"}
                       id=""
@@ -407,15 +389,12 @@ const CadastroFuncionarios = props => {
                       touched={formik.touched.status}
                       styleMsgError={styles.msgError}
                       options={StatusOptions}
-                      styles={customStyles}
-                      classNamePrefix={'select'}
                       components={{ DropdownIndicator }}
                     />
-                    <span>* Todos os campos são obrigatórios</span>
                   </Col>
                   <Col className={styles.buttons}>
-                      <Button variant="secondary">CANCELAR</Button>
-                      <Button variant="primary">SALVAR</Button>
+                    <Button variant="secondary">CANCELAR</Button>
+                    <Button variant="primary">SALVAR</Button>
                   </Col>
                 </Row>
               </Card.Body>

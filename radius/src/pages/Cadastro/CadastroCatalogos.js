@@ -124,6 +124,19 @@ const CadastroCatalogos = props => {
                   <Col>
                     <label for="">Prioridade:</label>
                     <SelectBox
+                      value={formik.values.prioridade}
+                      name={"prioridade"}
+                      id=""
+                      placeholder={"Selecione"}
+                      onChange={formik.setFieldValue}
+                      onBlur={formik.setFieldTouched}
+                      error={formik.errors.prioridade}
+                      touched={formik.touched.prioridade}
+                      styleMsgError={styles.msgError}
+                      options={StatusOptions}
+                      components={{ DropdownIndicator }}
+                    />
+                    {/* <SelectBox
                       value={formik.values.uf}
                       name={"uf"}
                       id=""
@@ -135,7 +148,7 @@ const CadastroCatalogos = props => {
                       styleMsgError={styles.msgError}
                       options={StatusOptions}
                       components={{ DropdownIndicator }}
-                    />
+                    /> */}
                     {/* <Select
                     placeholder="Selecione" classNamePrefix={'select'}
                     options={StatusOptions} styles={customStyles}
@@ -154,11 +167,7 @@ const CadastroCatalogos = props => {
                       classNamePrefix={'select'}
                       components={{ DropdownIndicator }}
                     /> */}
-                    {formik.errors.prioridade && formik.touched.prioridade ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.prioridade}
-                      </div>
-                    ) : null}
+
                   </Col>
                   <Col>
                     <label for="">Tempo de execução:</label>

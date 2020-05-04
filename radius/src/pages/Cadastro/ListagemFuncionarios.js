@@ -167,11 +167,7 @@ const ListagemFuncionarios = props => {
 
                 <Row className={styles.rowBusca}>
 
-<<<<<<< HEAD
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-=======
                   <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.info}>
->>>>>>> projetos
                     <label>Nome do Funcionário</label>
                     <input className={styles.input} />
                   </Col>
