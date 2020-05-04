@@ -145,7 +145,7 @@ const ListagemCatalogo = props => {
             title={"Nova Opção de Catálogo"} 
             icon={faPlusCircle}
             desc={"CADASTRAR NOVA OPÇÃO"}
-            onClick={() => history.push("#")}
+            onClick={() => history.push("/Cadastro/CadastroCatalogos")}
           ></ButtonCustom>
         </div>
 
