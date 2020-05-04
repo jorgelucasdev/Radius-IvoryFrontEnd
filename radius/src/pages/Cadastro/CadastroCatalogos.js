@@ -94,6 +94,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.id && formik.touched.id ? (
                       <div className={styles.msgError}>
@@ -111,6 +112,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.descricao && formik.touched.descricao ? (
                       <div className={styles.msgError}>
@@ -124,32 +126,10 @@ const CadastroCatalogos = props => {
                   <Col>
                     <label for="">Prioridade:</label>
                     <Select placeholder="Selecione" classNamePrefix={'select'}
-                                options={StatusOptions} styles={customStyles}
-                                components={{ DropdownIndicator }} className={styles.info}
-                            />
-                    {/* <Select
-                    placeholder="Selecione" classNamePrefix={'select'}
-                    options={StatusOptions} styles={customStyles}
-                    components={{ DropdownIndicator }} className={styles.select}
-                      value={formik.values.prioridade}
-                      name={"prioridade"}
-                      id=""
-                      placeholder={"Selecione"}
-                      onChange={formik.setFieldValue}
-                      onBlur={formik.setFieldTouched}
-                      error={formik.errors.prioridade}
-                      touched={formik.touched.prioridade}
-                      styleMsgError={styles.msgError}
-                     
-                      styles={customStyles}
-                      classNamePrefix={'select'}
+                      options={StatusOptions} styles={customStyles}
                       components={{ DropdownIndicator }}
-                    /> */}
-                    {formik.errors.prioridade && formik.touched.prioridade ? (
-                      <div className={styles.msgError}>
-                        {formik.errors.prioridade}
-                      </div>
-                    ) : null}
+                    />
+                   
                   </Col>
                   <Col>
                     <label for="">Tempo de execução:</label>
@@ -161,6 +141,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.tempoDeExecucao && formik.touched.tempoDeExecucao ? (
                       <div className={styles.msgError}>
@@ -181,6 +162,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.observacoes && formik.touched.observacoes ? (
                       <div className={styles.msgError}>
