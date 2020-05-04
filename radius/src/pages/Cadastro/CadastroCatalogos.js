@@ -136,37 +136,6 @@ const CadastroCatalogos = props => {
                       options={StatusOptions}
                       components={{ DropdownIndicator }}
                     />
-                    {/* <SelectBox
-                      value={formik.values.uf}
-                      name={"uf"}
-                      id=""
-                      placeholder={"Selecione"}
-                      onChange={formik.setFieldValue}
-                      onBlur={formik.setFieldTouched}
-                      error={formik.errors.uf}
-                      touched={formik.touched.uf}
-                      styleMsgError={styles.msgError}
-                      options={StatusOptions}
-                      components={{ DropdownIndicator }}
-                    /> */}
-                    {/* <Select
-                    placeholder="Selecione" classNamePrefix={'select'}
-                    options={StatusOptions} styles={customStyles}
-                    components={{ DropdownIndicator }} className={styles.select}
-                      value={formik.values.prioridade}
-                      name={"prioridade"}
-                      id=""
-                      placeholder={"Selecione"}
-                      onChange={formik.setFieldValue}
-                      onBlur={formik.setFieldTouched}
-                      error={formik.errors.prioridade}
-                      touched={formik.touched.prioridade}
-                      styleMsgError={styles.msgError}
-                     
-                      styles={customStyles}
-                      classNamePrefix={'select'}
-                      components={{ DropdownIndicator }}
-                    /> */}
 
                   </Col>
                   <Col>
