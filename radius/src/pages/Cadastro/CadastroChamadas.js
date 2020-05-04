@@ -128,7 +128,9 @@ const CadastroClientes = props => {
                   </Col>
                 
                 </Row>
-
+                <Row className={styles.rowInputs}>
+                  Aqui
+                  </Row>
                 <Row className={styles.rowInputs}>
                 <Col>
                     <label for="">Nome do projeto:</label>
