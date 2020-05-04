@@ -129,6 +129,11 @@ const CadastroClientes = props => {
                 
                 </Row>
                 <Row className={styles.rowInputs}>
+<<<<<<< HEAD
+=======
+                  </Row>
+                <Row className={styles.rowInputs}>
+>>>>>>> chamados
                 <Col>
                     <label for="">Nome do projeto:</label>
                     <SelectBox
@@ -227,7 +232,7 @@ const CadastroClientes = props => {
             title={"Chamadas"}
             icon={faUserFriends}
             desc={"LISTAGEM CHAMADAS"}
-            onClick={() => history.push("/Cadastro/ListagemChamadas")}
+            onClick={() => history.push("../Chamados/ListagemChamados")}
           ></ButtonCustom>
         </div>
       </div>
