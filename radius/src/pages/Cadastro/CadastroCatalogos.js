@@ -125,8 +125,17 @@ const CadastroCatalogos = props => {
                 <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">Prioridade:</label>
-                    <Select placeholder="Selecione" classNamePrefix={'select'}
-                      options={StatusOptions} styles={customStyles}
+                    <SelectBox
+                      value={formik.values.prioridade}
+                      name={"prioridade"}
+                      id=""
+                      placeholder={"Selecione"}
+                      onChange={formik.setFieldValue}
+                      onBlur={formik.setFieldTouched}
+                      error={formik.errors.prioridade}
+                      touched={formik.touched.prioridade}
+                      styleMsgError={styles.msgError}
+                      options={StatusOptions}
                       components={{ DropdownIndicator }}
                     />
                    
