@@ -129,7 +129,6 @@ const CadastroClientes = props => {
                 
                 </Row>
                 <Row className={styles.rowInputs}>
-                  Aqui
                   </Row>
                 <Row className={styles.rowInputs}>
                 <Col>
@@ -230,7 +229,7 @@ const CadastroClientes = props => {
             title={"Chamadas"}
             icon={faUserFriends}
             desc={"LISTAGEM CHAMADAS"}
-            onClick={() => history.push("/Cadastro/ListagemChamadas")}
+            onClick={() => history.push("../Chamados/ListagemChamados")}
           ></ButtonCustom>
         </div>
       </div>
