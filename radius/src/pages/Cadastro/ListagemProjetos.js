@@ -185,7 +185,7 @@ const ListagemProjetos = props => {
             title={"Novo Projeto"} 
             icon={faPlusCircle}
             desc={"CADASTRAR PROJETO"}
-            onClick={() => history.push("#")}
+            onClick={() => history.push("/Cadastro/CadastroProjetos")}
           ></ButtonCustom>
         </div>
 
