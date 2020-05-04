@@ -251,7 +251,7 @@ const CadastroUsuarios = props => {
                   </Col>
                   <Col>
                     <Form>
-                      <Form.Group controlId="formEmail">
+                      <Form.Group controlId="dataFim">
                         <Form.Label>Data de Fim:</Form.Label>
                         <DatePicker
                           showPopperArrow={false}
