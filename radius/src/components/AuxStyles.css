@@ -1,0 +1,7 @@
+.react-select__indicator-separator {
+    visibility: hidden;
+}
+
+.react-select__indicators {
+    padding: 0 5px 0 0;
+  }
