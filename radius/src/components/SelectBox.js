@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import "./AuxStyles.css";
 
 function SelectBox(props) {
   const handleChange = value => {
@@ -28,6 +29,7 @@ function SelectBox(props) {
         value={props.value}
         isClearable={true}
         isDisabled={props.isDisabled}
+        components={props.components}
       />
       {!!props.error && props.touched && (
         <div className={props.styleMsgError}>{props.error}</div>
