@@ -123,7 +123,7 @@ const CadastroClientes = (props) => {
                   </Col>
                 </Row>
                 <Row className={styles.rowInputs}>
-                  <Col>
+                <Col>
                     <label for="">Nome do projeto:</label>
                     <SelectBox
                       value={formik.values.nomeProjeto}
