@@ -185,7 +185,7 @@ const ListagemProjetos = props => {
             title={"Novo Projeto"} 
             icon={faPlusCircle}
             desc={"CADASTRAR PROJETO"}
-            onClick={() => history.push("#")}
+            onClick={() => history.push("/Cadastro/CadastroProjetos")}
           ></ButtonCustom>
         </div>
 
@@ -198,22 +198,22 @@ const ListagemProjetos = props => {
 
                 <Row className={styles.rowBusca}>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={6} className={styles.info}>
                     <label>Empresa</label>
                     <input className={styles.input} />
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={6} className={styles.info}>
                     <label>CNPJ</label>
                     <input className={styles.input} />
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={4} xl={4} className={styles.info}>
                     <label>Nome do Projeto</label>
                     <input className={styles.input} />
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={6} md={6} lg={4} xl={4} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Cadastro</label>
                     <DatePicker
                       name="dataInicial"
@@ -229,7 +229,7 @@ const ListagemProjetos = props => {
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={12} md={12} lg={4} xl={4} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Encerramento</label>
                     <DatePicker
                       name="dataFinal"
