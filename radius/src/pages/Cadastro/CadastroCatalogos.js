@@ -138,11 +138,7 @@ const CadastroCatalogos = props => {
                       options={StatusOptions}
                       components={{ DropdownIndicator }}
                     />
-<<<<<<< HEAD
-
-=======
                    
->>>>>>> catalogos
                   </Col>
                   <Col>
                     <label for="">Tempo de execução:</label>
