@@ -176,56 +176,50 @@ const ListagemClientes = () => {
 
         <div className={styles.conteudoSection}>
           <div className={styles.filtroClientes}>
-            <Card className={styles.filtro}>
-              <Card.Header as="h5" className={styles.header}>
-                Buscar Clientes
-              </Card.Header>
-              <Card.Body className={styles.body}>
-                <Row className={styles.rowInputs}>
-                  <Col>
-                    <label for="">Nome Cliente:</label>
-                    <input
-                      type="search"
-                      name="nomeCliente"
-                      id=""
-                      autoComplete="off"
-                    ></input>
-                  </Col>
-                  <Col>
-                    <label>Data Cadastro:</label>
-                    <DatePicker
-                      showPopperArrow={false}
-                      dateFormat="dd/MM/yyyy"
-                      selected={formik.values.dataCadastro}
-                      locale="pt-BR"
-                      name="dataCadastro"
-                      onChange={date => {
-                        formik.setFieldValue("dataCadastro", date);
-                      }}
-                      autoComplete="off"
-                      className={styles.calendario}
-                    />
-                    <i className={"icon-calendario"}></i>
-                  </Col>
-                  <Col>
-                    <label>Data Encerramento:</label>
-                    <DatePicker
-                      showPopperArrow={false}
-                      dateFormat="dd/MM/yyyy"
-                      selected={formik.values.dataEncerramento}
-                      locale="pt-BR"
-                      name="dataEncerramento"
-                      onChange={date => {
-                        formik.setFieldValue("dataEncerramento", date);
-                      }}
-                      autoComplete="off"
-                      className={styles.calendario}
-                    />
-                    <i className={"icon-calendario"}></i>
+          <Card className={styles.busca}>
+              <Card.Header as="h5" className={styles.headerBusca}>Buscar Clientes</Card.Header>
+              <Card.Body className={styles.bodyBusca}>
+
+                <Row className={styles.rowBusca}>
+
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                    <label>Nome de Cliente</label>
+                    <input className={styles.input} />
                   </Col>
 
-                  <Col>
-                    <Button variant="primary">FILTRAR</Button>
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                    <label className={styles.labelData}>Data Cadastro</label>
+                    <DatePicker
+                      name="dataInicial"
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataInicial}
+                      locale="pt-BR"
+                      showPopperArrow={false}
+                      onChange={date => {
+                        formik.setFieldValue("dataInicial", date);
+                      }}
+                      className={styles.data}
+                    />
+                    <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
+                  </Col>
+
+                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                    <label className={styles.labelData}>Data Encerramento</label>
+                    <DatePicker
+                      name="dataFinal"
+                      dateFormat="dd/MM/yyyy"
+                      selected={formik.values.dataFinal}
+                      locale="pt-BR"
+                      showPopperArrow={false}
+                      onChange={date => {
+                        formik.setFieldValue("dataFinal", date);
+                      }}
+                      className={styles.data}
+                    />
+                    <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
+                  </Col>
+                  <Col xs={12} sm={12} md={12} lg={12} xl className={styles.infoBtn}>
+                    <Button variant="primary" className={styles.btnFiltrar}>FILTRAR</Button>
                   </Col>
                 </Row>
               </Card.Body>

@@ -15,15 +15,18 @@
     display: flex;
     flex-direction: row;
 
+    form {
+      width: 100%;
+    }
+
     .conteudoSection {
       margin: 0 0 20px 0px;
 
       .filtroClientes {
-        .filtro {
-          border-radius: 10px;
-          width: 100%;
-
-          .header {
+        .busca {
+          border-radius: 10px 10px 10px 10px;
+  
+          .headerBusca {
             border-radius: 10px 10px 0px 0px;
             background: #262626;
             padding: 18px 20px;
@@ -31,41 +34,80 @@
             font-size: 18px;
             font-weight: bold;
           }
-          .body {
-            padding: 0px 20px;
-
-            .rowInputs {
-              label {
-                margin: 10px 0;
+          .bodyBusca {
+            padding: 18px 20px;
+            .rowBusca {
+              .info {
                 font-size: 14px;
+                .input {
+                  margin: 0 0 6px;
+                  padding: 0 0 0 10px;
+                  width: 100%;
+                  height: 30px;
+                  border-radius: 10px;
+                  border-style: solid;
+                  border-width: 1px;
+                  border-color: $color;
+                }
+                .input:focus {
+                  outline: none;
+                }
+                .selectContainer {
+                  border-style: solid;
+                  border-width: 1px;
+                  border-color: $color;
+                  border-radius: 10px;
+                }
+                .data {
+                  width: 100%;
+                  height: 30px;
+                  border-radius: 10px;
+                  border-style: solid;
+                  border-width: 1px;
+                  border-color: $color;
+                }
+                .arrow {
+                  color: #2e75b4;
+                }
               }
-
-              input {
-                display: block;
-                border: 1px solid $color;
-                border-radius: 10px;
-                font-size: 14px;
-                height: 35px;
-                width: 100%;
-                padding: 5px;
+              .info p {
+                margin: 0 0 8px 0;
               }
-
-              button {
-                border-radius: 10px;
-                width: 100%;
-                height: 35px;
+              .infoData {
+                display: flex;
+                flex-direction: column;
+                position: relative;
                 font-size: 14px;
-                padding: 4px 8px;
-                margin: 40px 0;
-                background-color: $color;
+                .data {
+                  width: 100%;
+                  height: 30px;
+                  padding: 0 0 0 10px;
+                  border-radius: 10px;
+                  border-style: solid;
+                  border-width: 1px;
+                  border-color: $color;
+                }
+                .calendar {
+                  position: absolute;
+                  top: 35px;
+                  right: 22px;
+                  color: #2e75b4;
+                }
               }
-
-              .calendario {
-                border: 1px solid $color;
-                width: 100%;
-                height: 35px;
-                font-size: 14px;
-                padding: 4px 8px;
+              .infoBtn {
+                .btnFiltrar {
+                  width: 100%;
+                  height: 30px;
+                  border-radius: 5px;
+                  border-style: solid;
+                  background-color: $color;
+                  margin: 29px 0 0;
+                  padding: 3px 6px;
+                  font-size: 14px;
+                }
+                .btnFiltrar:active {
+                  background: #81acd3;
+                }
               }
             }
           }
