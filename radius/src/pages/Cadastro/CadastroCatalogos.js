@@ -94,6 +94,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.id && formik.touched.id ? (
                       <div className={styles.msgError}>
@@ -111,6 +112,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.descricao && formik.touched.descricao ? (
                       <div className={styles.msgError}>
@@ -136,7 +138,11 @@ const CadastroCatalogos = props => {
                       options={StatusOptions}
                       components={{ DropdownIndicator }}
                     />
+<<<<<<< HEAD
 
+=======
+                   
+>>>>>>> catalogos
                   </Col>
                   <Col>
                     <label for="">Tempo de execução:</label>
@@ -148,6 +154,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.tempoDeExecucao && formik.touched.tempoDeExecucao ? (
                       <div className={styles.msgError}>
@@ -168,6 +175,7 @@ const CadastroCatalogos = props => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       autoComplete="off"
+                      className={styles.input}
                     ></input>
                     {formik.errors.observacoes && formik.touched.observacoes ? (
                       <div className={styles.msgError}>
