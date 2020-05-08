@@ -28,16 +28,29 @@ $tamanhoSidebar: 250px;
         justify-content: flex-start;
         align-items: center;
         padding: 0;
+        
         .iconMenu {
+          @extend %transition;
           color: #2e75b4;
           width: 30px;
           height: 30px;
+          
+          &.activeIcon {
+            transform: rotate(90deg);
+          }
         }
 
         .imgLogo {
+
           img {
+            @extend %transition;
             height: 35px;
             margin: 0 0 0 25px;
+          }
+
+          &.activeLogo img {
+            @extend %transition;
+            margin: 0 0 0 $tamanhoSidebar;
           }
         }
       }
