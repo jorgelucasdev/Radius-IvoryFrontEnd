@@ -71,7 +71,7 @@ function DefaultLayoutPublic(props) {
             <li><a href="#">Base De Conhecimento</a></li>
           </ul>
         </nav>
-        <main className={[styles.principal, !isOpen ? styles.active : null].join(' ')}>
+        <main className={styles.principal}>
           <BrowserRouter>
             <Suspense fallback={<main>Carregando...</main>}>
               <Switch>

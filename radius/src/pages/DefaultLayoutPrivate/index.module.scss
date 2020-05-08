@@ -50,7 +50,7 @@ $tamanhoSidebar: 250px;
 
           &.activeLogo img {
             @extend %transition;
-            margin: 0 0 0 $tamanhoSidebar;
+            margin: 0 0 0 220px;
           }
         }
       }
