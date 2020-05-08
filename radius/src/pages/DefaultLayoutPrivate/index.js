@@ -15,7 +15,7 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(true);
+  const [isOpen, updateIsOpen] = useState(false);
   return (
     <div className={styles.layout}>
       <div className="relative">
@@ -23,9 +23,9 @@ function DefaultLayoutPublic(props) {
           <Row className={[styles.principalCabecalho, !isOpen ? styles.active : null].join(' ')}>
             <Col className={styles.colEsquerda}>
               <div onClick={() => updateIsOpen(!isOpen)}>
-                <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
+                <FontAwesomeIcon icon={faBars} className={[styles.iconMenu, !isOpen ? styles.activeIcon : null].join(' ')} />
               </div>
-              <div className={styles.imgLogo}>
+              <div className={[styles.imgLogo, !isOpen ? styles.activeLogo : null].join(' ')}>
                 <img src={LogoRadius} />
               </div>
             </Col>
@@ -71,7 +71,7 @@ function DefaultLayoutPublic(props) {
             <li><a href="#">Base De Conhecimento</a></li>
           </ul>
         </nav>
-        <main className={[styles.principal, !isOpen ? styles.active : null].join(' ')}>
+        <main className={styles.principal}>
           <BrowserRouter>
             <Suspense fallback={<main>Carregando...</main>}>
               <Switch>
