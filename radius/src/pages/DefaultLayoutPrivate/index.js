@@ -4,19 +4,18 @@ import styles from "./index.module.scss";
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import {
   faBars,
-  faBell,
   faUserCircle,
-  faSignOutAlt,
-  faSearch, 
   faAngleRight
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import 'styled-components';
+import './AuxStyles.css';
 import LogoRadius from "../../assets/images/logoRadius.png";
 import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(true);
+  const [isOpen, updateIsOpen] = useState(false);
   return (
     <div className={styles.layout}>
       <div className="relative">
@@ -24,30 +23,25 @@ function DefaultLayoutPublic(props) {
           <Row className={[styles.principalCabecalho, !isOpen ? styles.active : null].join(' ')}>
             <Col className={styles.colEsquerda}>
               <div onClick={() => updateIsOpen(!isOpen)}>
-                <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
+                <FontAwesomeIcon icon={faBars} className={[styles.iconMenu, !isOpen ? styles.activeIcon : null].join(' ')} />
               </div>
-              <div className={styles.imgLogo}>
+              <div className={[styles.imgLogo, !isOpen ? styles.activeLogo : null].join(' ')}>
                 <img src={LogoRadius} />
               </div>
             </Col>
             <Col className={styles.colDireita}>
               <div className={styles.divDireita}>
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  className={styles.iconPesquisa}
-                />
+               
+                <i className={'icon-pesquisa'}></i>
                 <input type="text" placeholder="Pesquisar"></input>
 
-                <FontAwesomeIcon icon={faBell} className={styles.iconSino} />
+                <i className={'icon-sino'}></i>
                 <span>Bem vindo, João Silva</span>
                 <FontAwesomeIcon
                   icon={faUserCircle}
                   className={styles.iconUser}
                 />
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  className={styles.iconSair}
-                />
+                <i className={'icon-logoff'}></i>
               </div>
             </Col>
           </Row>
