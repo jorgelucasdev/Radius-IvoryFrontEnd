@@ -117,16 +117,17 @@ const CadastroUsuarios = (props) => {
                   <Col>
                     <label for="">Empresas:</label>
                     <SelectBox
-                      value={formik.values.empresa}
-                      name={"empresa"}
+                      value={formik.values.uf}
+                      name={"uf"}
                       id=""
                       placeholder={"Selecione"}
                       onChange={formik.setFieldValue}
                       onBlur={formik.setFieldTouched}
-                      error={formik.errors.empresa}
-                      touched={formik.touched.empresa}
+                      error={formik.errors.uf}
+                      touched={formik.touched.uf}
                       styleMsgError={styles.msgError}
                       options={Empresas}
+                      components={{ DropdownIndicator }}
                     />
                   </Col>
                 </Row>

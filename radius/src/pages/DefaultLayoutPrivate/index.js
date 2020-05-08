@@ -53,7 +53,7 @@ function DefaultLayoutPublic(props) {
               <a href="/Chamados/ListagemChamados">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
               <ul>
-                <li><a href="#">Novo</a></li>
+                <li><a href="/Cadastro/CadastroChamadas">Novo</a></li>
                 <li><a href="/Chamados/ListagemChamados">Consulta</a></li>
               </ul>
             </li>

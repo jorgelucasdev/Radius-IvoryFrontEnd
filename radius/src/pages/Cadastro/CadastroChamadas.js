@@ -15,28 +15,31 @@ import "./AuxStyles.css";
 import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-const CadastroClientes = props => {
+const CadastroClientes = (props) => {
   registerLocale("pt-BR", ptBR);
 
   const history = useHistory();
   const [startDate, setStartDate] = useState(new Date());
 
+  const DropdownIndicator = (props) => {
+    return <i className={[styles.arrow, "icon-setasduplas"].join(" ")}></i>;
+  };
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
+    { value: "vanilla", label: "Vanilla" },
   ];
 
   const projetosOptions = [
     { value: "projeto 1", label: "projeto 1" },
     { value: "projeto 2", label: "projeto 2" },
-    { value: "projeto 3", label: "projeto 3" }
+    { value: "projeto 3", label: "projeto 3" },
   ];
 
   const catalogoOptions = [
     { value: "catalogo 1", label: "catalogo 1" },
     { value: "catalogo 2", label: "catalogo 2" },
-    { value: "catalogo 3", label: "catalogo 3" }
+    { value: "catalogo 3", label: "catalogo 3" },
   ];
   const Empresas = [
     { value: "VLI", label: "VLI" },
@@ -44,25 +47,16 @@ const CadastroClientes = props => {
     { value: "3MW", label: "3MW" },
     { value: "Eletronuclear", label: "Eletronuclear" },
   ];
-  
+
   const validarCampos = Yup.object().shape({
-    empresa: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
+    empresa: Yup.string().nullable().required("Campo obrigatório"),
     razaoSocial: Yup.string()
       .nullable()
       .min(5, "O campo precisa ter um mínino de 5 caracteres")
       .required("Campo obrigatório"),
-      nomeProjeto: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-      catalogo: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-      descricao: Yup.string()
-      .nullable()
-      .required("Campo obrigatório"),
-
+    nomeProjeto: Yup.string().nullable().required("Campo obrigatório"),
+    catalogo: Yup.string().nullable().required("Campo obrigatório"),
+    descricao: Yup.string().nullable().required("Campo obrigatório"),
   });
 
   const formik = useFormik({
@@ -75,7 +69,7 @@ const CadastroClientes = props => {
       descricao: "",
     },
     validationSchema: validarCampos,
-    onSubmit: ""
+    onSubmit: "",
   });
   return (
     <div className={styles.principal}>
@@ -92,7 +86,7 @@ const CadastroClientes = props => {
               </Card.Header>
               <Card.Body className={styles.body}>
                 <Row className={styles.rowInputs}>
-                <Col>
+                  <Col>
                     <label for="">Empresas:</label>
                     <SelectBox
                       value={formik.values.empresa}
@@ -104,11 +98,12 @@ const CadastroClientes = props => {
                       error={formik.errors.empresa}
                       touched={formik.touched.empresa}
                       styleMsgError={styles.msgError}
-                      options={Empresas}
+                      options={catalogoOptions}
+                      components={{ DropdownIndicator }}
                     />
                   </Col>
-                  </Row>
-                  <Row className={styles.rowInputs}>
+                </Row>
+                <Row className={styles.rowInputs}>
                   <Col>
                     <label for="">Razão social:</label>
                     <input
@@ -126,9 +121,7 @@ const CadastroClientes = props => {
                       </div>
                     ) : null}
                   </Col>
-                
                 </Row>
-
                 <Row className={styles.rowInputs}>
                 <Col>
                     <label for="">Nome do projeto:</label>
@@ -142,12 +135,25 @@ const CadastroClientes = props => {
                       error={formik.errors.nomeProjeto}
                       touched={formik.touched.nomeProjeto}
                       styleMsgError={styles.msgError}
-                      options={projetosOptions}
+                      options={catalogoOptions}
+                      components={{ DropdownIndicator }}
                     />
+                    {/* <SelectBox
+                      value={formik.values.nomeProjeto}
+                      name={"nomeProjeto"}
+                      id=""
+                      placeholder={"Selecione"}
+                      onChange={formik.setFieldValue}
+                      onBlur={formik.setFieldTouched}
+                      error={formik.errors.nomeProjeto}
+                      touched={formik.touched.nomeProjeto}
+                      styleMsgError={styles.msgError}
+                      options={projetosOptions}
+                    /> */}
                   </Col>
                 </Row>
                 <Row className={styles.rowInputs}>
-                <Col md={12}>
+                  <Col md={12}>
                     <label for="">Catálogo:</label>
                     <SelectBox
                       value={formik.values.catalogo}
@@ -160,12 +166,23 @@ const CadastroClientes = props => {
                       touched={formik.touched.catalogo}
                       styleMsgError={styles.msgError}
                       options={catalogoOptions}
+                      components={{ DropdownIndicator }}
                     />
+                    {/* <SelectBox
+                      value={formik.values.catalogo}
+                      name={"catalogo"}
+                      id=""
+                      placeholder={"Selecione"}
+                      onChange={formik.setFieldValue}
+                      onBlur={formik.setFieldTouched}
+                      error={formik.errors.catalogo}
+                      touched={formik.touched.catalogo}
+                      styleMsgError={styles.msgError}
+                      options={catalogoOptions}
+                    /> */}
                   </Col>
-                
                 </Row>
                 <Row className={styles.rowInputs}>
-                
                   <Col>
                     <label for="">Descrição:</label>
                     <input
@@ -183,20 +200,17 @@ const CadastroClientes = props => {
                       </div>
                     ) : null}
                   </Col>
-
                 </Row>
                 <Row className={styles.rowInputs}>
-                      <Col>
-                      <Button
-                        variant="primary"
-                        className={styles.addFile}
-                        onClick={() =>
-                          history.push("#")
-                        }
-                      >
-                        Adicionar Fotos
-                      </Button>
-                      </Col>  
+                  <Col>
+                    <Button
+                      variant="primary"
+                      className={styles.addFile}
+                      onClick={() => history.push("#")}
+                    >
+                      Adicionar Fotos
+                    </Button>
+                  </Col>
                 </Row>
 
                 <Row className={styles.rowButtons}>
@@ -228,7 +242,7 @@ const CadastroClientes = props => {
             title={"Chamadas"}
             icon={faUserFriends}
             desc={"LISTAGEM CHAMADAS"}
-            onClick={() => history.push("/Cadastro/ListagemChamadas")}
+            onClick={() => history.push("../Chamados/ListagemChamados")}
           ></ButtonCustom>
         </div>
       </div>
