@@ -9,7 +9,7 @@ import styles from "./index.module.scss";
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1><span>Home</span></h1>
       <BuscarChamados />
       <UltimosChamados />
       <PagesBtn/> 
