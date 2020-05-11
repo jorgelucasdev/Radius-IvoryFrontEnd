@@ -7,7 +7,7 @@ $tamanhoSidebar: 250px;
   justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
-  background: #e6e7e8;
+  background: #ffffff;
 
   .cabecalho {
     background: #fff;
@@ -98,14 +98,15 @@ $tamanhoSidebar: 250px;
     background: #ffffff;
     position: absolute;
     top: 75px;
-    left: 0;
+    left: - $tamanhoSidebar;
     height: calc(100% - 75px);
     min-height: calc(100vh - 75px - 103px);
     padding: 0px;
     align-items: flex-start;
+    box-shadow: 2px -2px 5px 0px rgba(38, 38, 38, 0.25);
 
     &.active{
-      left: - $tamanhoSidebar;
+      left: 0;
     }
 
     ul {
@@ -121,14 +122,15 @@ $tamanhoSidebar: 250px;
       > li {
         position: relative;
 
+
         a {
           display: block;
           text-decoration: none;
-          box-shadow: 0 2px 3px 0 rgba(38, 38, 38, 0.25);
-          padding: 8px 15px;
+          box-shadow: 0 3px 3px 0 rgba(38, 38, 38, 0.25);
+          padding: 20px 15px;
           color: #2e75b4;
           .iconSeta {
-            top: 13px;
+            top: 24px;
             right: 15px;
             position: absolute;
           }
