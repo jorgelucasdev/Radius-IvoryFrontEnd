@@ -15,7 +15,7 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(false);
+  const [isOpen, updateIsOpen] = useState(true);
   return (
     <div className={styles.layout}>
       <div className="relative">
@@ -73,7 +73,7 @@ function DefaultLayoutPublic(props) {
             <li><a href="#">Base De Conhecimento</a></li>
           </ul>
         </nav>
-        <main className={[styles.principal, !isOpen ? styles.active : null].join(' ')}>
+        <main className={styles.principal}>
           <BrowserRouter>
             <Suspense fallback={<main>Carregando...</main>}>
               <Switch>
