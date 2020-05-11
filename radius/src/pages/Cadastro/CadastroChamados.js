@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "./CadastroChamadas.module.scss";
+import styles from "./CadastroChamados.module.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import SelectBox from "../../components/SelectBox";
 import ButtonCustom from "../../components/ButtonCustom";
@@ -80,7 +80,7 @@ const CadastroClientes = props => {
   return (
     <div className={styles.principal}>
       <h1>
-        Cadastro > Chamadas > <span>Nova Chamada</span>
+        Home > Chamados > <span>Novo Chamado</span>
       </h1>
 
       <div className={styles.conteudo}>
@@ -88,7 +88,7 @@ const CadastroClientes = props => {
           <div className={styles.conteudoSection}>
             <Card className={styles.novoCliente}>
               <Card.Header as="h5" className={styles.header}>
-                Nova Chamada
+                Novo Chamado
               </Card.Header>
               <Card.Body className={styles.body}>
                 <Row className={styles.rowInputs}>
@@ -209,7 +209,7 @@ const CadastroClientes = props => {
                       <Button
                         variant="secondary"
                         onClick={() =>
-                          history.push("/Cadastro/ListagemChamadas")
+                          history.push("/Cadastro/ListagemChamados")
                         }
                       >
                         CANCELAR
@@ -226,9 +226,9 @@ const CadastroClientes = props => {
         </form>
         <div className={styles.conteudoAside}>
           <ButtonCustom
-            title={"Chamadas"}
+            title={"Chamados"}
             icon={faUserFriends}
-            desc={"LISTAGEM CHAMADAS"}
+            desc={"LISTAGEM CHAMADOS"}
             onClick={() => history.push("../Chamados/ListagemChamados")}
           ></ButtonCustom>
         </div>

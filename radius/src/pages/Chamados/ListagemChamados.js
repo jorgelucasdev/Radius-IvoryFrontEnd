@@ -175,7 +175,7 @@ const ListagemChamados = props => {
             title={"Novo Chamado"} 
             icon={faPlusCircle}
             desc={"CADASTRAR CHAMADO"}
-            onClick={() => history.push("../Cadastro/CadastroChamadas")}
+            onClick={() => history.push("../Cadastro/CadastroChamados")}
           ></ButtonCustom>
         </div>
 
