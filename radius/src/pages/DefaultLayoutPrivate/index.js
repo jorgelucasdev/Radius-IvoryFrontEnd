@@ -15,7 +15,7 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(true);
+  const [isOpen, updateIsOpen] = useState(false);
   return (
     <div className={styles.layout}>
       <div className="relative">
