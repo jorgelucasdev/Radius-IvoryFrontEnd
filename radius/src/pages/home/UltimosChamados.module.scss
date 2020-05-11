@@ -8,14 +8,16 @@
         font-weight: bold;
         padding: 18px 20px;
         margin: 0;
-
+        border-color: rgba(38, 38, 38, 0.25);
     }
     .content{
         padding: 0 20px;
         background:white;
         border-radius: 0 0 8px 8px;
+        box-shadow: 0 0px 4px 0 rgba(38, 38, 38, 0.20);
         table{
             width: 100%;
+            
         }
        
         th{
@@ -24,6 +26,7 @@
             color: #2E75B4;
             border-bottom: 1px solid rgba(151,186 ,219, 0.5) ;
             font-size: 16px;
+            
             .setas{
                 margin: 0 0 0 7px;
                 .setaCima{
@@ -41,7 +44,7 @@
         tr{
             text-align: center;
             td{
-                font-size: 16px;
+                font-size: 14px;
                 padding: 15px 0;
             }
         }

@@ -19,7 +19,7 @@ h1 {
       margin: 0 0 20px 0;
       .busca {
         border-radius: 10px 10px 10px 10px;
-
+        box-shadow: 0 0px 4px 0 rgba(38, 38, 38, 0.20);
         .headerBusca {
           border-radius: 10px 10px 0px 0px;
           background: #262626;
@@ -109,7 +109,7 @@ h1 {
     }
     .listaUsuarios {
       border-radius: 10px;
-
+      box-shadow: 0 0px 4px 0 rgba(38, 38, 38, 0.20);
       .headerLista {
         border-radius: 10px 10px 0px 0px;
         background: #262626;
@@ -146,7 +146,7 @@ h1 {
         }
         tr {
           td {
-            font-size: 16px;
+            font-size: 14px;
             padding: 15px 0;
           }
         }
