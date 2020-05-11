@@ -7,14 +7,15 @@
         height: 90px;
         width:  95px;
         border-radius: 8px;
-        border-style: unset;
+        border-style: none;
+        box-shadow: 0 0px 4px 0 rgba(38, 38, 38, 0.20);
         background: white;
         outline: none;
         
         .icon{
             color: #2E75B4;
             p{
-                font-size: 10px;
+                font-size: 9.5px;
                 margin: 3px 0 0 0;
             }
         }
