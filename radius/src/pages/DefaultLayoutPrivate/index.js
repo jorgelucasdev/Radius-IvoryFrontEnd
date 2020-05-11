@@ -15,7 +15,7 @@ import LogoIvory from "../../assets/images/logoIvory.png";
 
 function DefaultLayoutPublic(props) {
   const { routes } = props;
-  const [isOpen, updateIsOpen] = useState(false);
+  const [isOpen, updateIsOpen] = useState(true);
   return (
     <div className={styles.layout}>
       <div className="relative">
@@ -48,7 +48,7 @@ function DefaultLayoutPublic(props) {
         </header>
         <nav className={[styles.sidebar, !isOpen ? styles.active : null].join(' ')}>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a className={styles.homeMenu} href="#">Home</a></li>
             <li>
               <a href="#">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
