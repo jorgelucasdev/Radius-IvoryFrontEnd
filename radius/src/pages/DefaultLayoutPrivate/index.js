@@ -23,9 +23,9 @@ function DefaultLayoutPublic(props) {
           <Row className={[styles.principalCabecalho, !isOpen ? styles.active : null].join(' ')}>
             <Col className={styles.colEsquerda}>
               <div onClick={() => updateIsOpen(!isOpen)}>
-                <FontAwesomeIcon icon={faBars} className={styles.iconMenu} />
+                <FontAwesomeIcon icon={faBars} className={[styles.iconMenu, !isOpen ? styles.activeIcon : null].join(' ')} />
               </div>
-              <div className={styles.imgLogo}>
+              <div className={[styles.imgLogo, !isOpen ? styles.activeLogo : null].join(' ')}>
                 <img src={LogoRadius} />
               </div>
             </Col>
@@ -53,7 +53,7 @@ function DefaultLayoutPublic(props) {
               <a href="/Chamados/ListagemChamados">Chamados <FontAwesomeIcon icon={faAngleRight} className={styles.iconSeta}/></a>
 
               <ul>
-                <li><a href="/Cadastro/CadastroChamadas">Novo</a></li>
+                <li><a href="/Cadastro/CadastroChamados">Novo</a></li>
                 <li><a href="/Chamados/ListagemChamados">Consulta</a></li>
               </ul>
             </li>
@@ -73,7 +73,7 @@ function DefaultLayoutPublic(props) {
             <li><a href="#">Base De Conhecimento</a></li>
           </ul>
         </nav>
-        <main className={[styles.principal, !isOpen ? styles.active : null].join(' ')}>
+        <main className={styles.principal}>
           <BrowserRouter>
             <Suspense fallback={<main>Carregando...</main>}>
               <Switch>

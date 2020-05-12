@@ -2,7 +2,7 @@
 
 .principal {
   h1 {
-    font-size: 16px;
+    font-size: 18px;
     padding: 25px 0;
     margin: 0px;
 
@@ -25,6 +25,7 @@
       .novoCliente {
         border-radius: 10px;
         width: 100%;
+        box-shadow: 0 0px 4px 0 rgba(38, 38, 38, 0.20);
 
         .header {
           border-radius: 10px 10px 0px 0px;

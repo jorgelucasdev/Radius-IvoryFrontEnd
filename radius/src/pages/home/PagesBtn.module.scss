@@ -17,7 +17,23 @@
             height: 30px;
           }
     }
-    button:active{
+
+    button{
+        &:first-child{
+            color: #7F7F7F;
+            cursor: default;
+        }
+    }
+
+    button{
+        &:nth-child(2){
+            background: #2E75B4;
+            color: white;
+            cursor: default;
+        }
+    }
+
+    button:active:nth-child(1n+3){
         background: #2E75B4;
         color: white;
     }
