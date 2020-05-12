@@ -19,6 +19,15 @@
                 margin: 3px 0 0 0;
             }
         }
+
+        .segIcon{
+            color: #2E75B4;
+            display: flex;
+            flex-direction: column;
+            margin: 1px 0 4px 0;
+            P{
+                font-size: 9.5px;}
+        }
     }
     
     .btn:hover{
@@ -26,10 +35,16 @@
        .icon{
             color:  white;
        }
+       .segIcon{
+            color:  white;
+       }
     }
     .btn:active{
         background: #81ACD3;
        .icon{
+            color:  white;
+       }
+       .segIcon{
             color:  white;
        }
     }
