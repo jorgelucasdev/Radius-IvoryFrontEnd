@@ -138,7 +138,6 @@ function Table({ data, columns }) {
               return !["chamado"].includes(column.id) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
-
                   <span className={styles.setas}>
                     {column.isSorted ? (
                       column.isSortedDesc ? (
@@ -164,7 +163,11 @@ function Table({ data, columns }) {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return ["status"].includes(cell.column.id) ? (
+                  <td className={`styles.${cell.value}`}>{cell.render("Cell")}</td>
+                ) : (
+                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                );
               })}
             </tr>
           );
