@@ -47,6 +47,18 @@
                 font-size: 14px;
                 padding: 15px 0;
             }
+            .statusAtivo {
+                color: blue;
+            }
+            .statusPendente {
+                color: orangered;
+            }
+            .statusConcluido {
+                color: green;
+            }
+            .statusCancelado {
+                color: red;
+            }
         }
     }
 
