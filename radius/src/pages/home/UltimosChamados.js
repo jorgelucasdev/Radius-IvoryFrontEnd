@@ -7,6 +7,7 @@ import {
   faCaretUp,
   faCaretDown
 } from "@fortawesome/free-solid-svg-icons";
+import './AuxStyles.css';
 
 export default function UltimosChamados() {
   const data = React.useMemo(() => [
@@ -164,7 +165,7 @@ function Table({ data, columns }) {
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
                 return ["status"].includes(cell.column.id) ? (
-                  <td className={`styles.${cell.value}`}>{cell.render("Cell")}</td>
+                  <td className={cell.value}>{cell.render("Cell")}</td>
                 ) : (
                   <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                 );

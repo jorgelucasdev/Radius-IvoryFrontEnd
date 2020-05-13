@@ -26,3 +26,16 @@
 .BuscarChamados_data__2ycY1:focus {
     outline: none;
 }
+
+.Ativo {
+    color: #00B0F0;
+}
+.Pendente {
+    color: #FF6600;
+}
+.Concluido {
+    color: #33CC00;
+}
+.Cancelado {
+    color: #EC2024;
+}
