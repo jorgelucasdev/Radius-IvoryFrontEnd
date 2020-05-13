@@ -20,45 +20,57 @@
             
         }
        
-        th{
-            padding: 15px 0;
-            text-align: center;
-            color: #2E75B4;
-            border-bottom: 1px solid rgba(151,186 ,219, 0.5) ;
-            font-size: 16px;
-            
-            .setas{
-                margin: 0 0 0 7px;
-                .setaCima{
-                    vertical-align: text-top;
-                    font-size: 7px;
-                   
-                }
-                .setaBaixo{
-                    vertical-align: text-bottom;
-                    font-size: 7px;
-                }
-            }
-            
-        }
         tr{
-            text-align: center;
-            td{
-                font-size: 14px;
+            text-align: left;
+            th{
+                padding: 15px 0 15px 15px;
+                text-align: left;
+                color: #2E75B4;
+                border-bottom: 1px solid rgba(151,186 ,219, 0.5) ;
+                font-size: 16px;
+                
+                .setas{
+                    margin: 0 0 0 7px;
+                    .setaCima{
+                        vertical-align: text-top;
+                        font-size: 7px;
+                        
+                    }
+                    .setaBaixo{
+                        vertical-align: text-bottom;
+                        font-size: 7px;
+                    }
+                }
+                
+            }
+            th:nth-child(1) {
+                text-align: center;
                 padding: 15px 0;
             }
-            .statusAtivo {
-                color: blue;
+            th:nth-child(6) {
+                text-align: center;
+                padding: 15px 0;
             }
-            .statusPendente {
-                color: orangered;
+            th:nth-child(8) {
+                text-align: center;
+                padding: 15px 0;
+            }            
+            td{
+                font-size: 14px;
+                padding: 15px 0 15px 15px;
             }
-            .statusConcluido {
-                color: green;
+            td:nth-child(1) {
+                text-align: center;
+                padding: 15px 0;
             }
-            .statusCancelado {
-                color: red;
+            td:nth-child(6) {
+                text-align: center;
+                padding: 15px 0;
             }
+            td:nth-child(8) {
+                text-align: center;
+                padding: 15px 0;
+            }            
         }
     }
 
