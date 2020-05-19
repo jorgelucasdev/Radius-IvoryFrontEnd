@@ -23,14 +23,14 @@ const ListagemProjetos = props => {
 
   const data = React.useMemo(() => [
     {
-      nomeEmpresa: "-",
-      cnpjEmpresa: "-",
-      nomeProjeto: "-",
-      dataInicio: "-",
-      dataFim: "-",
-      responsavel: "-",
-      email: "-",
-      status: "-",
+      nomeEmpresa: "Nome",
+      cnpjEmpresa: "11111",
+      nomeProjeto: "Projeto",
+      dataInicio: "11/11/1111",
+      dataFim: "11/11/1111",
+      responsavel: "Resp",
+      email: "email",
+      status: "Ativo",
       iconEditar: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
@@ -128,27 +128,27 @@ const ListagemProjetos = props => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Nome da Empresa",
+        Header: "Empresa",
         accessor: "nomeEmpresa",
         sortType: "basic"
       },
       {
-        Header: "CNPJ da Empresa",
+        Header: "CNPJ",
         accessor: "cnpjEmpresa",
         sortType: "basic"
       },
       {
-        Header: "Nome do Projeto",
+        Header: "Projeto",
         accessor: "nomeProjeto",
         sortType: "basic"
       },
       {
-        Header: "Data de início do Projeto",
+        Header: "Data de início",
         accessor: "dataInicio",
         sortType: "basic"
       },
       {
-        Header: "Data de fim do Projeto",
+        Header: "Data de fim",
         accessor: "dataFim",
         sortType: "basic"
       },
@@ -342,7 +342,11 @@ function Table({ data, columns }) {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+              return ["status"].includes(cell.column.id) ? (
+                <td className={cell.value}>{cell.render("Cell")}</td>
+              ) : (
+                <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+              );
               })}
             </tr>
           );

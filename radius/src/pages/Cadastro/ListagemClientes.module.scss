@@ -38,12 +38,12 @@
             padding: 18px 20px;
             .rowBusca {
               .info {
-                font-size: 14px;
+                font-size: 16px;
                 .input {
                   margin: 0 0 6px;
                   padding: 0 0 0 10px;
                   width: 100%;
-                  height: 30px;
+                  height: 35px;
                   border-radius: 10px;
                   border-style: solid;
                   border-width: 1px;
@@ -60,7 +60,7 @@
                 }
                 .data {
                   width: 100%;
-                  height: 30px;
+                  height: 35px;
                   border-radius: 10px;
                   border-style: solid;
                   border-width: 1px;
@@ -77,10 +77,10 @@
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                font-size: 14px;
+                font-size: 16px;
                 .data {
                   width: 100%;
-                  height: 30px;
+                  height: 35px;
                   padding: 0 0 0 10px;
                   border-radius: 10px;
                   border-style: solid;
@@ -89,7 +89,7 @@
                 }
                 .calendar {
                   position: absolute;
-                  top: 35px;
+                  top: 37px;
                   right: 22px;
                   color: #2e75b4;
                 }
@@ -97,13 +97,13 @@
               .infoBtn {
                 .btnFiltrar {
                   width: 100%;
-                  height: 30px;
-                  border-radius: 5px;
+                  height: 35px;
+                  border-radius: 10px;
                   border-style: solid;
                   background-color: $color;
                   margin: 29px 0 0;
                   padding: 3px 6px;
-                  font-size: 14px;
+                  font-size: 16px;
                 }
                 .btnFiltrar:active {
                   background: #81acd3;
@@ -137,11 +137,11 @@
           }
 
           th {
-            padding: 15px 0;
-            text-align: center;
+            padding: 15px 0 15px 15px;
+            text-align: left;
             color: $color;
             border-bottom: 1px solid rgba(151, 186, 219, 0.5);
-            font-size: 14px;
+            font-size: 16px;
             .setas {
               margin: 0 0 0 7px;
               .setaCima {
@@ -154,11 +154,27 @@
               }
             }
           }
-          tr {
+          th:nth-child(3) {
             text-align: center;
+            padding: 15px 0;
+            
+         }          
+          tr {
+            text-align: left;
             td {
-              font-size: 14px;
+              font-size: 16px;
+              padding: 15px 0 15px 15px;
+            }
+            td:nth-child(3) {
+              text-align: center;
               padding: 15px 0;
+              
+            }            
+            .btnLista {
+              border-style: unset;
+              background: white;
+              outline: none;
+              color: #2e75b4;
             }
           }
         }

@@ -124,17 +124,17 @@ const ListagemChamados = props => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Código do Chamado",
+        Header: "Chamado",
         accessor: "codigoChamado",
         sortType: "basic"
       },
       {
-        Header: "Nome da Empresa",
+        Header: "Empresa",
         accessor: "nomeEmpresa",
         sortType: "basic"
       },
       {
-        Header: "Nome do Projeto",
+        Header: "Projeto",
         accessor: "nomeProjeto",
         sortType: "basic"
       },

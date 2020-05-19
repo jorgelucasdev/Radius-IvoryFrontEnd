@@ -36,10 +36,8 @@ export default function BuscarChamados() {
           ...provided,
         }),
       
-        control: (_, { selectProps: { width }}) => ({
-            
-        })
-    }
+        control: (_, { selectProps: { width }}) => ({})
+    };
 
     const [startDate, setStartDate] = useState(new Date());
 

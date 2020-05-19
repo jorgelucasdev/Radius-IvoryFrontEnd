@@ -23,11 +23,11 @@ const ListagemUsuarios = props => {
 
   const data = React.useMemo(() => [
     {
-      nome: "-",
-      email: "-",
-      dataInicio: "-",
-      dataFim: "-",
-      status: "-",
+      nome: "Nome",
+      email: "email@email",
+      dataInicio: "11/11/1111",
+      dataFim: "11/11/1111",
+      status: "Pendente",
       iconEditar: (
         <button className={styles.btnEditar}>
           <i className={"icon-editar"}></i>
@@ -167,12 +167,12 @@ const ListagemUsuarios = props => {
 
                 <Row className={styles.rowBusca}>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.info}>
                     <label>Nome de Usuário</label>
                     <input className={styles.input} />
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Início</label>
                     <DatePicker
                       name="dataInicial"
@@ -188,7 +188,7 @@ const ListagemUsuarios = props => {
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.infoData}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.infoData}>
                     <label className={styles.labelData}>Período de Fim</label>
                     <DatePicker
                       name="dataFinal"
@@ -204,7 +204,7 @@ const ListagemUsuarios = props => {
                     <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                   </Col>
 
-                  <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
+                  <Col xs={12} sm={6} md={6} lg={6} xl={3} className={styles.info}>
                     <label>Status</label>
                     <Select placeholder="" classNamePrefix={'select'}
                       options={StatusOptions} styles={customStyles}
@@ -273,7 +273,8 @@ function Table({ data, columns }) {
               {
                 /* console.log(column); */
               }
-              return !["iconEditar"].includes(column.id) ? (
+              return !(["iconEditar"].includes(column.id)) && 
+                     !(["email"].includes(column.id)) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
@@ -310,7 +311,11 @@ function Table({ data, columns }) {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+              return ["status"].includes(cell.column.id) ? (
+                <td className={cell.value}>{cell.render("Cell")}</td>
+              ) : (
+                <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+              );
               })}
             </tr>
           );

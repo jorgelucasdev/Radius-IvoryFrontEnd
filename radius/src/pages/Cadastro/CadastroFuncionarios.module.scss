@@ -38,6 +38,7 @@
           padding: 18px 20px;
 
           .rowInputs {
+            position: relative;
             label {
               margin: 10px 0;
               font-size: 16px;
@@ -62,6 +63,13 @@
               font-size: 14px;
               padding: 4px 8px;
             }
+
+            .calendar {
+              position: absolute;
+              top: 50px;
+              right: 22px;
+              color: #2e75b4;
+            }            
 
             .msgError {
               margin: 5px 0px;

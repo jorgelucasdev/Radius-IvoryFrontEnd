@@ -25,7 +25,7 @@
   border-width: 1px;
   border-color: #2e75b6;
   border-radius: 10px;
-  height: 30px;
+  height: 35px;
 }
 
 .select__indicator-separator {
@@ -34,4 +34,17 @@
 
 .select__indicators {
   padding: 0 5px 0 0;
+}
+
+.Ativo {
+  color: #00B0F0;
+}
+.Pendente {
+  color: #FF6600;
+}
+.Concluido {
+  color: #33CC00;
+}
+.Cancelado {
+  color: #EC2024;
 }
