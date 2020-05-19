@@ -307,8 +307,8 @@ const CadastroUsuarios = props => {
                       id=""
                       placeholder="(XX) 9XXXX-XXXX"
                       options={{
-                        blocks: [0,2,5,4],
-                        delimiters: ["(",") ","-"],
+                        blocks: [0,2,4,4],
+                        delimiters: ["(",") 9","-"],
                         numericOnly: true,
                       }}
                       value={formik.values.celular}
