@@ -16,7 +16,7 @@ $tamanhoSidebar: 250px;
 
     .principalCabecalho {
       @extend %transition;
-      margin: 0 0 0 $tamanhoSidebar;
+      margin: 0 0 0 130px;
       padding: 0 20px;
 
       &.active{
@@ -121,8 +121,6 @@ $tamanhoSidebar: 250px;
     > ul {
       > li {
         position: relative;
-
-
         a {
           display: block;
           text-decoration: none;
@@ -159,11 +157,11 @@ $tamanhoSidebar: 250px;
 
   .principal {
     @extend %transition;
-    margin: 0 0 0 $tamanhoSidebar;
+    margin: 0 130px;
     padding: 0 20px 40px;
 
-    &.active{
-      margin: 0;
+    &.activeMenu{
+      margin: 0 0 0 $tamanhoSidebar;
     }
   }
 

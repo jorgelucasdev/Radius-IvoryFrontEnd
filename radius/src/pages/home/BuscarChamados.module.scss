@@ -26,7 +26,7 @@
                         margin: 0 0 6px;
                         padding: 0 0 0 10px;
                         width: 100%;
-                        height: 30px;
+                        height: 35px;
                         border-radius: 10px;
                         border-style: solid;
                         border-width: 1px;
@@ -55,7 +55,7 @@
                     font-size: 16px;
                     .data {
                         width: 100%;
-                        height: 30px;
+                        height: 35px;
                         padding: 0 0 0 10px;
                         border-radius: 10px;
                         border-style: solid;
@@ -64,7 +64,7 @@
                     }
                     .calendar {
                         position:absolute;
-                        top:35px; 
+                        top: 37px; 
                         right:22px;
                         color: #2E75B4;
                     }
@@ -72,8 +72,8 @@
                 .infoBtn {
                     .btnFiltrar {
                         width: 100%;
-                        height: 30px;
-                        border-radius: 5px;
+                        height: 35px;
+                        border-radius: 10px;
                         border-style: solid;
                         background-color: $color;
                         margin: 31px 0 0;

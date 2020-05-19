@@ -389,7 +389,7 @@ const CadastroUsuarios = (props) => {
                           autoComplete="off"
                           className={styles.calendario}
                         />
-                        <i className={"icon-calendario"}></i>
+                        <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                         {formik.errors.dataInicio &&
                         formik.touched.dataInicio ? (
                           <div className={styles.msgError}>
@@ -417,7 +417,7 @@ const CadastroUsuarios = (props) => {
                           autoComplete="off"
                           className={styles.calendario}
                         />
-                        <i className={"icon-calendario"}></i>
+                        <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                         {formik.errors.dataFim && formik.touched.dataFim ? (
                           <div className={styles.msgError}>
                             {formik.errors.dataFim}

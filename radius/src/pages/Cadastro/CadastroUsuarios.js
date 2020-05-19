@@ -239,7 +239,7 @@ const CadastroUsuarios = props => {
                           autoComplete="off"
                           className={styles.calendario}
                         />
-                        <i className={"icon-calendario"}></i>
+                        <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                         {formik.errors.dataInicio &&
                         formik.touched.dataInicio ? (
                           <div className={styles.msgError}>
@@ -266,7 +266,7 @@ const CadastroUsuarios = props => {
                           autoComplete="off"
                           className={styles.calendario}
                         />
-                        <i className={"icon-calendario"}></i>
+                        <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                         {formik.errors.dataFim && formik.touched.dataFim ? (
                           <div className={styles.msgError}>
                             {formik.errors.dataFim}
@@ -361,7 +361,7 @@ const CadastroUsuarios = props => {
                           autoComplete="off"
                           className={styles.calendario}
                         />
-                        <i className={"icon-calendario"}></i>
+                        <i className={[styles.calendar, 'icon-calendario'].join(' ')}></i>
                         {formik.errors.dataAniversario &&
                         formik.touched.dataAniversario ? (
                           <div className={styles.msgError}>
@@ -400,19 +400,17 @@ const CadastroUsuarios = props => {
                                 options={StatusOptions} styles={customStyles}
                                 components={{ DropdownIndicator }} className={styles.select}
                             /> */}
-                    <Select
-                      value={formik.values.status}
-                      name={"status"}
+                    <SelectBox
+                      value={formik.values.prioridade}
+                      name={"prioridade"}
                       id=""
                       placeholder={"Selecione"}
                       onChange={formik.setFieldValue}
                       onBlur={formik.setFieldTouched}
-                      error={formik.errors.status}
-                      touched={formik.touched.status}
+                      error={formik.errors.prioridade}
+                      touched={formik.touched.prioridade}
                       styleMsgError={styles.msgError}
                       options={StatusOptions}
-                      styles={customStyles}
-                      classNamePrefix={'select'}
                       components={{ DropdownIndicator }}
                     />
                     <span>* Todos os campos são obrigatórios</span>

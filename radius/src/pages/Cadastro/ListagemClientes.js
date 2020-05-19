@@ -36,7 +36,9 @@ function Table({ data, columns }) {
               {
                 /* console.log(column); */
               }
-              return !["email"].includes(column.id) ? (
+              return !(["email"].includes(column.id)) && 
+                     !(["iconEditar"].includes(column.id)) && 
+                     !(["iconExcluir"].includes(column.id)) ? (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
 
@@ -73,7 +75,11 @@ function Table({ data, columns }) {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return ["status"].includes(cell.column.id) ? (
+                  <td className={cell.value}>{cell.render("Cell")}</td>
+                ) : (
+                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                );
               })}
             </tr>
           );
@@ -100,37 +106,97 @@ const ListagemClientes = () => {
       nomeFantasia: "Ivory",
       email: "ivory@ivory.com.br",
       dataCadastro: "00/00/0000",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "VLI",
       email: "vli@vli.com.br",
       dataCadastro: "01/01/0001",
-      status: "Cancelado"
+      status: "Cancelado",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Unilever",
       email: "unilever@unilever.com.br",
       dataCadastro: "02/02/0002",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Ale",
       email: "ale@ale.com.br",
       dataCadastro: "03/03/0003",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "Prefeitura de Betim",
       email: "prfBetim@prfBetim.com.br",
       dataCadastro: "04/04/0004",
-      status: "Ativo"
+      status: "Ativo",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     },
     {
       nomeFantasia: "3MW",
       email: "3mw@3mw.com.br",
       dataCadastro: "05/05/0005",
-      status: "Pendente"
+      status: "Pendente",
+      iconEditar: (
+        <button className={styles.btnLista}>
+          <i className={"icon-editar"}></i>
+        </button>
+      ),
+      iconExcluir: (
+        <button className={styles.btnLista}>
+          <i className={"icon-excluir"}></i>
+        </button>
+      )
     }
   ]);
 
@@ -153,6 +219,14 @@ const ListagemClientes = () => {
         Header: "Status",
         accessor: "status",
         sortType: "basic"
+      },
+      {
+        Header: "",
+        accessor: "iconEditar"
+      },
+      {
+        Header: "",
+        accessor: "iconExcluir"
       }
     ],
     []
@@ -183,7 +257,7 @@ const ListagemClientes = () => {
                 <Row className={styles.rowBusca}>
 
                   <Col xs={12} sm={6} md={6} lg xl className={styles.info}>
-                    <label>Nome de Cliente</label>
+                    <label>Nome do Cliente</label>
                     <input className={styles.input} />
                   </Col>
 
