@@ -34,9 +34,11 @@ $tamanhoSidebar: 250px;
           color: #2e75b4;
           width: 30px;
           height: 30px;
+          margin: 0 25px 0 0;
           
           &.activeIcon {
             transform: rotate(90deg);
+            margin: 0 220px 0 0;
           }
         }
 
@@ -45,12 +47,11 @@ $tamanhoSidebar: 250px;
           img {
             @extend %transition;
             height: 35px;
-            margin: 0 0 0 25px;
           }
 
           &.activeLogo img {
             @extend %transition;
-            margin: 0 0 0 220px;
+            
           }
         }
       }
@@ -157,7 +158,7 @@ $tamanhoSidebar: 250px;
 
   .principal {
     @extend %transition;
-    margin: 0 130px;
+    margin: 0 125px;
     padding: 0 20px 40px;
 
     &.activeMenu{

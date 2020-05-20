@@ -26,7 +26,7 @@ function DefaultLayoutPublic(props) {
                 <FontAwesomeIcon icon={faBars} className={[styles.iconMenu, !isOpen ? styles.activeIcon : null].join(' ')} />
               </div>
               <div className={[styles.imgLogo, !isOpen ? styles.activeLogo : null].join(' ')}>
-                <img src={LogoRadius} />
+                <a href="/"><img  src={LogoRadius} /></a>
               </div>
             </Col>
             <Col className={styles.colDireita}>

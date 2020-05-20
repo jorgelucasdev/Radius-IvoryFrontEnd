@@ -1,5 +1,6 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table";
+import { Table } from "react-bootstrap";
 import styles from "./UltimosChamados.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -109,12 +110,12 @@ export default function UltimosChamados() {
     <div className={styles.colPrincipal}>
       <p className={styles.header}>Últimos Chamados</p>
       <div className={styles.content}>
-        <Table columns={columns} data={data} />
+        <Tabela columns={columns} data={data} />
       </div>
     </div>
   );
 }
-function Table({ data, columns }) {
+function Tabela({ data, columns }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -130,7 +131,7 @@ function Table({ data, columns }) {
   );
 
   return (
-    <table {...getTableProps()}>
+    <Table borderless responsive {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -174,6 +175,6 @@ function Table({ data, columns }) {
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 }

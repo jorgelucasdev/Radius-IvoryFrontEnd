@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "./ListagemFuncionarios.module.scss";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form, Button, Table } from "react-bootstrap";
 import SelectBox from "../../components/SelectBox";
 import Cleave from "cleave.js/react";
 import CleavePhone from "cleave.js/dist/addons/cleave-phone.br";
@@ -230,7 +230,7 @@ const ListagemFuncionarios = props => {
               Funcionários
             </Card.Header>
             <Card.Body className={styles.bodyListaUsuarios}>
-              <Table columns={columns} data={data} />
+              <Tabela columns={columns} data={data} />
             </Card.Body>
           </Card>
 
@@ -249,7 +249,7 @@ const ListagemFuncionarios = props => {
   );
 };
 
-function Table({ data, columns }) {
+function Tabela({ data, columns }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -265,7 +265,7 @@ function Table({ data, columns }) {
   );
 
   return (
-    <table {...getTableProps()}>
+    <Table responsive borderless {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -320,7 +320,7 @@ function Table({ data, columns }) {
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 }
 

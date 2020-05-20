@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ListagemClientes.module.scss";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Card, Form, Button, Table } from "react-bootstrap";
 import { useTable, useSortBy } from "react-table";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
@@ -12,7 +12,7 @@ import ButtonCustom from "../../components/ButtonCustom";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-function Table({ data, columns }) {
+function Tabela({ data, columns }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -28,7 +28,7 @@ function Table({ data, columns }) {
   );
 
   return (
-    <table {...getTableProps()}>
+    <Table borderless responsive {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -85,7 +85,7 @@ function Table({ data, columns }) {
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
@@ -303,7 +303,7 @@ const ListagemClientes = () => {
           <div className={styles.listaClientes}>
             <p className={styles.header}>Clientes</p>
             <div className={styles.tabela}>
-              <Table columns={columns} data={data} />
+              <Tabela columns={columns} data={data} />
             </div>
           </div>
 
